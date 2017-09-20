@@ -1,1 +1,23 @@
-Following \citep{nowak99} we ...
+    During recent years it was found that a lot of information about an X-ray binary could be obtained with its luminosity timing properties.
+Very first one could examine luminosity variability power spectrum, which typically can be represented with the set of broad and thin Lorentzian functions representing correspondingly Fourie continuum and QPOs \citep[see, e.g.][]{1972ApJ...174L..35T, 1990A&A...227L..33B}.
+It was found that variability properties changes with the system state - e.g. variability amplitude significantly lower in the soft state \citep{},  and also with the luminosity in particular state - for example position of some QPOs and the power spectrum break frequencies \cite{1990A&A...227L..33B}. 
+Some changes of the shape of the XBs luminosity power spectrum can be explained with the accretion flow model where large flux variations are produced in the hot flow with (coronal) flow and the flux of the blackbody emission from the geomtrically thin accretion disk is relatively constant \citep{churazov}. 
+Similar model is used for the long time to explain the energy spectrum of black hole binaries \citep{ederly74??}.
+    
+    In many BHbs
+
+
+
+Following method \citep{nowak99} we estimated correlation of the lightcurves obtained in the soft (3--10~keV) and hard (10--79~keV) energy bands from the {\it NuSTAR} data.
+
+In contrast to the \citep{nowak99} study net countrate, obtained in this observation, is {\bf 100?~s$^{-1}$}, it follows that approximately quarter of the total pds power is due to the Poisson noise. 
+Since Poisson noise in the two considered energy bands is independent, correlation of the lightcurves computed with the eq.4 from \cite{Nowak99} will be dumped, and tends to zero on the frequencies where Poisson noise dominates over the source variability.
+Therefore, to obtain proper estimates on the correlation function and phase lags, insted of the product of estimates of power spectra in two energy bands as denominator we are using analytical model $P_{h}(f)\cdotP_{s}(f)$. 
+Here $P_h(f)$ and $P_s(f)$ - analytical function, aproximating the power spectra in soft and hard bands.
+We found, that the power spectra in this bands are very simmilar and can be approximated with followin function:
+$$P(f) = n f^{0.2} (1 + (f/f_{lb})^4)^{-0.05} (1 + (f/f_{hb})^2)^{\alpha} + \frac{s}{f + f_{qpo}} + poiss$$
+In Table \ref{tbl:ps_fit_parameters} one can fined obtained fit parameters for the 13 separate uninterupted {\it NuSTAR} observations.
+
+With the obtained models we estimated coherence as 
+$$\frac{|<F_s^*(f)F_h(F)>|^2}{P_{h}^2(f)\cdotP_{s}^2(f)}$$
+We found, that, similarlly to different XBs objects, light curves in the hard and soft bands demonstrate strong correlation up to the high frequencies.

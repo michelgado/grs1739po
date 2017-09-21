@@ -1,23 +1,52 @@
     During recent years it was found that a lot of information about an X-ray binary could be obtained with its luminosity timing properties.
 Very first one could examine luminosity variability power spectrum, which typically can be represented with the set of broad and thin Lorentzian functions representing correspondingly Fourie continuum and QPOs \citep[see, e.g.][]{1972ApJ...174L..35T, 1990A&A...227L..33B}.
 It was found that variability properties changes with the system state - e.g. variability amplitude significantly lower in the soft state \citep{},  and also with the luminosity in particular state - for example position of some QPOs and the power spectrum break frequencies \cite{1990A&A...227L..33B}. 
-Some changes of the shape of the XBs luminosity power spectrum can be explained with the accretion flow model where large flux variations are produced in the hot flow with (coronal) flow and the flux of the blackbody emission from the geomtrically thin accretion disk is relatively constant \citep{churazov}. 
+Some changes of the shape of the XBs luminosity power spectrum can be explained with the accretion flow model where large flux variations are produced in the hot flow with (coronal) flow and the flux of the blackbody emission from the geometrically thin accretion disk is relatively constant \citep{churazov}. 
 Similar model is used for the long time to explain the energy spectrum of black hole binaries \citep{ederly74??}.
     
     In many BHbs
 
 
+\subsection{Coherence}
 
-Following method \citep{nowak99} we estimated correlation of the lightcurves obtained in the soft (3--10~keV) and hard (10--79~keV) energy bands from the {\it NuSTAR} data.
+Following method \citep{nowak99} we estimated correlation of the lightcurves obtained in the soft and hard energy bands. 
+Since for the timing analysis we use {\it NuSTAR} data, we adopt following energy bands for the soft and hard light-curves correspondingly: 3--10~keV (soft) and 10--79~keV (hard).
 
-In contrast to the \citep{nowak99} study net countrate, obtained in this observation, is {\bf 100?~s$^{-1}$}, it follows that approximately quarter of the total pds power is due to the Poisson noise. 
-Since Poisson noise in the two considered energy bands is independent, correlation of the lightcurves computed with the eq.4 from \cite{Nowak99} will be dumped, and tends to zero on the frequencies where Poisson noise dominates over the source variability.
-Therefore, to obtain proper estimates on the correlation function and phase lags, insted of the product of estimates of power spectra in two energy bands as denominator we are using analytical model $P_{h}(f)\cdotP_{s}(f)$. 
-Here $P_h(f)$ and $P_s(f)$ - analytical function, aproximating the power spectra in soft and hard bands.
-We found, that the power spectra in this bands are very simmilar and can be approximated with followin function:
-$$P(f) = n f^{0.2} (1 + (f/f_{lb})^4)^{-0.05} (1 + (f/f_{hb})^2)^{\alpha} + \frac{s}{f + f_{qpo}} + poiss$$
-In Table \ref{tbl:ps_fit_parameters} one can fined obtained fit parameters for the 13 separate uninterupted {\it NuSTAR} observations.
+In contrast to the \citep{nowak99} study net count rate, obtained in this observation, is {\bf 160~s$^{-1}$}, it follows that approximately quarter of the total pds power is due to the Poisson noise. 
+Since Poisson noise in the two considered energy bands is independent, correlation of the light-curves computed with the eq.4 from \cite{Nowak99} is dumped, and tends to zero on the frequencies where Poisson noise dominates over the source variability.
+Therefore, to obtain proper estimates on the correlation function and phase lags between soft and hard flux, instead of the product of estimates of power spectra in two energy bands as denominator we are use analytical model $P_{h}(f)\cdotP_{s}(f)$ describing corresponding power spectra. 
+Here $P_h(f)$ and $P_s(f)$ - analytical function, approximating the power spectra in soft and hard bands.
+We found, that the power spectra in this bands are very similar to each other and can be fitted on the frequencies above 0.01~Hz with the following function:
+$$P(f) = n (1 + (f/f_{hb})^2)^{\alpha} + \frac{s}{(f - f_{qpo})^2 + q^2} +  \frac{s_2}{(f - 2f_{qpo})^2 + q_2^2} + poiss$$
+In Table \ref{tbl:ps_fit_parameters} one can fined obtained fit parameters for the 13 separate uninterrupted {\it NuSTAR} time series.
 
 With the obtained models we estimated coherence as 
 $$\frac{|<F_s^*(f)F_h(F)>|^2}{P_{h}^2(f)\cdotP_{s}^2(f)}$$
-We found, that, similarlly to different XBs objects, light curves in the hard and soft bands demonstrate strong correlation up to the high frequencies.
+
+\begin{figure}
+\includegraphics{}[] 
+\caption{Coherence between the soft and hard energy bands as a function of frequency} %, due to uncertainty in the power spectra models on the frequencies above $\sim 2$~Hz the  }
+\label{fig:coherence}
+\end{figure}
+
+We found, that our estimate on the coherence, growths significantly on the frequencies above $\sim2$~Hz, where Poisson noise begins to dominate over the source intrinsic variability.
+This can be explained with the uncertainty of obtained model parameters or its simplicity. 
+We found that for both soft and hard bands, obtained fits suggest very abrupt drop in power between the QPO and low-frequency plateau, it leads to very steep index of the power-law component. 
+Therefore growth of the coherence estimates on the higher frequencies is due to the underestimation of the source intrinsic variability on the corresponding frequencies.
+
+We found, that, similarly to different XBs, light curves in the hard and soft bands demonstrate strong correlation up to the high frequencies.
+
+\subsection{Phase lags}
+    Most of the models of the accretion flow which describe variability and energy spectra formation, suggest the time lag between the fluxes in different energy bands. 
+For example in some models of the energy spectra formation, time lag is naturally arise due to the geometry of the corona and properties of the inverse Comptonization process \citep[see, e.g.][]{kotov01}.
+Phase lag is also suggested from the propagating fluctuations model - hard photons are emitted from the inner parts of the accretion flow and perturbations spend some time before reaching them. 
+
+It also was found, that phase lag of XBs, probably depends on the system inclination angle \citep{eijeden17}, it also definitely contain information about the characteristic times of the system, and therefore can be proxy to the compact object mass \citep{}. 
+
+Phase lags can be estimated as a product of the mean phase of the set of Fourier spectra and the corresponding frequency:
+$$<F_h(f)F_s(f)> = n(f)e^{-i\phi(f)}$$ 
+here, $F_h(f)$ and $F_s(f)$ are Fourier functions of the light-curves in the hard and soft bands, $\phi(f)$ is the phase lag and $$n(f)$$ - is the square root of the power spectrum of the soft and hard light-curves coherent part. 
+
+To estimate phase lags we use the same approach as for the coherence.
+
+

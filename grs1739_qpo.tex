@@ -99,9 +99,17 @@ Fortunately, the \nustar\, \citep{harrison13_nust} observation triggered by \cit
 \subsection{NuSTAR observation}
 \label{sec:nust} 
 
-\nustar\, observed \grs (ObsID: 80002018002) for nearly 30 ks of dead-time corrected exposure right after hard X-ray peak (see Fig.~\ref{fig:batlc}). Earlier, \cite{miller15_nust} shown that the average spectrum of this observation is well described by reflection models such as {\it relxill} \citep{dauser14,dauser16} with accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO), with upper estimate being $r_{in} = 5^{+3}_{-4}\, G M/c^{2}$. Interestingly, no additional thermal component were needed in order to obtain good fit, probably because of \nustar\, energy band, starting at 3~keV. 
+\nustar\, observed \grs (ObsID: 80002018002) for nearly 30 ks of dead-time corrected exposure right after hard X-ray peak (see Fig.~\ref{fig:batlc}). Earlier, \cite{miller15_nust} shown that the average spectrum of this observation is well described by reflection models such as {\it relxill} \citep{dauser14,dauser16} with accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO), with upper estimate being $r_{in} = 5^{+3}_{-4}\, G M/c^{2}$. 
+Interestingly, no additional thermal component was needed in order to obtain a good fit, probably because of \nustar\, energy band, starting at 3~keV. 
 
-Given the 96.9 minute orbital period of \nustar, observation is divided in 13 intervals separated by Earth occultations, as shown in Fig.\,\ref{fig:nust_lc}. We denoted this intervals with roman numerals, from {\bf I} to {\bf XIII}. From the lightcurve of observation it is clear, that source flux is increasing throughout observation from $\approx$145 counts per second up to $\approx$170 counts per second. Spectrum also alter, with hardness (defined as ratio of countrates  $R_{3-10\,keV}/R_{10-78\,keV}$) monotonically growing from 2.5 to 3.5. Since it is obvious that source spectrum is somehow changing during observation it is interesting to check if  Fe-line profile stays the same during observation or changes. We split observation into three major pieces, with first made by intervals {\bf I-IV}, second by {\bf V-IX} and third by {\bf X-XIII} and extracted 3--78 keV spectra. We chose to group them in order to have at least 100 counts per bin. Then we fitted them (excluding data below 4 keV and between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using $N_{H} = 2.15\times10^{22}$ cm$^{-2}$ as found by joint \xmm/\nustar\, observation during low luminosity state \citep{fuerst16}. Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. Parameters of  cut-off powerlaw change slightly from part to part: photon index grows from 1.48 to 1.52 and then to 1.56 , while energy of exponential rollover changes from 28.5 keV to 27.8 keV and then to 27.4 keV. 
+Given the 96.9 minute orbital period of \nustar, observation is divided in 13 intervals separated by Earth occultations, as shown in Fig.\,\ref{fig:nust_lc}. We denoted this intervals with roman numerals, from {\bf I} to {\bf XIII}. From the lightcurve of observation it is clear, that source flux is increasing throughout observation from $\approx$145 counts per second up to $\approx$170 counts per second. 
+The spectrum also alter, with hardness (defined as ratio of countrates  $R_{3-10\,keV}/R_{10-78\,keV}$) monotonically growing from 2.5 to 3.5. 
+Since it is obvious that the source spectrum is somehow changing during the observation it is interesting to check if Fe-line profile stays the same during observation or changes. 
+We split observation into three major pieces, with first made by intervals {\bf I-IV}, second by {\bf V-IX} and third by {\bf X-XIII} and extracted 3--78 keV spectra. 
+We chose to group them in order to have at least 100 counts per bin. 
+Then we fitted them (excluding data below 4 keV and between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using $N_{H} = 2.15\times10^{22}$ cm$^{-2}$ as was found by joint \xmm/\nustar\, observation during low luminosity state \citep{fuerst16}. 
+Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. 
+Parameters of the cut-off powerlaw change slightly from part to part: photon index grows from 1.48 to 1.52 and then to 1.56 , while energy of exponential rollover changes from 28.5 keV to 27.8 keV and then to 27.4 keV. 
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.7]{nuAlc_color_v04.eps}}
@@ -115,10 +123,12 @@ Given the 96.9 minute orbital period of \nustar, observation is divided in 13 in
 \label{fig:ratios}
 \end{figure}  
             
-From visual inspection of Fig.~\ref{fig:ratios} it is seen that nor line profile, nor Compton hump is not change significantly between parts of observation.
+From visual inspection of Fig.~\ref{fig:ratios} it is seen that nor line profile, nor Compton hump did not changing significantly between parts of the observation.
 
 
-There is a 1 ks part of \swiftx\, observation, that coincides with of \nustar\, observation, we decided to treat that data simultaneously, thus covering range from 0.8 to 78 keV. We used latest availiable for us version of {\it relxill} package (v1.0.2). Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}.
+There is a 1 ks part of \swiftx\, observation, that coincides with ??? of \nustar\, observation, we decided to treat that data simultaneously, thus covering energies from 0.8 to 78 keV. 
+We used latest availiable version of {\it relxill} package (v1.0.2). 
+Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}.
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.7]{QPOdrift_v02.eps}}

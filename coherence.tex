@@ -13,10 +13,23 @@ Most of that models were architect in order to explain energy spectra (or partic
 However, as will be discussed in the following chapter, additional analysis, describing time properties in different energy bands, can be applied to rule out some of that models.
 
 \subsection{Power spectrum}
+    The power spectra of each of the separate observation has a form of plateau ending on the frequency $\approx0.1$~Hz transforming in the power law with the slope $\rho\approx-2$ on the higher frequencies, it also contains a prominent QPO on the frequencies 0.3--0.7~Hz and second overtone, also there is clear Poisson noise component dominating over the source variability above $\sim2$~Hz.
+    The shapes of the power spectra obtained from the light curves in different energy bands are very similar.
+    In order to estimate QPO amplitude and location we fit Power Spectra with the following function:
+\begin{equation}
+        P(f) = n (1 + (f/f_{\rm lb})^4)^{\alpha} (1 + (f/f_{\rm hb})^4)^{\beta} + \frac{s_1}{(f - f_{qpo})^2 + (f_{\rm qpo} Q_{\rm m})^2} + \frac{s_2}{(f - 2f_{qpo})^2 + (f_{\rm qpo} Q_{\rm o})^2} + n_2 (1 + (f/f_{\rm vh})^2)^{\gamma} + poiss
+        \label{eq:complex_fit}
+\end{equation}
+In this function first component represents plateau function with break, which can have complex shape (sharp or wide), second two components describe QPO main harmonics in its overtone, fourth component represent any additional high frequency power, it can be connected either with detector dead time effects or can describe broad featureless component connected to the QPO power spreading to the high frequencies, last component represents constant Poisson noise component.
 
-    The power spectra of each of the separate observation 
+\begin{figure*}
+        \includegraphics[width=0.5\columnwidth]{}
+        \includegraphics[width=0.5\columnwidth]{}
+        \caption{On the left panel power spectra obtained in the soft (red) and hard (black) bands at the beginning of {\it NuSTAR} observation. 
+        On the right column same spectra obtained at the end of the observation.}
+        \label{fig:ps_example}
+\end{figure}
 
-$$P(f) = n (1 + (f/f_{hb})^2)^{\alpha} + \frac{s}{(f - f_{qpo})^2 + q^2} +  \frac{s_2}{(f - 2f_{qpo})^2 + q_2^2} + poiss$$
 In Table \ref{tbl:ps_fit_parameters} one can fined obtained fit parameters for the 13 separate uninterrupted {\it NuSTAR} time series.
 
 \subsection{Coherence}

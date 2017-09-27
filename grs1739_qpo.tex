@@ -113,8 +113,7 @@ The spectrum also alter, with hardness (defined as ratio of countrates  $R_{3-10
 Since it is obvious that the source spectrum is somehow changing during the observation it is interesting to check if Fe-line profile stays the same during observation or changes. 
 We split observation into three major pieces, with first made by intervals {\bf I-IV}, second by {\bf V-IX} and third by {\bf X-XIII} and extracted 3--78 keV spectra. 
 We chose to group them in order to have at least 100 counts per bin. 
-Then we fitted them using \texttt{XSPEC} package \citep{arnaud96} (excluding data below 4 keV and between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using $N_{H} = 2.15\times10^{22}$ cm$^{-2}$ as was found by joint \xmm/\nustar\, observation during low luminosity state \citep{fuerst16}. 
-Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. 
+Then we fitted them using \texttt{XSPEC} package \citep{arnaud96} (excluding data below 4 keV and between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using $N_{H} = 2.15\times10^{22}$ cm$^{-2}$ as was found by joint \xmm/\nustar\, observation during low luminosity state \citep{fuerst16}. Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}. Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. 
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.7]{nuAlc_color_v04.eps}}
@@ -138,9 +137,8 @@ Examination of best-fit parameters shown in Fig.\ref{fig:intspe} confirms that s
 \label{fig:intspe}
 \end{figure}  
             
-There is a 1 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides with \nustar\, observation.  Extending energy range to 0.8 to 78 keV allow one to search for thermal emission associated with cold inner disk with $kT \sim 0.1...0.4 keV$ (such as were found in other BHCs, see \cite[][ e.t.c]{miller06b,miller06a,parker15}).
+There is a 1 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides with \nustar\, observation.  Extending energy range to 0.8 to 78 keV allow one to search for thermal emission associated with cold inner disk with $kT \sim 0.1...0.4$ keV (such as were found in other BHCs during LHS, see \cite[][ e.t.c]{miller06b,miller06a,parker15}).
 We used latest availiable version of {\it relxill} package (v1.0.2). 
-Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}.
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.7]{QPOdrift_v02.eps}}

@@ -286,20 +286,24 @@ It also was found, that phase lag of XBs, probably depends on the system inclina
 
 Phase lags can be estimated as a product of the mean phase of the set of Fourier spectra and the corresponding frequency:
 \begin{equation}
-        \begin{split}
-                \tau = \frac{<\phi(f)>}{\pi f}\\
-                <\phi(f)> = <arccos{\left(\frac{re(F_h(f)F_s(f))}{|F_{\rm h}(f) F_{\rm s}(f)|}\right)}>
-        \end{split}
+                \tau = \frac{\phi(f)}{2\pi f}\\
+\end{equation}
+\begin{equation}
+        \phi(f) = <arccos{\left(\frac{re(<F_{\rm h}^{*}(f)F_{\rm s}(f)>)}{|F_{\rm h}^{*}(f) F_{\rm s}(f)|}\right)}>
+        \label{eq:phase_lag}
 \end{equation}
 here, $F_h(f)$ and $F_s(f)$ are Fourier functions of the light-curves in the hard and soft bands, $\phi(f)$ is the phase lag. 
 
-Due to the significant fraction of the Poisson noise in each observation we were not able to obtain phase lag for them.
+%Due to the significant fraction of the Poisson noise in each observation we were not able to obtain phase lag for them.
+We found that phase lag on each frequency is generally conserved along the observation.
 In order to improve significance we compute phase lag for all 13 time series.
-Obtained phase lag for frequencies from $10^{-3}$~Hz to 10~Hz is presented in Figure~\ref{fig:phase_lag}.
+Obtained phase lag for frequencies from $10^{-2}$~Hz to 100~Hz is presented in Figure~\ref{fig:phase_lag}.
+As follows from the Eq.~\ref{eq:phase_lag} we compute phase shift between the phases of the Fourier harmonics in hard and soft lightcurves, therefore negative phase lag corresponds to the hard lag.
+It Follows from Figure~\ref{fig:phase_lag} that there is soft lag on low frequencies which transforms in to the hard lag on frequencies grater than QPO frequency. 
 
 \begin{figure}
-        \includegraphics[]{}
-        \caption{Phase lag between hard (10--78~keV) and soft (3--10) energy bands in \grs\ source.}
+        \includegraphics[width=0.5\columnwidth]{Phase_lag.pdf}
+        \caption{Phase lag between the hard (10--78~keV) and soft (3--10) energy bands in \grs\.}
         \label{fig:phase_lag}
 \end{figure}
 

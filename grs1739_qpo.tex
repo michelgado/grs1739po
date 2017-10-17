@@ -113,8 +113,7 @@ The spectrum also alter, with hardness (defined as ratio of countrates  $R_{3-10
 Since it is obvious that the source spectrum is somehow changing during the observation it is interesting to check if Fe-line profile stays the same during observation or changes. 
 We split observation into three major pieces, with first made by intervals {\bf I-IV}, second by {\bf V-IX} and third by {\bf X-XIII} and extracted 3--78 keV spectra. 
 We chose to group them in order to have at least 100 counts per bin. 
-Then we fitted them using \texttt{XSPEC} package \citep{arnaud96} (excluding data below 4 keV and between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using $N_{H} = 2.15\times10^{22}$ cm$^{-2}$ as was found by joint \xmm/\nustar\, observation during low luminosity state \citep{fuerst16}. 
-Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. 
+Then we fitted them using \texttt{XSPEC} package \citep{arnaud96} (excluding data below 4 keV and between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using $N_{H} = 2.15\times10^{22}$ cm$^{-2}$ as was found by joint \xmm/\nustar\, observation during low luminosity state \citep{fuerst16}. Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}. Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. 
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.7]{nuAlc_color_v04.eps}}
@@ -142,11 +141,12 @@ There is a 1 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides w
 We used latest available version of {\it relxill} package (v1.0.2). 
 Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}.
 
-\begin{figure*}
-\centerline{\includegraphics[scale=0.7]{QPOdrift_v02.eps}}
-\caption{Change of the QPO frequency with time. On the left panel we show how power-density spectra change with time - for clarity each spectrum is multiplied by a factor of 3.25. On the right panel we show how the QPO frequency changes during observation. Green cross show QPO frequency derived from \swiftx\, observation.} 
-\label{fig:qpodrift}
-\end{figure*}  
+
+%\begin{figure*}
+%\centerline{\includegraphics[scale=0.7]{QPOdrift_v02.eps}}
+%\caption{Change of the QPO frequency with time. On the left panel we show how power-density spectra change with time - for clarity each spectrum is multiplied by a factor of 3.25. On the right panel we show how the QPO frequency changes during observation. Green cross show QPO frequency derived from \swiftx\, observation.} 
+%\label{fig:qpodrift}
+%\end{figure*}  
 
 
 \section{Timing analysis} 
@@ -206,6 +206,7 @@ XIII & $0.13_{-0.03}^{+0.04}$ & $0.67_{-0.01}^{+0.01}$ & $5.71_{-1.19}^{+1.08}\t
 \hline
 \end{tabular}
 
+<<<<<<< HEAD
 \end{table}\subsection{Power spectrum}
     {\it NuSTAR} observation of the \grs\ 2014 outburst are split on 13 continuous parts separated with $\sim0.7$~hr intervals when the source was occulted by Earth. 
     The continuous observations have duration from $\sim2440$ to $\sim3390$~sec see Table~\ref{}.
@@ -222,6 +223,14 @@ XIII & $0.13_{-0.03}^{+0.04}$ & $0.67_{-0.01}^{+0.01}$ & $5.71_{-1.19}^{+1.08}\t
     From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
 
     In order to assess properties of the variability power spectra we approximate each obtained power spectra with the following analytical function:
+=======
+\end{table*}
+
+\subsection{Power spectrum}
+    The power spectra of each of the separate observation has a form of plateau ending on the frequency $\approx0.1$~Hz transforming in the power law with the slope $\rho\approx-2$ on the higher frequencies, it also contains a prominent QPO on the frequencies 0.3--0.7~Hz and second overtone, also there is clear Poisson noise component dominating over the source variability above $\sim2$~Hz.
+    The shapes of the power spectra obtained from the light curves in different energy bands are very similar.
+    In order to estimate QPO amplitude and location we fit Power Spectra with the following function:
+>>>>>>> 9599b2e7a36824cae258a12a426c2d844dc9f785
 \begin{equation}
         \begin{split}
         P(f) = n (1 + (f/f_{\rm lb})^4)^{\alpha} (1 + (f/f_{\rm hb})^4)^{\beta} + \\
@@ -291,20 +300,19 @@ We also found, that the correlation of the light-curves obtained from {\it NuSTA
 In order to eliminate this effects, following the recipe suggested in \cite{2015ApJ...800..109B} for power spectra estimation, we find crossproducts of the light-curves Fourier functions obtained on the different modules - e.g. correlations of the light-curve obtained in the soft band on the FPMA module with the light-curve in the hard band obtained in the FPMB and vice versa.
 Obtained correlation does not contain polluting signal from the blocking dead time. 
 
-After that, as explained in \citep{Nowak99}, one should find the amplitude of the fully coherent signal $<|H(f)|^2><|S(f)|^2>$ in order to estimate coherence of the signals. 
+After that, as explained in \citep{nowak99}, one should find the amplitude of the fully coherent signal $<|H(f)|^2><|S(f)|^2>$ in order to estimate coherence of the signals. 
 There is several different options, which one can be use to estimate this normalization:
-\begin{itemize}
-        \enumerate
+\begin{enumerate}
         \item Use observed of the power spectra in each energy band. 
-                The drawback of this method is that power spectra contain Poisson noise component constant on all frequencies and dominating over the source variability on high frequencies. 
-                Thus, since Poisson noise is not coherent,  if one use this normalization as a denominator in Eq.~\ref{eq:nowak_coh} coherence estimation will be dumped on the value equal to the ratio of the Poisson noise to the source signal power on each frequency.
+                 The drawback of this method is that power spectra contain Poisson noise component constant on all frequencies and dominating over the source variability on high frequencies. 
+                 Thus, since Poisson noise is not coherent,  if one use this normalization as a denominator in Eq.~\ref{eq:nowak_coh} coherence estimation will be dumped on the value equal to the ratio of the Poisson noise to the source signal power on each frequency.
         \item Instead of the observed power spectra, one can use approximation of the power spectra with analytical models. 
                 Poisson noise component can be discarded in analytical model, thus only source signal is conserved. 
                 The drawback is that due to the Dead time effects Poisson noise has a complex form and can not be easily estimated with simple model.
         \item Use coherent part of the Fourier function of light curves in two modules \citep{2015ApJ...800..109B} or it's approximation with the analytical function. 
                 It should be noted, that obtained coherent part of the ${\rm re}(H_{\rm A}(f)^*H_{\rm B}(f))$ has complex statistic which not restricting negative values, which must be ignored or modified thus affecting result.  
                 We also found, that for short time series, one should use more complex likelihood criterion in order to fit coherent signal with analytical functions, since the statistic is still far from Gaussian and obtained fits are often unstable.
-\end{itemize}
+\end{enumerate}
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{coherence_3.pdf}
@@ -395,8 +403,8 @@ As follows from the Eq.~\ref{eq:phase_lag} we compute phase shift between the ph
 It Follows from Figure~\ref{fig:phase_lag} that there is soft lag on low frequencies which transforms in to the hard lag on frequencies grater than QPO frequency. 
 
 \begin{figure}
-        \includegraphics[width=0.5\columnwidth]{Phase_lag.pdf}
-        \caption{Phase lag between the hard (10--78~keV) and soft (3--10) energy bands in \grs\.}
+        \includegraphics[width=\columnwidth]{Phase_lag.pdf}
+        \caption{Phase lag between the hard (10--78~keV) and soft (3--10) energy bands in \grs}
         \label{fig:phase_lag}
 \end{figure}
 
@@ -411,7 +419,7 @@ Total power of the harmonics growing with the source count-rate and QPO frequenc
 
 %--------------------------------------------------------------------------------
 \bibliographystyle{astron}
-\bibliography{author_en.bib, coherence.bib}
+\bibliography{author_en.bib,coherence.bib}
 \bsp	
 \label{lastpage}
 \end{document}

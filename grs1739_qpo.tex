@@ -187,7 +187,7 @@ In the following section we presenting analysis of the timing properties and the
 \label{tab:timing}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 \hline\hline
-Data set & f$_{\rm br}$, Hz & f$_{\rm qpo}$, Hz & Q$_{\rm m}$ & Q$_{\rm o}$ & A$_{\rm m}$, (rms/mean) \% & A$_{\rm o}$, (rms/mean) \%i & rms, \% & $\Gamma$ & E$_{\rm cut}$, keV \\
+Data set & duration, s & f$_{\rm br}$, Hz & f$_{\rm qpo}$, Hz & Q$_{\rm m}$ & Q$_{\rm o}$ & A$_{\rm m}$, (rms/mean) \% & A$_{\rm o}$, (rms/mean) \%i & rms, \% & $\Gamma$ & E$_{\rm cut}$, keV \\
 \hline
 
 I & $7.34_{-2.09}^{+2.29}\times10^{-2}$ & $0.30_{-0.01}^{+0.01}$ & $6.60_{-1.64}^{+1.67}\times10^{-2}$ & $0.20_{-0.07}^{+0.08}$ & $12_{-1}^{+1}$ & $3.87_{-0.87}^{+0.96}$ & $27_{-3}^{+6}$ & & \\
@@ -207,9 +207,21 @@ XIII & $0.13_{-0.03}^{+0.04}$ & $0.67_{-0.01}^{+0.01}$ & $5.71_{-1.19}^{+1.08}\t
 \end{tabular}
 
 \end{table}\subsection{Power spectrum}
-    The power spectra of each of the separate observation has a form of plateau ending on the frequency $\approx0.1$~Hz transforming in the power law with the slope $\rho\approx-2$ on the higher frequencies, it also contains a prominent QPO on the frequencies 0.3--0.7~Hz and second overtone, also there is clear Poisson noise component dominating over the source variability above $\sim2$~Hz.
-    The shapes of the power spectra obtained from the light curves in different energy bands are very similar.
-    In order to estimate QPO amplitude and location we fit Power Spectra with the following function:
+    {\it NuSTAR} observation of the \grs\ 2014 outburst are split on 13 continuous parts separated with $\sim0.7$~hr intervals when the source was occulted by Earth. 
+    The continuous observations have duration from $\sim2440$ to $\sim3390$~sec see Table~\ref{}.
+    Since {\it NuSTAR} detectors operate in the photons counting mode, data can be reduced to the light-curve with time resolution up to 2$\mu$s.
+    For our analysis we extracted light-curves with 0.01~s temporal resolution, therefore we obtained power spectra in the $sim3\times10^{-3}$--$50$~Hz range.
+    This is a frequency range which usually contains low frequency quasi periodic oscillations QPOs and broad band noise component \citep{1999ApJ...514..939W}.
+    We didn't try to found high frequency QPOs, since the typical HF QPO (centroid frequency 100-400~Hz, amplitude $\approx10$\% and quality $Q\approx0.1$--$0.5$) is indiscernible over the Poisson noise with the obtained count-rate.
+
+    The power spectrum of each of the separate observations has a form of a white noise plateau ($P(f)\propto const$) on the low frequencies, transforming on the frequency $\approx0.1$~Hz in to the power law with the slope $\rho\approx-1.6$--$-2.0$. 
+    Also a prominent QPO on the frequencies 0.3--0.7~Hz and its second overtone is presented.
+    Poisson noise dominates intrinsic source variability on the frequencies over $\approx2$~Hz, preventing analysis of any high-frequency features. %, nevertheless we inspected power spectrum in the range from 100 to 500~Hz and didn't find any signs of high frequency QPOs.
+    There is also signs that the Power spectrum on the frequencies below $\approx0.003$~Hz has a form of growing power law $P(f)\proptof^{\alpha}$, $\alpha > 0$.
+
+    From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
+
+    In order to assess properties of the variability power spectra we approximate each obtained power spectra with the following analytical function:
 \begin{equation}
         \begin{split}
         P(f) = n (1 + (f/f_{\rm lb})^4)^{\alpha} (1 + (f/f_{\rm hb})^4)^{\beta} + \\
@@ -219,7 +231,32 @@ XIII & $0.13_{-0.03}^{+0.04}$ & $0.67_{-0.01}^{+0.01}$ & $5.71_{-1.19}^{+1.08}\t
 \end{split}
         \label{eq:complex_fit}
 \end{equation}
-In this function first component represents plateau with break which can has be sharp or wide, second two components describe QPO main harmonics and its overtone, fourth component represents any additional high frequency power, it can describes either detector dead time effects or broad featureless component connected to the QPO power spreading to the high frequencies, last component represents constant Poisson noise.
+In this function first component represents plateau with the break which can be sharp or smooth, second two components describe QPO main harmonics and its overtone, fourth component represents any additional high frequency power, it can describes either detector dead time effects or broad featureless component connected to the QPO power spreading to the high frequencies, last component represents constant Poisson noise.
+
+Due to the complex dead-time behaviour over the energy, it's impact on to the power spectrum can not be well described. 
+\citet{2015ApJ...800..109B} proposed to use real part of the cross-product between two independent {\it NuSTAR} detectors for the power spectrum assessment ($P(f)\approx real(F(f)_{\rm fpma}^{*}F(f)_{\rm fpmb}$, where $F(f)_{\rm fpma}$ and $F(f)_{\rm fpmb}$ - are measured Fourier signal on corresponding frequency $f$ and $^{*}$ - complex conjugation operation) in order to read out of Poisson noise and dead time effects.
+This method is based on the following assumption: since photons arrival times are independent for the two detectors, phases of the Fourier function of two light-curves are also random and independent.
+It follows that this cross-product is a complex value with random uniformly distributed phase and the mean of it's real part is zero.
+
+While cross-spectrum technique works perfectly for the power spectrum assessment, we still using classical Fourier power spectrum for the analysis in this work due to the following reason.
+Each value of the cross-spectrum belongs two the distribution with a complex probability density function (PDF), which,  for the random independent signals in two detectors, can be described with the special Bessel function of second Kind and has a different PDF for a coherent signals. 
+Since this distribution has finite standard deviation, according to the central limit theorem, distribution of the sum of the values tends toward a normal distribution.
+To track the source variability evolution we fitting relatively short observations with duration of 2--3~ks, and therefore can not split them more than on few dozens parts in order to have an eye on the power spectrum break feature on the 0.1~Hz frequency. 
+We found that usual root mean square technique, used to fit normally distributed values, works not stable in that case, probably because the PDF is not yet close enough to the normal distribution. 
+
+To simplify our analysis we inspect power spectrum only on frequencies above 10~Hz, allowing Poisson noise to has arbitrary power but assuming that it's power spectrum component is still flat ($P(f) = const$).
+
+We found that the QPO frequency and amplitude had clearly evolved with time see Table~\ref{tab:ps} and Figure~\ref{fig:qpo}.
+The QPO frequency correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep{2003A&A...397..729V,2003A&A...407.1039P}.
+On the other hand we see, that QPO amplitude was stable during the first half of the observation, and started to growth in the second part.
+
+Some models suggest, that the type-C QPO arising due to the Lense-Thearing precession of the accretion flow inner parts \citep{1998ApJ...492L..59S, 2006ApJ...642..420S, 2009MNRAS.397L.101I}, therefore growth of the QPO frequency corresponds to the shrinking of the disk inner radius.
+However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum already suggest accretion disk inner radius $R_{\rm in}= 5_{-3}^{+3}R_{\rm g}$ (for optically thick, cold disk producing neutral iron K$\alpha$ line), see section~\ref{sec:spec} and also \citep{miller15_nust}.
+
+We found that the QPO amplitude is smaller in the soft band, while amplitude of it's harmonic is bigger, the ratio of the power between the QPO and it's harmonic is $0.2\pm0.1$ in 10--78~keV band and $0.4\pm0.1$ in 3-5 energy band.
+
+In some observation segments QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cross-spectra (see examples on Figure~\ref{fig:subharmonic}) (namely I, ...). 
+
 
 \begin{figure*}
         \includegraphics[trim=0 0 0 0.65cm, clip, width=\columnwidth]{NuFirst.pdf}
@@ -309,6 +346,31 @@ There is no clear changes in the coherence on the QPO frequency, i.e. soft and e
 %We found, that, similarly to different XBs, light curves in the hard and soft bands demonstrate strong correlation up to the high frequencies, however, we were not able to estimate properly coherence above 2~Hz due to the Poisson noise.
 
 \subsection{Phase lags}
+    
+Following \citep{1997ApJ...474L..43V} we estimate phase lag as an angle of mean product of the light curves Fourier harmonics from one energy bands to the conjugated Fourier harmonics of second energy band. 
+\begin{equation}
+        P_{\rm hs} = F_h(f)^{*}F_s(f)
+\end{equation}
+We can imagine that each light curve from a sample consist of stochastic noise and coherent signal $F_{\rm h[s]} = ne^{-i\alpha}$, where $i$ - is complex unit, k - amplitude of the Fourier harmonic and $\alpha$ its phase.
+Amplitudes of each harmonic in that case are distributed with the Normal distribution with zero mean, and divergence equal to the square power in particular frequency band. 
+The probability density function (PDF) of the product of two Normal distribution described with the modified Bessel function of second kind with 0-th order. 
+Result of the product of two Foruier harmonics can be represented ad a sum of four complex numbers, amplitude of each is distributed with PDF having a form of modified Bessel function, phases of three of these numbers distributed uniformly, and phase of the last one is distributed nonuniformly with mean equal to real phase shift between two coherent signals.
+We can now determine the ``phase axis'' as the axis along the mean complex value of the Sample.
+Distribution of the points relative to the ``phase axis'' obviously should be symmetrical, and along it should be assymetric and shifted towards the mean complex value of the sample.
+If we now rotate all the obtained complex Fourier harmonics in our sample along this axis $\frac{<P_{\rm hs}^{*}>P_{\rm hs}}{|<P_{\rm hs}>|}$, real part of each value is the projection on the ''phase axis'' and imaginary part is projection on the perpendicular axis. 
+We found that the distribution of the projected on the ''phase axis'' values is closely resembles assymetric Laplace distribution and the distribution of the points projected on the perpendicular axis resembles symmetric Laplace distribution. 
+Bearing this in mind we estimate mean value for each of the four distributions (positive real, negative real, positive imaginary and negative imaginary) and assess variances of this distribution.
+Since we accepted that each of these distribution has a PDF close to exponential we take their variance as a variance of $\chi_2^{\rm 2N}$ distribution, where $N$ - is a number of entities in the each sample. 
+After that we accept the error on the phase to be equal $\pi$ if the mean of positive real sample is less than the square root of the sum of the positive and negative real samples variances, otherwise we take it to be equal
+\begin{equation}
+        \Delta \phi = atan{\left(\frac{\sqrt{v_{i-}^2 + v_{i+}^{2}}}{m_{r+} - m_{r-} - \sqrt{v_{r+}^2 + v_{r-}^2}}\right)}
+\end{equation}
+
+
+
+    Error assessment for the phase lag points position 
+
+
     Most of the models of the accretion flow which describe variability and energy spectra formation, suggest the time lag between the signals in different energy bands. 
 For example in some models of the energy spectra formation, time lag is naturally arise due to the geometry of the corona and properties of the inverse Comptonization process \citep[see, e.g.][]{kotov01}.
 Phase lag is also suggested from the propagating fluctuations model - hard photons are emitted from the inner parts of the accretion flow from the perturbations, which initially were born in the outer parts of the disk were produce soft emission.  

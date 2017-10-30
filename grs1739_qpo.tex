@@ -93,7 +93,7 @@ After some 18 year slumber \grs\, demonstrated another big outburst, rise of whi
 \label{sec:datared} 
 In order to characterize the overall outburst profile we used data of \swiftb\, {\it transient monitor} \citep{krimm13bat} in hard X-rays (15--50 keV) as well as data from \maxi\, \citep{matsuoka13maxi} (2--4 keV).
 
-We used public observations of \swiftx\, (target ID: 33203) performed regular over the peak and decline of the outburst.  Since the source was bright, all \swiftx\, observations were performed in windowed mode, allowing study of timing properties of the source. We performed standard analysis with {\texttt{xrtpipeline}} and barycentered data prior to lightcurve extraction. During several observations countrate was as high as 280 cts s$^{-1}$, therefore we excluded one or few brightest columns, in order to suppress effects caused by photon pile-up.  
+We used public observations of \swiftx\, (target ID: 33203) performed regular over the peak and decline of the outburst.  Since the source was bright, all \swiftx\, observations were performed in windowed mode, allowing study of timing properties of the source. We performed standard analysis with {\texttt{xrtpipeline}} and barycentered data prior to lightcurve extraction. During several observations countrate was as high as 280 cts s$^{-1}$, therefore we excluded one or few brightest columns, in order to suppress effects caused by photon pile-up. Photons with energies below 0.8 keV and above 10 keV were also filtered out. 
 Long-term lightcurves and spectra were obtained from UK Swift Science Data Centre at the University of Leicester \citep{evans09}.
 
 We also used \nustar\, observation (ObsID: 80002018002) performed at March 26, 2014 (MJD 56742).  {\texttt{nuproducts}} pipeline were utilized to extract photons  from two-arcminute circular region, centered on source and to produce lightcurves and spectra.
@@ -124,7 +124,7 @@ Examination of best-fit parameters shown in Fig.\ref{fig:intspe} confirms that s
 Yet, spectra of single intervals have not enough statistics to constrain change of Fe-line profile and, hence, to determine is the inner boundary of disk is moving during observation. To increase statistics, we split whole observation into three major pieces, with first made by intervals {\bf I-IV}, second by {\bf V-IX} and third by {\bf X-XIII} and extracted 4--78 keV spectra. 
 We chose to group them in order to have at least 100 counts per bin and then we fitted them (excluding data between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using, once again, $N_{H} = 2.15\times10^{22}$ cm$^{-2}$.  
 
-Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. Therefore we can conclude, that there is no drastic change in position of inner disk boundary between parts of observation. Additionally, we estimated equivalent width of Fe-line in this three parts - we approximated 4--78~keV spectra with 10--30~keV range being ignored (to neglect the Compton-hump contribution) with model consisting of absorbed cut-off powerlaw and gaussian. Equivalent width of gaussian component remain constant within error margins, around 0.175 keV, although it is possible that the quality of data is not enough to trace real change.
+Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. Therefore we can conclude, that there is no drastic change in position of inner disk boundary between parts of observation. Additionally, we estimated equivalent width of Fe-line in this three parts - we approximated 4--78~keV spectra with 10--30~keV range being ignored (to neglect the Compton-hump contribution) with model consisting of absorbed cut-off powerlaw and gaussian. Equivalent width of gaussian component remain constant within error margins, around 0.175 keV, although it is possible that the quality of data is not enough to trace the real change.
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.7]{nuAlc_color_v04.eps}}
@@ -146,9 +146,11 @@ Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios
 \subsubsection{Characterization of the average spectrum}            
 There is a 1.3 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides with \nustar\, observation. Extension of an energy range to 0.8 to 78 keV allow one to search for thermal emission associated with cold inner disk with $kT \sim 0.1...0.4 keV$ (such as were found in other BHCs, see \cite[][ e.t.c]{miller06b,miller06a,parker15}).
 
-We extracted \swiftx\, spectrum using only zero-grade events, and grouped it (as well as \nustar\, spectra) to have 30 counts per bin. We used latest available version of {\it relxilllp} package (v1.0.2), the model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. Among the parameters of model several of particular interest - namely $\Gamma_{1},\Gamma_{2},R_{br}$ - i.e parameters that describe emissivity profile along radius and, of course, $R_{in}$, location of the inner boundary of accretion disk.  This model was selected for several reasons - first, \cite{miller15_nust} found that it match observed data well, second, during the 1996 outburst source were detected at radiowaves, possibly indicating jet activity.
+We extracted \swiftx\, spectrum using only zero-grade events, and grouped it (as well as \nustar\, spectra) to have at least 30 counts per bin. We used latest available version of {\it relxilllp} package (v1.0.2), the model that describes reflection of emission produced by point source located on the rotation axis above the Kerr black hole from the relativistic accretion disk. Among the parameters of a model several of a particular interest - namely $h,a$ - height of point source above the black hole, the black hole spin and, of course, $R_{in}$, location of the inner boundary of accretion disk.  This model was selected for several reasons - first, \cite{miller15_nust} found that it match observed data well, second, and second, during the 1996 outburst source was detected at radiowaves, possibly indicating jet activity.
 
-Best-fit parameters are presented in
+Interestingly, instead of surplus thermal component we found a lack of soft emission - usage of $N_{H} = 2.15\times10^{22}$ cm$^{-2}$, measured in source low state \citep{furst16} led to worse fits with systematic negative residuals below few keV. Therefore, we left $N_{H}$ free during the fit. Obtained value of 2.6$\times10^{22}$ cm$^{-2}$ is higher than one meadured by \cite{furst16}. This can be possibly accounted to either presence of disk outflow, caused by severe X-ray irradiation or to the fact, that powerlaw emission, seen in spectra, could possibly origin from some hot Comptonizing cloud, in which self-absorption will suppress low-energy part of spectra. 
+
+
 
 \begin{figure}
 \centerline{\includegraphics[width=\linewidth]{rinfit_v03.eps}}
@@ -252,7 +254,7 @@ It follows that this cross-product is a complex value with random uniformly dist
 Following \cite{2015ApJ...800..109B} we calling obtained function cross-spectrum or cospectrum. 
 
 While cross-spectrum technique works perfectly for the power spectrum assessment, we still using classical Fourier power spectrum for the analysis in this work due to the following reason.
-Each value of the cross-spectrum belongs two the distribution with a complex probability density function (PDF), which,  for the random independent signals in two detectors, can be described with the special Bessel function of second kind and has a different PDF for a coherent signals. 
+Each value of the cross-spectrum belongs to the distribution with a complex probability density function (PDF), which,  for the random independent signals in two detectors, can be described with the special Bessel function of second kind and has a different PDF for a coherent signals. 
 Since this distribution has finite standard deviation, according to the central limit theorem, distribution of the sum of the values tends toward a normal distribution.
 To track the source variability evolution we fitting relatively short observations with duration of 2--3~ks, and therefore can not split them more than to few dozens parts in order to have an eye on the power spectrum break feature on the 0.1~Hz frequency. 
 We found that usual root mean square technique, used to fit normally distributed values, works not stable in that case, probably because the PDF is not yet close enough to the normal distribution. 
@@ -261,7 +263,7 @@ To simplify our analysis we inspect power spectrum only on frequencies below 10~
 
 We found that the QPO frequency and amplitude clearly evolves with time see Table~\ref{tab:timing} and Figure~\ref{fig:qpo}.
 The QPO frequency correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep[see, e.g.,][]{2003A&A...397..729V,2003A&A...407.1039P}.
-On the other hand we see, that the QPO amplitude was stable during the first half of the observation, and started to grow up in the second part.
+On the other hand we see, that the QPO amplitude was stable during the first half of the observation, and started to grow in the second part.
 
 Some models suggest, that the type-C QPO arise due to the Lense-Thirring precession of the inner parts of the accretion flow \citep{1998ApJ...492L..59S, 2006ApJ...642..420S, 2009MNRAS.397L.101I}, in such models growth of the QPO frequency corresponds to the shrinking of the disk inner radius (so called {\it truncation} radius).
 However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius is $R_{\rm in}= 5_{-3}^{+4}R_{\rm g}$.
@@ -272,8 +274,8 @@ It follows that the QPO profile, if it is presented \citep[see, e.g.][]{2015MNRA
 Following \citep{2015MNRAS.446.3516I} we tried to extract  QPO profile segregating the coherent part between the QPO and it's harmonic, however no significant coherence was presented above the noise level, one can conclude that the QPO profile was not stable. 
 
 In some observation segments QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cross-spectra (see examples on Figure~\ref{fig:subharmonic}, red crosses) (namely I, II, IV, V, VI sets).
-In order to observe QPO profile with better significance we summarized several cospectra, frequency of each cospectrum was scaled such a way to conserve QPO centroid at 0.3~Hz.
-Obtained tracked cospectrum is presented on Figure~\ref{fig:cospec_tracked}.
+In order to observe QPO profile with better significance we summarized several cospectra, frequency of each cospectrum was scaled in a way to conserve QPO centroid at 0.3~Hz.
+Obtained stacked cospectrum is presented on Figure~\ref{fig:cospec_tracked}.
 
 \begin{figure}
         \includegraphics[width=\columnwidth]{folded_cospectr2.pdf}
@@ -282,13 +284,12 @@ Obtained tracked cospectrum is presented on Figure~\ref{fig:cospec_tracked}.
         \label{fig:cospec_tracked}
 \end{figure}
 
-The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were not able to obtain it with a large significance on the tracked spectrum.
+The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were not able to obtain it with a large significance in the stacked spectrum.
 
-It should be noted that the changes in the QPO centroid position may contribute in the observed quality factor $Q$.
+It should be noted that the changes in the QPO centroid position during the interval may contribute to the observed quality factor $Q$.
 We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 6.5\times10^{-6}$~Hz~s$^{-1}$. 
-During an observation with the duration $\tau = 3000$~s even perfect QPO located at $f_{\rm QPO}=0.3$~Hz is observed with the quality factor $Q \approx \dot{f_{\rm QPO}}\tau/f_{\rm QPO} \approx 0.065$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
-In order to better estimate the QPO quality factor, we separated each of the 13 observations on 82~s time-series. 
-Power spectra in each observation we fitted simultaneously substituting in the model~\ref{eq:complex_fit} instead of the QPO centroid frequency $f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, with $\dot{f}_{\rm qpo}$ being the free parameter, $f_{\rm qpo}$ QPO centroid position estimated for the model\ref{eq:complex_fit}  and $t_{\rm mid}$ middle of the data set observation time interval. 
+During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect QPO located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx \dot{f_{\rm QPO}}\tau/f_{\rm QPO} \approx 0.065$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
+In order to better estimate of the QPO quality factor, we split each of the 13 intervals in a set of 82~s time-series. We fitted power spectrum of all time-series simultaneously,  substituting in the model~\ref{eq:complex_fit} the QPO centroid frequency $f_{\rm qpo}$, stimated for the model \ref{eq:complex_fit}, with shifted frequency $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, with $\dot{f}_{\rm qpo}$ being the free parameter and $t_{\rm mid}$ middle of the data set observation time interval. 
 Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend, nevertheless the median quality factor, obtained in this model appears to be $\sim7\times10^{-2}$ - i.e. compatible with the previous estimations (see Table~\ref{tab:timing}). 
 
 \begin{figure*}
@@ -301,7 +302,7 @@ Inside each data set we obtained the QPO centroid changing speed consistent with
         \label{fig:qpo}
 \end{figure*}
 
-In Table \ref{tbl:ps_fit_parameters} one can fined obtained fit parameters for the 13 separate uninterrupted {\it NuSTAR} time series.
+In Table \ref{tbl:ps_fit_parameters} one can find obtained fit parameters for the 13 {\it NuSTAR} intervals.
 
 \subsection{Coherence}
 
@@ -434,9 +435,37 @@ It Follows from Figure~\ref{fig:phase_lag} that there is soft lag on low frequen
         \label{fig:phase_lag}
 \end{figure}
 
-\subsection{timinig discussion}
-We found that the total power in the second QPO harmonic in the soft band is comparable to the total power in the main harmonic, in the hard band second harmonic is $\approx3$ times less powerfull than the main. 
+\subsection{\swiftx\, observations}
+We performed search for LF QPOs in first dosen of \swiftx observations of the \grs. QPO is clearly detected in observations 3 to 9, with frequency varying from 0.4 Hz (during simultaneous observation with \nustar, see Fig.~\ref{fig:nust_lc}) up to 5 Hz (see Tab.~\ref{tab:xrtqpo}). Due to typically short exposures of \swiftx\, snapshots (about 1 ks) it is hard to classify QPOs as belonging to type C or B, because low-frequency part of power spectra lacks statistics, yet, except for the first detection (segment 03) power spectra were red-noise like, without strong low-frequency components. We calculated $rms$ for each detected QPO - most of them is higher than 10\%, which is not typical for type C QPO \citep{casella05}.
+
+\begin{table}
+\noindent
+\centering
+\caption{QPOs detected in \swiftx\, observations}
+\label{tab:xrtqpo}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline\hline
+Segment & $f_{QPO}$, Hz & $rms$, \% & Type\\
+\hline
+03  &  0.4  &  14\% & C\\
+04  &  2.2 &  11\% & B\\
+05  &  1.7  & 13\% & B \\ 
+06  &  5.0 &   6\% & B\\
+07  &  2.5 &  10\% &  B\\ 
+08  &  5.1 &   7\% & B\\
+09  &  2.2 &  11\% &  B\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+We found that the total power in the second QPO harmonic in the soft band is comparable to the total power in the main harmonic, in the hard band second harmonic is $\approx3$ times less powerful than the main. 
 Total power of the harmonics growing with the source count-rate and QPO frequency in the soft and hard energy bands (see Table~\ref{tab:timing}). 
+
+
+
+
 %If the QPO has geometrical origin - i.e. it's due to the change of the view on the some statical illumination pattern like in the \citep{IVK09} model, than this pattern is more complex in the soft energy band. 
 
 %If the QPO is due to the changing of our field of view on some static pattern, like in the \citep{ivk09} model, than it follows that QPOs in this bands have different origin - i.e. QPO in the soft band is due to the scattering of the photones from precessing corona, while QPOs  reflection of the ro

@@ -277,14 +277,9 @@ It follows that the QPO profile, if it's presented \citep[see, e.g.][]{2015MNRAS
 Following \citep{2015MNRAS.446.3516I} we tried to extract  QPO profile segregating the coherent part between the QPO and it's harmonic, however no significant coherence was presented above the noise level, one can conclude that the QPO profile was not stable along the observation. 
 
 In some observation segments QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cross-spectra (see examples on Figure~\ref{fig:subharmonic}, red crosses) (namely I, II, IV, V, VI sets).
-<<<<<<< HEAD
-In order to observe QPO profile with better significance we summarized several cospectra, frequency of each cospectrum was scaled in a way to conserve QPO centroid at 0.3~Hz.
-Obtained stacked cospectrum is presented on Figure~\ref{fig:cospec_tracked}.
-=======
 In order to observe QPO profile with better significance we summarized several cospectra, frequency of each cospectrum was scaled such a way to conserve QPO centroid at 0.3~Hz.
 Obtained ``tracked'' cospectrum is presented on Figure~\ref{fig:cospec_tracked}.
 The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were not able to obtain it with a large significance on the tracked spectrum.
->>>>>>> fd8f620fac8ffe7cad37727025d55bb66ffde661
 
 \begin{figure}
         \includegraphics[width=\columnwidth]{folded_cospectr2.pdf}
@@ -293,22 +288,12 @@ The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were n
         \label{fig:cospec_tracked}
 \end{figure}
 
-<<<<<<< HEAD
-The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were not able to obtain it with a large significance in the stacked spectrum.
-
-It should be noted that the changes in the QPO centroid position during the interval may contribute to the observed quality factor $Q$.
-We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 6.5\times10^{-6}$~Hz~s$^{-1}$. 
-During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect QPO located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx \dot{f_{\rm QPO}}\tau/f_{\rm QPO} \approx 0.065$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
-In order to better estimate of the QPO quality factor, we split each of the 13 intervals in a set of 82~s time-series. We fitted power spectrum of all time-series simultaneously,  substituting in the model~\ref{eq:complex_fit} the QPO centroid frequency $f_{\rm qpo}$, stimated for the model \ref{eq:complex_fit}, with shifted frequency $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, with $\dot{f}_{\rm qpo}$ being the free parameter and $t_{\rm mid}$ middle of the data set observation time interval. 
-=======
-
 It should be noted that  changes in the QPO centroid position may contribute in the observed quality factor $Q$.
 We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 6.5\times10^{-6}$~Hz~s$^{-1}$. 
 During an observation with the duration $\tau = 3000$~s even perfect periodical signal located at $f_{\rm QPO}=0.3$~Hz is observed with the quality factor $Q \approx \dot{f_{\rm QPO}}\tau/f_{\rm QPO} \approx 0.065$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
 In order to better estimate the QPO quality factor, we separated each of the 13 observations on 82~s time-series. 
-Power spectra in each observation we fitted simultaneously with the slightly modified model~\ref{eq:complex_fit}.
+The power spectrum of each uninterupted part of the observation we fitted with slightly modified model~\ref{eq:complex_fit}.
 To assess QPO centroid movement speed we substituted $f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$ instead of the QPO centroid frequency, with $\dot{f}_{\rm qpo}$ being the free parameter, $f_{\rm qpo}$ QPO centroid position estimated for the model\ref{eq:complex_fit}  and $t_{\rm mid}$ center of the observing time interval. 
->>>>>>> fd8f620fac8ffe7cad37727025d55bb66ffde661
 Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend, nevertheless the median quality factor, obtained in this model appears to be $\sim7\times10^{-2}$ - i.e. compatible with the previous estimations (see Table~\ref{tab:timing}). 
 It should be noted that the estimation of the QPO quality factor is restricted with the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate signals used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz.
 

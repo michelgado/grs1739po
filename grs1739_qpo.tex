@@ -396,7 +396,7 @@ We also assumed that the coherence is preserved along the observation. %, and al
 
 
 \begin{figure}
-    \includegraphics[width=\columnwidth]{coherence_new.pdf}
+    \includegraphics[width=\columnwidth]{coherence_4.pdf}
     \caption{Coherence between different energy bands:  red crosses between 3--5 and 5--8 keV,
      green crosses between 5--8 and 8--15 keV, blue crosses between 8--15 and 15--78 keV, black crosses between 3--5 and 15--78 keV.}
     \label{fig:coherence}
@@ -413,10 +413,11 @@ SInce the loss of the coherence is also observed above 0.3--1.0~Hz frequency for
 \subsection{Phase lags}
     
 Following \citep{1997ApJ...474L..43V} we estimated phase lag as an angle of mean product of the light curves Fourier harmonics from one energy bands to the conjugated Fourier harmonics of second energy band. 
-We can imagine that each light curve from a sample consist of stochastic noise and coherent signal $F_{\rm h[s]} = ne^{-i\alpha}$, where $i$ - is complex unit, k - amplitude of the Fourier harmonic and $\alpha$ its phase.
-Amplitudes of each harmonic in that case are distributed with the Normal distribution with zero mean, and divergence equal to the square power in particular frequency band. 
-The probability density function (PDF) of the product of two Normal distribution described with the modified Bessel function of second kind with 0-th order. 
-Result of the product of two Fourier harmonics can be represented as a sum of four complex numbers, amplitude of each is distributed with PDF having a form of modified Bessel function, phases of three of these numbers distributed uniformly, and phase of the last one is distributed nonuniformly with mean equal to real phase shift between two coherent signals.
+We can imagine that each light curve from a sample consist of a stochastic noise and coherent signal $S\exp{-i(\alpha(s, h) + U_{h=s}[-\pi, \pi])} + N\exp{-iU[-\pi, \pi]}$, where S and N amplitudes of coherent signals and noise correspondingly and U - uniform distribution, $U_{h=s}$ stands for random phase shift equal for the signals in hard and soft bands, and $\alpha(s, h)$ - phase shift between soft and hard bands.
+Therefore the product of the Fourier signals from two bands is $S_{s}S_{h}\exp{-i\alpha(s, h) + (S_{s}*N_{h} + S_{h}*N_{s} + N_{h}*N_{s})\exp{-iU[-\pi, \pi]}$.
+\citep{bachetti17} pointer out that the product of two normally distributed values has probability density function (PDF) of the form of special Bessel function of second kind with zero order. 
+It follows that noise components in the Brackets is a sum of three random numbers with PDF = $K_{0}$, with not equal moments, phase of the coherent part is either well defined or distributed around some particular phase shift.
+%Result of the product of two Fourier harmonics can be represented as a sum of four complex numbers, amplitude of each is distributed with PDF having a form of modified Bessel function, phases of three of these numbers distributed uniformly, and phase of the last one is distributed nonuniformly with mean equal to real phase shift between two coherent signals.
 We can now determine the ``phase axis'' as the axis along the mean complex value of the Sample.
 Distribution of the points relative to the ``phase axis'' obviously should be symmetrical, and along it should be assymetric and shifted towards the mean complex value of the sample.
 If we now rotate all the obtained complex Fourier harmonics in our sample along this axis $\frac{<P_{\rm hs}^{*}>P_{\rm hs}}{|<P_{\rm hs}>|}$, real part of each value is the projection on the ''phase axis'' and imaginary part is projection on the perpendicular axis. 
@@ -432,7 +433,7 @@ After that we accept the error on the phase to be equal $\pi$ if the mean of pos
 For example in some models of the energy spectra formation, time lag is naturally arise due to the geometry of the corona and properties of the inverse Comptonization process \citep[see, e.g.][]{kotov01}.
 Phase lag is also suggested from the propagating fluctuations model - hard photons are emitted from the inner parts of the accretion flow from the perturbations, which initially were born in the outer parts of the disk were produce soft emission.  
 
-It also was found, that phase lag of XBs, probably depends on the system inclination angle \citep{eijeden17}, it also definitely contain information about the characteristic times of the system, and therefore can be proxy to the compact object mass \citep{}. 
+\citep{eijeden17} have found, that the phase lag of XBs, probably depends on the system inclination angle, it also definitely contain information about the characteristic times of the system, and therefore can be proxy to the compact object mass \citep{}. 
 
 Phase lags can be estimated as a product of the mean phase of the set of Fourier spectra and the corresponding frequency:
 \begin{equation}
@@ -445,15 +446,23 @@ Phase lags can be estimated as a product of the mean phase of the set of Fourier
 here, $F_h(f)$ and $F_s(f)$ are Fourier functions of the light-curves in the hard and soft bands, $\phi(f)$ is the phase lag. 
 
 %Due to the significant fraction of the Poisson noise in each observation we were not able to obtain phase lag for them.
-We found that phase lag on each frequency is generally conserved along the observation.
-In order to improve significance we compute phase lag for all 13 time series.
-Obtained phase lag for frequencies from $10^{-2}$~Hz to 100~Hz is presented in Figure~\ref{fig:phase_lag}.
-As follows from the Eq.~\ref{eq:phase_lag} we compute phase shift between the phases of the Fourier harmonics in hard and soft lightcurves, therefore negative phase lag corresponds to the hard lag.
-It Follows from Figure~\ref{fig:phase_lag} that there is soft lag on low frequencies which transforms in to the hard lag on frequencies grater than QPO frequency. 
+%We found that phase lag on each frequency is generally conserved along the observation.
+%In order to improve significance we compute phase lag for all 13 time series.
+Phase lag between 3--5 and 8--15~keV energy bands for frequencies from $10^{-2}$~Hz to 10~Hz is presented in Figure~\ref{fig:phase_lag}.
+To measure phase lags we use two approaches, first we estimated with the frequency scaling, as it was described in the previous part, second we estimated phase lag on the raw frequency suggesting that it do not changing with time.
+Surprisingly, both pictures appears to be very similar, it should be noted that some observations suggested that the phase lag changes with the QPO frequency \citep{}
+
+It appears that the phase lags is generally positive (hard lag) on the frequencies 0.1--2~Hz, and also can be described with the shifted power law $\propto(f - f_0)^{0.3}$. 
+Above 2~Hz significance of the phase lags estimation drops due to the Poisson noise.
+In the range 0.03--0.1 Hz there is a week indication on the negative phase lag with the mean value $\approx 0.02\pi$, which corresponds to the time $\approx0.1$~s.
+
+
+
+%It Follows from Figure~\ref{fig:phase_lag} that there is soft lag on low frequencies which transforms in to the hard lag on frequencies grater than QPO frequency. 
 
 \begin{figure}
-        \includegraphics[width=\columnwidth]{Phase_lag.pdf}
-        \caption{Phase lag between the hard (10--78~keV) and soft (3--10) energy bands in \grs}
+        \includegraphics[width=\columnwidth]{phase_lags_traced_and_not.pdf}
+        \caption{Phase lag between the hard (3--5~keV) and soft (8--15) energy bands in \grs}
         \label{fig:phase_lag}
 \end{figure}
 

@@ -92,9 +92,15 @@ In this article we report on first detection of type-C QPOs in HIMS of Galactic 
 \section{GRS 1739-278}
 
 \grs is a typical X-ray nova, discovered during outburst in 1996  \citep{paul96} by {\it SIGMA} \citep{paul91} telescope onboard {\it GRANAT} space observatory.
-Using {\it ROSAT} observation \cite{greiner96} inferred distance of 6--8.5~kpc, indicating that source may belong to Galactic bulge. Optical and radio emission were detected during the course of outburst \citep{hjellming96,marti97}. \cite{borozdin98} found spectral evolution throughout outburst to be consistent with canonical model - outburst starts from LHC, then soft component, associated with disk emission starts to dominate, heralding transition to high-soft state. Eventually, they observed very high state and detected a  QPO at 5 Hz using {\it RXTE} data \citep{borozdin00}.
+Using {\it ROSAT} observation from the estimated absorption \citet{greiner96} inferred distance of 6--8.5~kpc, indicating that the source may belong to Galactic bulge. 
+Optical and radio emission were detected during the course of outburst \citep{hjellming96,marti97}. 
+\citet{borozdin98} found spectral evolution throughout the outburst to be consistent with canonical model - outburst starts from {\bf lhc is ...}(LHC), then soft emission, associated with the optically thick disk starts to dominate, heralding transition to high-soft state. 
+Eventually, they observed very high state and detected a QPO at 5 Hz using {\it RXTE} data \citep{borozdin00}.
 
-After some 18 year slumber \grs\, demonstrated another big outburst, rise of which was detected by \swiftb \citep{krimm14_atel} along with \integral \citep{filippova14}. During this outburst extensive observing campaign by \swiftx\, were carried out, along with single long \nustar\, exposure. We will utilize this data in following chapters. After this outburst source remain active with repetitive mini-outbursts \citep{mereminskiy16,yan17}.
+After some 18 year slumber \grs\ demonstrated another big outburst, rise of which was detected by \swiftb \citep{krimm14_atel} along with \integral \citep{filippova14}. 
+During this outburst extensive observing campaign by \swiftx\, were carried out, along with single long \nustar\, exposure. 
+We will utilize this data in following chapters. 
+After this outburst source remain active with repetitive mini-outbursts \citep{mereminskiy16,yan17}.
 
 
 
@@ -108,18 +114,29 @@ After some 18 year slumber \grs\, demonstrated another big outburst, rise of whi
 \label{sec:datared} 
 In order to characterize the overall outburst profile we used data of \swiftb\, {\it transient monitor} \citep{krimm13bat} in hard X-rays (15--50 keV) as well as data from \maxi\, \citep{matsuoka13maxi} (2--4 keV).
 
-We used public observations of \swiftx\, (target ID: 33203) performed regular over the peak and decline of the outburst.  Since the source was bright, all \swiftx\, observations were performed in windowed mode, allowing study of timing properties of the source. We performed standard analysis with {\texttt{xrtpipeline}} and barycentered data prior to lightcurve extraction. During several observations countrate was as high as 280 cts s$^{-1}$, therefore we excluded one or few brightest columns, in order to suppress effects caused by photon pile-up. Photons with energies below 0.8 keV and above 10 keV were also filtered out. 
+We used public observations of \swiftx\, (target ID: 33203) performed regular over the peak and decline of the outburst.  
+Since the source was bright, all \swiftx\, observations were performed in windowed mode, allowing study of timing properties of the source. 
+We performed standard analysis with {\texttt{xrtpipeline}} and barycentered data prior to lightcurve extraction. 
+During several observations countrate was as high as 280 cts s$^{-1}$, therefore we excluded {\bf one or few} brightest columns, in order to suppress effects caused by photon pile-up. 
+Photons with energies below 0.8 keV and above 10 keV were also filtered out. 
 Long-term lightcurves and spectra were obtained from UK Swift Science Data Centre at the University of Leicester \citep{evans09}.
 
-We also used \nustar\, observation (ObsID: 80002018002) performed at March 26, 2014 (MJD 56742).  {\texttt{nuproducts}} pipeline were utilized to extract photons  from two-arcminute circular region, centered on source and to produce lightcurves and spectra.
+We also used \nustar\, observation (ObsID: 80002018002) performed at March 26, 2014 (MJD 56742). 
+{\texttt{nuproducts}} pipeline were utilized to extract photons from two-arcminute circular region, centered on source and to produce lightcurves and spectra.
 
 \section{Analysis}
 \subsection{Outburst}
-First detection of the source by \swiftb\, \citep{krimm14_atel} occurred at March 9, 2014 (MJD 56725, we will refer to this date as $\tau_{0}$). Outburst profile in hard X-rays (15--50~keV) featured fast rise with tenfold intensity increase over ten days, nearly flat-top peak ($\tau_{0}$+10..+15) followed by abrupt flux decrease by 30\% over two days. After this, source demonstrated gradual decline interrupted by flaring activity at $\tau_{0}$+30..+65. Another interesting feature is dip, observed in \swiftb\, lightcurve at $\tau_{0} \approx +86$. After the cease of the outburst source remained active with flux about 5--15 mCrab. 
+First detection of the source by \swiftb\, \citep{krimm14_atel} occurred at March 9, 2014 (MJD 56725, we will refer to this date as $\tau_{0}$). 
+Outburst profile in hard X-rays (15--50~keV) featured fast rise with tenfold intensity increasing over ten days, nearly flat-top peak ($\tau_{0}$+10..+15) followed by abrupt flux decrease by 30\% over two days.
+After this, source demonstrated gradual decline interrupted by flaring activity at $\tau_{0}$+30..+65. 
+Another interesting feature is a dip, observed in \swiftb\, lightcurve at $\tau_{0} \approx +86$. 
+After the cease of the outburst source remained active with flux about 5--15 mCrab. 
 
-Adding softer data from \maxi\, to the \swiftb\, hard X-ray lightcurve gives us another insight on evolution of the outburst as shown in Fig.\,\ref{fig:batlc} - comparing fluxes in soft and hard bands (for 2--4 keV band we took a 1.67 counts s$^{-1}$ as a reference value for Crab, corresponding value for 15--50 keV band is 0.22 cts cm$^{-2}$ s$^{-1}$) one can see that soft component obviously lags hard emission in the beginning of the outburst but then start to grow and ends up dominating during the flaring period as well as hard dip(s). Lower subplot of Fig.\,\ref{fig:batlc} shows evolution of hardness ratio (3--10~keV/0.8--3~keV) measured by \swiftx. Right after peak of hard X-rays one can see decline of hardness, also indicating appearance of thermal component.
+Adding softer data from \maxi\, to the \swiftb\, hard X-ray lightcurve gives us another insight on evolution of the outburst as shown in Fig.\,\ref{fig:batlc} - comparing fluxes in soft and hard bands (for 2--4 keV band we took a 1.67 counts s$^{-1}$ as a reference value for Crab, corresponding value for 15--50 keV band is 0.22 cts cm$^{-2}$ s$^{-1}$) one can see that soft component obviously lags hard emission in the beginning of the outburst but then starts to grow and ends up dominating during the flaring period as well as hard dip(s). 
+Lower subplot of Fig.\,\ref{fig:batlc} shows evolution of hardness ratio (3--10~keV/0.8--3~keV) measured by \swiftx. 
+Right after the peak of hard emission one can see the decline of hardness, also indicating appearance of the thermal component.
 
-Fortunately, the \nustar\, observation triggered by \cite{miller15_nust} were carried right at the transition between hard and soft states, thus giving us unique possibility to study processes that happens during HIMS. 
+Fortunately, \nustar\ observation triggered by \cite{miller15_nust} were carried right at the transition between hard and soft states, thus giving us unique possibility to study processes that happens during HIMS. 
 
 \subsection{NuSTAR observation}
 \label{sec:nust} 

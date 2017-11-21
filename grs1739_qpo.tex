@@ -277,10 +277,36 @@ Also a prominent QPO on the frequencies 0.3--0.7~Hz and its second overtone is p
 Typical power spectrum of a single interval is shown in Fig.~\ref{fig:qpo}.
 Poisson noise dominates intrinsic source variability on the frequencies over $\approx2$~Hz, preventing analysis of any high-frequency features.
 There is also signs that the Power spectrum on the frequencies below $\approx0.003$~Hz has a form of growing power law $P(f)\propto f^{\alpha}$, $\alpha > 0.3$.
-
 From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
 
-In order to assess properties of the variability power spectra we approximate each obtained power spectra with the following analytical function:
+{\it NuSTAR} detectors are subject to nonblocking dead time with characteristical timescale $\tau \approx 2.5$~$\mu$s \cite{2015ApJ...800..109B}.
+Authors noted that {\it NuSTAR} dead-time has a complex dependence on the energy of registered photons, and therefore it is hard to create analytical model for resulting power spectra. 
+They proposed to use the real part of the cross spectrum of light-curves obtained from two {\it NuSTAR} detectors for the estimation of the power spectrum 
+\begin{equation}
+        re(F_{\rm FPMA}^{*}F_{\rm FPMA})
+\end{equation}
+where $F_{\rm FPMA[B]}$ - Fourie funcation of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
+
+This method is based on the following assumption: signals produced by an observed source on two detectors are identical and have no time lag and therefore their Fourier functions are also identical and have zero phase shift, while independent for two detectors signals (like counting statistics) have random phase shifts.  
+It follows that due to the random phase shift mean power of the independent noise tends to zero in the averaged real part of cross spectrum.
+
+\citep{2017arXiv170909666H} shown that cross-spectrum (or shortly cospectum) in each frequency bin is distributed with Laplace probability density function (PDF) if it is derived from two Normaly distributed random independent series \citep[see, e.q. 14 in ][]{2017arXiv170909666H}:
+\begin{equation}
+        p(C_{j}|0, \sigma_x \sigma_y) = \frac{1}{\sigma_x \sigma_y} exp{\left(\frac{-|C_{j}|}{\sigma_x \sigma_y} \right)}
+\end{equation}
+Where $C_{j}$ - cospectrum of two {\it uncoherent} series measured in the $j$-th frequency chanel and $\sigma_x$, $\sigma_y$ - are second momenta of the initial Normal distributions (therefore they are equal to the square of the power spectra in correspnding frequency channel for each time series).
+If signals used for the estimation of cospectrum have identical power spectra than $\sigma_x = \sigma_y \approx |F_{\rm FPMA}|$.
+We, therefore, see that to proper determine likelihood function which can be used to approximate cospectra with analytical functions, one still has to know Poisson noise level.
+It is also worse noting, that source count rate and total count rate are usually slightly differs for two {\it NuSTAR} modules making amplidues of counting-statistic and dead-time not equal.
+
+Since we used relatively large bining (10 ms) to extract lightcurves from {\it NuSTAR} data, we assumed that the only effect from the dead-time is lowering of the constant Poisson noise level on the $(1 - 2\nu \tau_{\rm d})$ factor, where $\nu$ is total count rate for detector and $\tau_{\rm d}$ is a dead time. 
+As was mentioned, dead-time is not constant along energy band, therefore We decided to estimate modified Poisson level for each extracted data-set from the data.
+We therefore decided to use power spectrum for the intrinsic variability estimation.
+To simplify our analysis we inspect power spectrum only on frequencies below 10~Hz.
+
+%To track the source variability evolution we fitting relatively short observations with duration of 2--3~ks, and therefore can not split them on more than few dozens parts in order to have an eye on the power spectrum break feature on the 0.1~Hz frequency. 
+
+In order to assess properties of \grs\ intrinsic variability we approximate each obtained power spectra with the following analytical function:
 \begin{equation}
         \begin{split}
         P(f) = n (1 + (f/f_{\rm lb})^4)^{\alpha} + \\
@@ -290,29 +316,9 @@ In order to assess properties of the variability power spectra we approximate ea
 \end{split}
         \label{eq:complex_fit}
 \end{equation}
-Where $f_{\rm lb}$ - broad noise break frequency, $f_{qpo}$ and $Q_{\rm m}$ - centroid of the QPO and its quality correspondingly and poiss - represents mean power of the variations caused by the conunting statistics.
+Where $f_{\rm lb}$ - broad noise break frequency, $f_{qpo}$ and $Q_{\rm m}$ - centroid of the QPO and its quality correspondingly and poiss - represents mean power of the variations caused by the conunting statistics and dumped by dead-time.
 In this function first component represents plateau with the break, second two components describe QPO main harmonics and its overtone, last component represents constant Poisson noise.
 We take that the quality of the QPO harmonic is equal to the QPO peak quality.
-
-{\it NuSTAR} detectors are subject to the nonblocking dead time with characteristical timescale $\tau \approx 2.5$~$\mu$s \cite{2015ApJ...800..109B}.
-Authors noted that {\it NuSTAR} dead-time has a complex dependence on the energy of registered photons, and therefore it is hard to create analytical model for the resulted power spectrum. 
-They proposed to use the real part of the cross spectrum of light-curves obtained from two {\it NuSTAR} detectors for the estimation of the power spectrum 
-\begin{equation}
-        re(F_{\rm FPMA}^{*}F_{\rm FPMA})
-\end{equation}
-where $F_{\rm FPMA[B]}$ - Fourie funcation of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
-
-This method is based on the following assumption: signals produced by an observed source on two detectors are coherent and have no time lag and therefore their Fourier functions have zero phase shift, independent for two detectors signals (like counting statistics) have random phase shifts.  
-It follows that due to the random phase shift mean power of the independent noise tends to zero in the averaged real part of cross spectrum.
-%Following \cite{2015ApJ...800..109B} we calling obtained function cross-spectrum or cospectrum. 
-
-While cross-spectrum technique works perfectly for the power spectrum estimation, we still using classical Fourier power spectrum for the analysis in this work due to the following reason.
-\citep{2017arXiv170909666H} shown that cross-spectrum (or shortly cospectum) in each frequency bin is distributed with Laplace probability density function (PDF) if its derived from two Normaly distributed random independent series.
-Since this distribution has finite standard deviation, according to the central limit theorem, distribution of the sum of the values tends toward a normal distribution.
-To track the source variability evolution we fitting relatively short observations with duration of 2--3~ks, and therefore can not split them more than to few dozens parts in order to have an eye on the power spectrum break feature on the 0.1~Hz frequency. 
-We found that usual root mean square technique, used to fit normally distributed values, works not stable in that case, probably because the PDF is not yet close enough to the normal distribution. 
-
-To simplify our analysis we inspect power spectrum only on frequencies above 10~Hz, allowing Poisson noise to has arbitrary power but assuming that it's power spectrum component is still flat ($P(f) = const$).
 
 \begin{figure*}
         \includegraphics[trim=0 0 0 0.65cm, clip, width=\columnwidth]{spectrum_model_and_cospectrum0.pdf}
@@ -327,7 +333,7 @@ To simplify our analysis we inspect power spectrum only on frequencies above 10~
 
 We found that the QPO frequency and amplitude had clearly evolved with time see Table~\ref{tab:ps} and Figure~\ref{fig:qpo}.
 The QPO frequency correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep[see, e.g.,][]{2003A&A...397..729V,2003A&A...407.1039P}.
-On the other hand we see, that the QPO amplitude was stable during the first half of the observation, and started to grow in the second part.
+On the other hand we see, that the QPO amplitude had been stable during the first half of the observation, and started to grow in the second part.
 
 \begin{table*}
 \noindent
@@ -357,8 +363,8 @@ XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}\times10^{-2}$ & $0.67\pm0.01$ & $15\
 \end{tabular}
 \end{table*}
 
-Some models suggest, that the type-C QPO arising due to the Lense-Thirring precession of the accretion flow inner parts \citep{1998ApJ...492L..59S, 2006ApJ...642..420S, 2009MNRAS.397L.101I}, in such models growth of the QPO frequency corresponds to the shrinking of the disk inner radius.
-However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius is $R_{\rm in}= 5_{-3}^{+3}R_{\rm g}$.
+Some models suggest, that type-C QPO arising due to the Lense-Thirring precession of the accretion flow inner parts \citep{1998ApJ...492L..59S, 2006ApJ...642..420S, 2009MNRAS.397L.101I}, in such models growth of the QPO frequency corresponds to the shrinking of the disk inner radius.
+However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius was $R_{\rm in}= 5_{-3}^{+3}R_{\rm g}$ during the observation.
 This estimation is primarily based on the profile of the relativistically widened neutral Iron fluorescent line, see section~\ref{sec:spec} and also \citep{miller15_nust}.
 
 We found that the QPO amplitude is smaller in the soft band, while amplitude of it's harmonic is bigger, the ratio of the power in the QPO and it's harmonic is $0.2\pm0.1$ in 10--78~keV band and $0.4\pm0.1$ in 3-5 energy band.

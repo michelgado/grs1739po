@@ -7,6 +7,8 @@
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{epstopdf}
 \usepackage{hyperref}
+\usepackage{tikz}
+%\usepackage{pgflots}
 
 \def\grs{{GRS\,1739--278\,}}
 \def\swiftx{{\em Swift-XRT\,}}
@@ -343,22 +345,22 @@ On the other hand we see, that the QPO amplitude had been stable during the firs
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \hline\hline
-Interval & T$_{start}$, & Expo,  & f$_{\rm br}$, & f$_{\rm QPO}$, & Q$_{\rm m}$, & A$_{\rm m}$, & A$_{\rm o}$,& rms, \% & $\Gamma$ & E$_{\rm cut}$, \\
-            &  MJD &  s & $\times10^{-2}$, Hz &  Hz & $\times10^{-2}$ & (rms/mean) \% &  (rms/mean) \%   &  & &  keV \\
+Interval    & T$_{start}$,  & Expo,     & f$_{\rm br}$,                     & f$_{\rm QPO}$, & Q$_{\rm m}$,     & A$_{\rm m}$,  & A$_{\rm o}$,      & rms & $\Gamma$ & E$_{\rm cut}$, \\
+            &  MJD          &  s        & $\times10^{-2}$, Hz               &  Hz            & $\times10^{-2}$  & \%            &  \%               &   \%       &          &  keV             \\
 \hline
-I & 56742.68 & 3386 & $8.9_{-2.3}^{+2.2}\times10^{-2}$ & $0.30\pm0.01$ & $15_{-3}^{+5}$ & $7.5_{-1.0}^{+0.9}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.459\pm0.005$ & $29.9\pm0.4$ & \\
-II & 56742.75 & 3388 & $7.8_{-1.8}^{+2.0}\times10^{-2}$ & $0.31\pm0.01$ & $13\pm3$ & $7.9_{-0.9}^{+1.0}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.462\pm0.005$ & $30.7\pm0.4$ & \\
-III & 56742.82 & 3392 & $8.2_{-1.9}^{+2.4}\times10^{-2}$ & $0.34\pm0.01$ & $12_{-2}^{+3}$ & $7.7_{-0.8}^{+0.9}$ & $3.9_{-0.8}^{+0.9}$ & $26\pm1$ & $1.464\pm0.005$ & $29.7\pm0.4$ & \\
-IV & 56742.88 & 3389 & $8.3_{-1.8}^{+2.0}\times10^{-2}$ & $0.35\pm0.01$ & $15_{-3}^{+4}$ & $7.6\pm0.9$ & $3.2_{-0.8}^{+0.7}$ & $26\pm1$ & $1.468\pm0.005$ & $29.5_{-0.3}^{+0.4}$ & \\
-V & 56742.95 & 3389 & $6.9_{-1.4}^{+1.6}\times10^{-2}$ & $0.39\pm0.01$ & $13_{-3}^{+4}$ & $7.4\pm0.8$ & $4.3_{-0.9}^{+0.8}$ & $26\pm1$ & $1.473\pm0.005$ & $28.6\pm0.3$ & \\
-VI & 56743.02 & 3136 & $7.5_{-1.5}^{+1.9}\times10^{-2}$ & $0.41\pm0.01$ & $17_{-3}^{+5}$ & $6.9_{-0.8}^{+0.9}$ & $3.8_{-0.8}^{+0.7}$ & $26\pm1$ & $1.475\pm0.005$ & $28.1\pm0.3$ & \\
-VII & 56743.09 & 2771 & $9.7_{-2.2}^{+2.7}\times10^{-2}$ & $0.43\pm0.01$ & $12_{-2}^{+3}$ & $7.4\pm0.9$ & $3.6\pm0.9$ & $26_{-1}^{+2}$ & $1.500\pm0.005$ & $28.7\pm0.4$ & \\
-VIII & 56743.15 & 3387 & $5.8_{-1.5}^{+1.4}\times10^{-2}$ & $0.46\pm0.01$ & $11_{-2}^{+3}$ & $7.9\pm0.9$ & $4.2_{-0.8}^{+0.9}$ & $27\pm2$ & $1.507\pm0.005$ & $29.3\pm0.4$ & \\
-IX & 56743.22 & 3392 & $7.1_{-1.4}^{+1.6}\times10^{-2}$ & $0.50\pm0.01$ & $12_{-2}^{+4}$ & $7.9\pm0.8$ & $4.3\pm0.8$ & $26\pm1$ & $1.504\pm0.005$ & $28.1\pm0.3$ & \\
-X & 56743.29 & 3390 & $7.0_{-1.6}^{+1.7}\times10^{-2}$ & $0.53\pm0.01$ & $13_{-2}^{+3}$ & $8.7\pm0.7$ & $4.5_{-0.8}^{+0.7}$ & $25\pm1$ & $1.498\pm0.005$ & $27.2\pm0.3$ & \\
-XI & 56743.35 & 3382 & $(6.7\pm1.5)\times10^{-2}$ & $0.57\pm0.01$ & $13\pm3$ & $9.1_{-0.7}^{+0.8}$ & $4.0\pm0.8$ & $25\pm1$ & $1.527_{-0.005}^{+0.004}$ & $28.7\pm0.3$ & \\
-XII & 56743.42 & 3386 & $6.7_{-1.4}^{+1.8}\times10^{-2}$ & $0.63\pm0.01$ & $14_{-2}^{+3}$ & $9.5_{-0.7}^{+0.8}$ & $4.4\pm0.7$ & $26_{-1}^{+2}$ & $1.525\pm0.004$ & $27.5\pm0.3$ & \\
-XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}\times10^{-2}$ & $0.67\pm0.01$ & $15\pm3$ & $9.6\pm0.7$ & $4.2\pm0.8$ & $25_{-1}^{+2}$ & $1.528\pm0.004$ & $26.2\pm0.3$ & \\
+I           & 56742.68      & 3386      & $8.9_{-2.3}^{+2.2}\times10^{-2}$  & $0.30\pm0.01$ & $15_{-3}^{+5}$ & $7.5_{-1.0}^{+0.9}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.459\pm0.005$ & $29.9\pm0.4$ \\
+II & 56742.75 & 3388 & $7.8_{-1.8}^{+2.0}\times10^{-2}$ & $0.31\pm0.01$ & $13\pm3$ & $7.9_{-0.9}^{+1.0}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.462\pm0.005$ & $30.7\pm0.4$ \\
+III & 56742.82 & 3392 & $8.2_{-1.9}^{+2.4}\times10^{-2}$ & $0.34\pm0.01$ & $12_{-2}^{+3}$ & $7.7_{-0.8}^{+0.9}$ & $3.9_{-0.8}^{+0.9}$ & $26\pm1$ & $1.464\pm0.005$ & $29.7\pm0.4$ \\
+IV & 56742.88 & 3389 & $8.3_{-1.8}^{+2.0}\times10^{-2}$ & $0.35\pm0.01$ & $15_{-3}^{+4}$ & $7.6\pm0.9$ & $3.2_{-0.8}^{+0.7}$ & $26\pm1$ & $1.468\pm0.005$ & $29.5_{-0.3}^{+0.4}$ \\
+V & 56742.95 & 3389 & $6.9_{-1.4}^{+1.6}\times10^{-2}$ & $0.39\pm0.01$ & $13_{-3}^{+4}$ & $7.4\pm0.8$ & $4.3_{-0.9}^{+0.8}$ & $26\pm1$ & $1.473\pm0.005$ & $28.6\pm0.3$ \\
+VI & 56743.02 & 3136 & $7.5_{-1.5}^{+1.9}\times10^{-2}$ & $0.41\pm0.01$ & $17_{-3}^{+5}$ & $6.9_{-0.8}^{+0.9}$ & $3.8_{-0.8}^{+0.7}$ & $26\pm1$ & $1.475\pm0.005$ & $28.1\pm0.3$ \\
+VII & 56743.09 & 2771 & $9.7_{-2.2}^{+2.7}\times10^{-2}$ & $0.43\pm0.01$ & $12_{-2}^{+3}$ & $7.4\pm0.9$ & $3.6\pm0.9$ & $26_{-1}^{+2}$ & $1.500\pm0.005$ & $28.7\pm0.4$ \\
+VIII & 56743.15 & 3387 & $5.8_{-1.5}^{+1.4}\times10^{-2}$ & $0.46\pm0.01$ & $11_{-2}^{+3}$ & $7.9\pm0.9$ & $4.2_{-0.8}^{+0.9}$ & $27\pm2$ & $1.507\pm0.005$ & $29.3\pm0.4$ \\
+IX & 56743.22 & 3392 & $7.1_{-1.4}^{+1.6}\times10^{-2}$ & $0.50\pm0.01$ & $12_{-2}^{+4}$ & $7.9\pm0.8$ & $4.3\pm0.8$ & $26\pm1$ & $1.504\pm0.005$ & $28.1\pm0.3$ \\
+X & 56743.29 & 3390 & $7.0_{-1.6}^{+1.7}\times10^{-2}$ & $0.53\pm0.01$ & $13_{-2}^{+3}$ & $8.7\pm0.7$ & $4.5_{-0.8}^{+0.7}$ & $25\pm1$ & $1.498\pm0.005$ & $27.2\pm0.3$ \\
+XI & 56743.35 & 3382 & $(6.7\pm1.5)\times10^{-2}$ & $0.57\pm0.01$ & $13\pm3$ & $9.1_{-0.7}^{+0.8}$ & $4.0\pm0.8$ & $25\pm1$ & $1.527_{-0.005}^{+0.004}$ & $28.7\pm0.3$ \\
+XII & 56743.42 & 3386 & $6.7_{-1.4}^{+1.8}\times10^{-2}$ & $0.63\pm0.01$ & $14_{-2}^{+3}$ & $9.5_{-0.7}^{+0.8}$ & $4.4\pm0.7$ & $26_{-1}^{+2}$ & $1.525\pm0.004$ & $27.5\pm0.3$ \\
+XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}\times10^{-2}$ & $0.67\pm0.01$ & $15\pm3$ & $9.6\pm0.7$ & $4.2\pm0.8$ & $25_{-1}^{+2}$ & $1.528\pm0.004$ & $26.2\pm0.3$ \\
 \hline
 \end{tabular}
 \end{table*}
@@ -367,8 +369,13 @@ Some models suggest, that type-C QPO arising due to the Lense-Thirring precessio
 However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius was $R_{\rm in}= 5_{-3}^{+3}R_{\rm g}$ during the observation.
 This estimation is primarily based on the profile of the relativistically widened neutral Iron fluorescent line, see section~\ref{sec:spec} and also \citep{miller15_nust}.
 
-We found that the QPO amplitude is smaller in the soft band, while amplitude of it's harmonic is bigger, the ratio of the power in the QPO and it's harmonic is $0.2\pm0.1$ in 10--78~keV band and $0.4\pm0.1$ in 3-5 energy band.
-It follows that the QPO profile, if it's presented \citep[see, e.g.][]{2015MNRAS.446.3516I}, differs in the hard and soft X-ray band.
+We found that the QPO amplitude is smaller in the soft band, while amplitude of it's harmonic is bigger, the ratio of the power in the QPO and it's harmonic see Figure~\ref{fig:qpo_ratio}.
+\begin{figure}
+\includegraphics[width=\columnwidth]{QPO_and_harmonic_ratio_ylabel.pdf}
+        \caption{Ratio of the total power in the QPO and its second harmonic measured for the lightcurves obtained in 3--5~keV and 15--78~keV energy bands.}
+        \label{fig:qpo_ratio}
+\end{figure}
+It follows that the QPO profile, if it's presented \citep[see, e.g.][]{2015MNRAS.446.3516I}, differs in the hard and soft X-ray bands.
 Following \citep{2015MNRAS.446.3516I} we tried to extract  QPO profile segregating the coherent part between the QPO and it's harmonic, however no significant coherence was presented above the noise level, one can conclude that the QPO profile was not stable along the observation. 
 
 In some observation segments QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cross-spectra (see examples on Figure~\ref{fig:subharmonic}, red crosses) (namely I, II, IV, V, VI sets).
@@ -385,14 +392,14 @@ The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were n
 \end{figure}
 
 It should be noted that the changes in the QPO centroid position during the interval may contribute to the observed quality factor $Q$.
-We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 6.5\times10^{-6}$~Hz~s$^{-1}$. 
-During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect QPO located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx \dot{f_{\rm QPO}}\tau/f_{\rm QPO} \approx 0.065$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
-In order to better estimate of the QPO quality factor, we split each of the 13 intervals in a set of 82~s time-series. We fitted power spectrum of all time-series simultaneously,  substituting in the model~\ref{eq:complex_fit} the QPO centroid frequency $f_{\rm qpo}$, stimated for the model \ref{eq:complex_fit}, with shifted frequency $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, with $\dot{f}_{\rm qpo}$ being the free parameter and $t_{\rm mid}$ middle of the data set observation time interval. 
-Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend, nevertheless the median quality factor, obtained in this model appears to be $\sim7\times10^{-2}$ - i.e. compatible with the previous estimations (see Table~\ref{tab:timing}). 
-It should be noted that the estimation of the QPO quality factor is restricted with the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate signals used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz.
+We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 5.0$--$6.5\times10^{-6}$~Hz~s$^{-1}$. 
+During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect QPO located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx f{\rm QPO}/(\dot{f_{\rm QPO}}\tau) \approx 17$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
+In order to better estimate the QPO quality factor, we splited each of the 13 intervals in sets of 82~s long time-series. 
+After that, for each of 13 intervals, we fitted obtained power spectra simultaneously with new model in which we assume that QPO frequency linearly growing with time. 
+The model has the same form as \ref{eq:complex_fit} with $f{\rm qpo}$ substituted with $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, where $\dot{f}_{\rm qpo}$ being the free parameter and $t_{i}^{\rm mid}$, $f_{\rm QPO}$ being the middle time of the $i$-th 82~s interval and qpo centroid frequency measured with \ref{eq:complex_fit} model correspondingly.
+Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend ($\approx 2$--$9\times10^{-6}$~Hz~s$^{-1}$), nevertheless the median quality factor, obtained in this model appears to be $\sim14.3$ - i.e. compatible with the previous estimations made with \ref{eq:complex_fit} model (see Table~\ref{tab:timing}). 
+It should be noted that the estimation of the QPO quality factor is restricted with the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate signals used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz (we cant discriminate Q > 25).
 
-
-In Table \ref{tbl:ps_fit_parameters} one can find obtained fit parameters for the 13 {\it NuSTAR} intervals.
 
 \subsection{Coherence}
 
@@ -550,7 +557,8 @@ This behaviour was first observed in a number of systems by \citet{dimatteo99} a
         \label{fig:qpoconstr}
 \end{figure}
 
-We carried out extensive study of timing properties of the \grs. Along with broadband noise and fundamental QPO first overtone of QPO is clearly seen. During several intervals from first half of the observation subharmonic was seen too. Break frequency of broadband noise is correlated with QPO frequency following the WK relation \citep{wijnands99}. In all 13 intervals first QPO overtone is more prominent in soft band (3--5 keV), with relation of its amplitude to that of fundamental QPO being 0.4(1) in 3--5 keV band versus 0.2(1) in 10--78 keV.  We also measure velocity of QPO drift and found it to be 7.0\times10^{-6}$~Hz~s$^{-1}$. We searched for similar QPO in \swiftx\, observations of the \grs performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
+We carried out extensive study of timing properties of the \grs. Along with broadband noise and fundamental QPO first overtone of QPO is clearly seen. During several intervals from first half of the observation subharmonic was seen too. Break frequency of broadband noise is correlated with QPO frequency following the WK relation \citep{wijnands99}. 
+In all 13 intervals first QPO overtone is more prominent in soft band (3--5 keV), with relation of its amplitude to that of fundamental QPO being 0.4(1) in 3--5 keV band versus 0.2(1) in 10--78 keV.  We also measure velocity of QPO drift and found it to be $7.0\times10^{-6}$~Hz~s$^{-1}$. We searched for similar QPO in \swiftx\, observations of the \grs performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
 Coherence measured between adjacent energy ranges in 0.01-1 Hz was found to be nearly unity, while for distant energy coherence turned out to be lower. Phase lag found to be ....
 
 

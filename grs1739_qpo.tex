@@ -7,6 +7,8 @@
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{epstopdf}
 \usepackage{hyperref}
+\usepackage{tikz}
+%\usepackage{pgflots}
 
 \def\grs{{GRS\,1739--278\,}}
 \def\swiftx{{\em Swift-XRT\,}}
@@ -140,7 +142,7 @@ Fortunately, \nustar\ observation triggered by \cite{miller15_nust} were carried
 \subsection{NuSTAR observation}
 \label{sec:nust} 
 
-\nustar\, observed \grs (ObsID: 80002018002) for nearly 30 ks of dead-time corrected exposure right after hard X-ray peak (see Fig.~\ref{fig:batlc}). Earlier, \cite{miller15_nust} shown that the average spectrum of this observation is well described by reflection models such as {\it relxill} \citep{garcia14, dauser14,dauser16} with accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO), with upper estimate being $r_{in} = 5^{+3}_{-4}\, G M/c^{2}$ \citep{miller15_nust}. Interestingly, no additional thermal component was needed in order to obtain a good fit, probably because of \nustar\, energy band, starting at 3~keV. 
+\nustar\, observed \grs\ (ObsID: 80002018002) for nearly 30 ks of dead-time corrected exposure right after hard X-ray peak (see Fig.~\ref{fig:batlc}). Earlier, \cite{miller15_nust} shown that the average spectrum of this observation is well described by reflection models such as {\it relxill} \citep{garcia14, dauser14,dauser16} with accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO), with upper estimate being $r_{in} = 5^{+3}_{-4}\, G M/c^{2}$ \citep{miller15_nust}. Interestingly, no additional thermal component was needed in order to obtain a good fit, probably because of \nustar\, energy band, starting at 3~keV. 
 
 Given the 96.9 minute orbital period of \nustar, observation is divided in 13 intervals separated by Earth occultations, as shown in Fig.\,\ref{fig:nust_lc}. We denoted this intervals with roman numerals, from {\bf I} to {\bf XIII}. From the lightcurve of observation it is clear, that source flux is increasing throughout observation from $\approx$145 counts per second up to $\approx$170 counts per second. 
 The spectrum also alter, with hardness (defined as ratio of countrates  $R_{3-10\,keV}/R_{10-78\,keV}$) monotonically growing from 2.5 to 3.5. 
@@ -251,56 +253,75 @@ $\chi^{2}_{red.}$    &   1.1=\\
 %They found a time lag between hard and soft emission of the soft and hard emission, which have a complex behaviour with the frequency, which they used to constrain geometrical size of the accretion flow \citep{1999ApJ...517..355N}. 
 %Observed time lags also were used to discriminate some spectral models \citep[see, e.g.,][]{2001MNRAS.327..799K}.
 
- Variability properties of different types of X-ray binary systems are usually described in terms of the power spectrum, which is a common technique for determination of amount of power in the particular frequency range. Power spectrum of the BHC systems in LHS typically can be described as a combination of band-limited noise and one or few narrow Lorentzian functions, representing correspondingly broad band stochastic noise and QPOs \citep[see, e.g.][e.t.c]{1972ApJ...174L..35T, 1990A&A...227L..33B, homan05}. Properties of this components and correlations between them, in principle, may be used to discriminate between different models, proposed for generation of X-ray emission in BHC. 
+Variability properties of different types of X-ray binary systems are usually described in terms of the power spectrum, which is a common technique for determination of amount of power in the particular frequency range. 
+Power spectrum of the BHC systems in LHS typically can be described as a combination of band-limited noise and one or few narrow Lorentzian functions, representing correspondingly broad band stochastic noise and QPOs \citep[see, e.g.][e.t.c]{1972ApJ...174L..35T, 1990A&A...227L..33B, homan05}. 
+Properties of this components and correlations between them, in principle, may be used to discriminate between different models, proposed for generation of X-ray emission in BHC. 
  
- Although power spectra analysis is by far the most popular, more sophisticated methods, such as coherence function or phase-lag were successfully used to infer physical properties of accretion flows. Using a measured time-lag between the soft and hard emission, which have a complex behavior with the frequency, \cite{1999ApJ...517..355N}  constrained geometrical size of the accretion flow. 
+Although power spectra analysis is by far the most popular, more sophisticated methods, such as coherence function or phase-lag were successfully used to infer physical properties of accretion flows. 
+Using a measured time-lag between the soft and hard emission, which has a complex behavior with the frequency, \cite{1999ApJ...517..355N} constrained geometrical size of the accretion flow. 
 
 %\citet{1997ApJ...474L..43V} used coherence spectrum in order to additionally constrain time properties of the accretion flow. 
 %They found a time lag between hard and soft emission of the soft and hard emission, which have a complex behavior with the frequency, which they used to constrain geometrical size of the accretion flow \citep{1999ApJ...517..355N}. 
 %Observed time lags also were used to discriminate some spectral models \citep[see, e.g.,][]{2001MNRAS.327..799K}.
 
-In the following section we present analysis of the timing properties and their evolution during the 2014 outburst of \grs.
+In the following section we present analysis of the \grs\ timing properties and their evolution during the 2014 outburst.
 
 \subsection{Power spectrum}
-    {\it NuSTAR} observation of the \grs\ 2014 outburst are split on 13 continuous parts separated with $\sim0.7$~hr intervals when the source was occulted by Earth. 
-    The continuous observations have duration from $\sim2440$ to $\sim3390$~sec see Table~\ref{}.
-    Since {\it NuSTAR} detectors operate in the photons counting mode, data can be reduced to the light-curve with time resolution up to 2$\mu$s.
-    For our analysis we extracted light-curves with 0.01~s temporal resolution, therefore we obtained power spectra in the $sim3\times10^{-3}$--$50$~Hz range.
-    This is a frequency range which usually contains low frequency quasi periodic oscillations QPOs and broad band noise component \citep{1999ApJ...514..939W}.
-    We didn't try to found high frequency QPOs, since the typical HF QPO (centroid frequency 100-400~Hz, amplitude $\approx10$\% and quality $Q\approx0.1$--$0.5$) is indiscernible over the Poisson noise with the obtained count-rate.
 
-    The power spectrum of each of the separate observations has a form of a white noise plateau ($P(f)\propto const$) on the low frequencies, transforming on the frequency $\approx0.1$~Hz in to the power law with the slope $\rho\approx-1.6$--$-2.0$. Also a prominent QPO on the frequencies 0.3--0.7~Hz and its second overtone is presented. Typical power spectrum of single interval is shown in Fig.~\ref{fig:qpo}.
-    Poisson noise dominates intrinsic source variability on the frequencies over $\approx2$~Hz, preventing analysis of any high-frequency features. %, nevertheless we inspected power spectrum in the range from 100 to 500~Hz and didn't find any signs of high frequency QPOs.
-    There is also signs that the Power spectrum on the frequencies below $\approx0.003$~Hz has a form of growing power law $P(f)\propto f^{\alpha}$, $\alpha > 0$.
+We splited {\it NuSTAR} observation of the \grs\ 2014 outburst on 13 continuous parts separated with $\sim0.7$~hr intervals when the source was occulted by Earth. 
+The continuous observations have duration from $\sim2440$ to $\sim3390$~sec see Table~\ref{tab:timing}.
+Since {\it NuSTAR} detectors operate in the photons counting mode, data can be reduced to the light-curve with time resolution up to 2$\mu$s.
+For our analysis we extracted light-curves with 0.01~s temporal resolution, therefore we obtained power spectra in $sim3\times10^{-3}$--$50$~Hz frequency range.
+This is a frequency band which usually contains low frequency quasi periodic oscillations (QPOs) and broad band noise \citep{1999ApJ...514..939W}.
+We didn't try to found any high frequency QPOs, since the typical HF QPO (centroid frequency 100-400~Hz, amplitude $\approx10$\% and quality $Q\approx2$--$10$) is indiscernible over the Poisson noise with the obtained count-rate and duration of the observation.
 
-    From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
+Power spectrum of each of the separate part of {\it NuSTAR} observations has a form of a white noise plateau ($P(f)\propto const$) on the low frequencies, transforming on the frequency $\approx0.1$~Hz in to the power law with the slope $\rho\approx-1.6$--$-2.0$. 
+Also a prominent QPO on the frequencies 0.3--0.7~Hz and its second overtone is presented. 
+Typical power spectrum of a single interval is shown in Fig.~\ref{fig:qpo}.
+Poisson noise dominates intrinsic source variability on the frequencies over $\approx2$~Hz, preventing analysis of any high-frequency features.
+There is also signs that the Power spectrum on the frequencies below $\approx0.003$~Hz has a form of growing power law $P(f)\propto f^{\alpha}$, $\alpha > 0.3$.
+From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
 
-    In order to assess properties of the variability power spectra we approximate each obtained power spectra with the following analytical function:
+{\it NuSTAR} detectors are subject to nonblocking dead time with characteristical timescale $\tau \approx 2.5$~$\mu$s \cite{2015ApJ...800..109B}.
+Authors noted that {\it NuSTAR} dead-time has a complex dependence on the energy of registered photons, and therefore it is hard to create analytical model for resulting power spectra. 
+They proposed to use the real part of the cross spectrum of light-curves obtained from two {\it NuSTAR} detectors for the estimation of the power spectrum 
+\begin{equation}
+        re(F_{\rm FPMA}^{*}F_{\rm FPMA})
+\end{equation}
+where $F_{\rm FPMA[B]}$ - Fourie funcation of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
+
+This method is based on the following assumption: signals produced by an observed source on two detectors are identical and have no time lag and therefore their Fourier functions are also identical and have zero phase shift, while independent for two detectors signals (like counting statistics) have random phase shifts.  
+It follows that due to the random phase shift mean power of the independent noise tends to zero in the averaged real part of cross spectrum.
+
+\citep{2017arXiv170909666H} shown that cross-spectrum (or shortly cospectum) in each frequency bin is distributed with Laplace probability density function (PDF) if it is derived from two Normaly distributed random independent series \citep[see, e.q. 14 in ][]{2017arXiv170909666H}:
+\begin{equation}
+        p(C_{j}|0, \sigma_x \sigma_y) = \frac{1}{\sigma_x \sigma_y} exp{\left(\frac{-|C_{j}|}{\sigma_x \sigma_y} \right)}
+\end{equation}
+Where $C_{j}$ - cospectrum of two {\it uncoherent} series measured in the $j$-th frequency chanel and $\sigma_x$, $\sigma_y$ - are second momenta of the initial Normal distributions (therefore they are equal to the square of the power spectra in correspnding frequency channel for each time series).
+If signals used for the estimation of cospectrum have identical power spectra than $\sigma_x = \sigma_y \approx |F_{\rm FPMA}|$.
+We, therefore, see that to proper determine likelihood function which can be used to approximate cospectra with analytical functions, one still has to know Poisson noise level.
+It is also worse noting, that source count rate and total count rate are usually slightly differs for two {\it NuSTAR} modules making amplidues of counting-statistic and dead-time not equal.
+
+Since we used relatively large bining (10 ms) to extract lightcurves from {\it NuSTAR} data, we assumed that the only effect from the dead-time is lowering of the constant Poisson noise level on the $(1 - 2\nu \tau_{\rm d})$ factor, where $\nu$ is total count rate for detector and $\tau_{\rm d}$ is a dead time. 
+As was mentioned, dead-time is not constant along energy band, therefore We decided to estimate modified Poisson level for each extracted data-set from the data.
+We therefore decided to use power spectrum for the intrinsic variability estimation.
+To simplify our analysis we inspect power spectrum only on frequencies below 10~Hz.
+
+%To track the source variability evolution we fitting relatively short observations with duration of 2--3~ks, and therefore can not split them on more than few dozens parts in order to have an eye on the power spectrum break feature on the 0.1~Hz frequency. 
+
+In order to assess properties of \grs\ intrinsic variability we approximate each obtained power spectra with the following analytical function:
 \begin{equation}
         \begin{split}
         P(f) = n (1 + (f/f_{\rm lb})^4)^{\alpha} + \\
-        \frac{s_1}{(f - f_{qpo})^2 + (f_{\rm qpo} Q_{\rm m})^2} +\\
-        \frac{s_2}{(f - 2f_{qpo})^2 + (2f_{\rm qpo} Q_{\rm m})^2} + \\
+        \frac{s_1}{(f - f_{qpo})^2 + (f_{\rm qpo}/Q_{\rm m})^2} +\\
+        \frac{s_2}{(f - 2f_{qpo})^2 + (2f_{\rm qpo}/Q_{\rm m})^2} + \\
         + poiss
 \end{split}
         \label{eq:complex_fit}
 \end{equation}
-
-
+Where $f_{\rm lb}$ - broad noise break frequency, $f_{qpo}$ and $Q_{\rm m}$ - centroid of the QPO and its quality correspondingly and poiss - represents mean power of the variations caused by the conunting statistics and dumped by dead-time.
 In this function first component represents plateau with the break, second two components describe QPO main harmonics and its overtone, last component represents constant Poisson noise.
-
-Due to the complex dead-time behaviour over the energy, it's impact on to the power spectrum can not be well described. 
-This method is based on the following assumption: since photons arrival times are independent for the two detectors, phases of the Fourier function of two light-curves are also random and independent.
-It follows that this cross-product is a complex value with random uniformly distributed phase and the mean of it's real part is zero.
-Following \cite{2015ApJ...800..109B} we calling obtained function cross-spectrum or cospectrum. 
-
-While cross-spectrum technique works perfectly for the power spectrum assessment, we still using classical Fourier power spectrum for the analysis in this work due to the following reason.
-Each value of the cross-spectrum belongs to the distribution with a complex probability density function (PDF), which,  for the random independent signals in two detectors, can be described with the special Bessel function of second kind and has a different PDF for a coherent signals. 
-Since this distribution has finite standard deviation, according to the central limit theorem, distribution of the sum of the values tends toward a normal distribution.
-To track the source variability evolution we fitting relatively short observations with duration of 2--3~ks, and therefore can not split them more than to few dozens parts in order to have an eye on the power spectrum break feature on the 0.1~Hz frequency. 
-We found that usual root mean square technique, used to fit normally distributed values, works not stable in that case, probably because the PDF is not yet close enough to the normal distribution. 
-
-To simplify our analysis we inspect power spectrum only on frequencies above 10~Hz, allowing Poisson noise to has arbitrary power but assuming that it's power spectrum component is still flat ($P(f) = const$).
+We take that the quality of the QPO harmonic is equal to the QPO peak quality.
 
 \begin{figure*}
         \includegraphics[trim=0 0 0 0.65cm, clip, width=\columnwidth]{spectrum_model_and_cospectrum0.pdf}
@@ -315,7 +336,7 @@ To simplify our analysis we inspect power spectrum only on frequencies above 10~
 
 We found that the QPO frequency and amplitude had clearly evolved with time see Table~\ref{tab:ps} and Figure~\ref{fig:qpo}.
 The QPO frequency correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep[see, e.g.,][]{2003A&A...397..729V,2003A&A...407.1039P}.
-On the other hand we see, that the QPO amplitude was stable during the first half of the observation, and started to grow in the second part.
+On the other hand we see, that the QPO amplitude had been stable during the first half of the observation, and started to grow in the second part.
 
 \begin{table*}
 \noindent
@@ -325,32 +346,37 @@ On the other hand we see, that the QPO amplitude was stable during the first hal
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \hline\hline
-Interval & T$_{start}$, & Expo,  & f$_{\rm br}$, & f$_{\rm QPO}$, & Q$_{\rm m}$, & A$_{\rm m}$, & A$_{\rm o}$,& rms, \% & $\Gamma$ & E$_{\rm cut}$, \\
-            &  MJD &  s & $\times10^{-2}$, Hz &  Hz & $\times10^{-2}$ & (rms/mean) \% &  (rms/mean) \%   &  & &  keV \\
+Interval    & T$_{start}$,  & Expo,     & f$_{\rm br}$,                     & f$_{\rm QPO}$, & Q$_{\rm m}$,     & A$_{\rm m}$,  & A$_{\rm o}$,      & rms & $\Gamma$ & E$_{\rm cut}$, \\
+            &  MJD          &  s        & $\times10^{-2}$, Hz               &  Hz            & $\times10^{-2}$  & \%            &  \%               &   \%       &          &  keV             \\
 \hline
-I &  	56742.68 & 3386 & $9.0_{-2.5}^{+2.5}$ & $0.30\pm0.01$ & $7.2_{-1.8}^{+2.5}$ & $7.4_{-1.2}^{+1.1}$ & $3.9_{-1.3}^{+1.1}$ & $27\pm3$ & 1.46$\pm$0.01 & $29.9\pm0.4$ \\
-II & 56742.75 & 3388 & $8.8_{-2.3}^{+2.6}$ & $0.31\pm0.01$ & $8.5_{-2.2}^{+2.6}$ & $7.6\pm1.2$ & $3.3_{-1.2}^{+1.1}$ & $24_{-2}^{+3}$ & 1.46$\pm$0.01 & $30.7\pm0.4$ \\
-III &  56742.81 & 3392 & $9.1_{-2.2}^{+3.2}$ & $0.34\pm0.01$ & $8.7_{-2.2}^{+3.3}$ & $7.2\pm1.2$ & $3.9_{-1.2}^{+1.0}$ & $26\pm3$ & 1.46$\pm$0.01 & $29.7\pm0.4$ \\
-IV &  56742.88 & 3389 & $8.3_{-2.1}^{+2.5}$ & $0.35\pm0.01$ & $8.6_{-1.9}^{+2.4}$ & $7.3_{-1.2}^{+1.1}$ & $4.2_{-1.2}^{+1.1}$ & $27_{-3}^{+4}$ & 1.47$\pm$0.01 & $29.5_{-0.3}^{+0.4}$ \\
-V &  56742.95 & 3389 & $7.2_{-1.9}^{+2.0}$ & $0.39\pm0.01$ & $8.6_{-2.1}^{+2.7}$ & $7.1_{-1.1}^{+1.0}$ & $4.4_{-1.3}^{+1.2}$ & $27_{-3}^{+4}$ & 1.47$\pm$0.01 & $28.6\pm0.3$ \\
-VI &  56743.02 & 3136 & $7.2_{-2.0}^{+2.1}$ & $0.41\pm0.01$ & $7.1_{-1.8}^{+2.0}$ & $7.0\pm1.1$ & $4.8_{-1.2}^{+1.1}$ & $27_{-3}^{+4}$ & 1.47$\pm$0.01 & $28.1\pm0.3$ \\
-VII & 56743.09 & 2771 & $8.4_{-2.2}^{+2.5}$ & $0.42\pm0.02$ & $13.0_{-3.0}^{+4.0}$ & $7.3_{-1.3}^{+1.2}$ & $4.1_{-1.2}^{+1.4}$ & $25_{-3}^{+4}$ & 1.50$\pm$0.01 & $28.7\pm0.4$ \\
-VIII & 56743.15 & 3387 & $6.0_{-1.7}^{+1.8}$ & $0.46\pm0.01$ & $7.2_{-1.9}^{+2.5}$ & $6.6_{-1.0}^{+1.1}$ & $3.8_{-1.3}^{+1.1}$ & $30_{-5}^{+6}$ & 1.51$\pm$0.01 & $29.3\pm0.4$ \\
-IX & 56743.22 & 3392 & $13.0_{-3.0}^{+3.0}$ & $0.49\pm0.02$ & $15.0_{-3.0}^{+4.0}$ & $9.8_{-1.1}^{+0.9}$ & $6.6_{-1.2}^{+1.0}$ & $21\pm1$ & 1.50$\pm$0.01 & $28.1\pm0.3$ \\
-X & 56743.29  & 3390 & $7.9_{-2.5}^{+2.4}$ & $0.54\pm0.01$ & $7.8_{-1.8}^{+2.1}$ & $7.9_{-1.0}^{+1.1}$ & $5.3_{-1.0}^{+1.2}$ & $26_{-3}^{+5}$ & 1.50$\pm$0.01 & $27.2\pm0.3$ \\
-XI & 56743.35 & 3382 & $6.3_{-1.9}^{+2.3}$ & $0.57\pm0.01$ & $7.8_{-1.7}^{+2.0}$ & $8.3\pm1.0$ & $4.1_{-1.4}^{+1.1}$ & $26_{-3}^{+5}$ & 1.53$\pm$0.01 & $28.7\pm0.3$ \\
-XII & 56743.42 & 3386 & $7.1_{-2.2}^{+2.4}$ & $0.63\pm0.01$ & $8.8_{-1.7}^{+2.7}$ & $8.9_{-1.1}^{+1.0}$ & $5.1_{-1.3}^{+1.2}$ & $26_{-3}^{+6}$ & 1.53$\pm$0.01 & $27.5\pm0.3$ \\
-XIII &  56743.49 & 3391 & $6.8_{-2.1}^{+2.2}$ & $0.67\pm0.01$ & $6.5_{-1.4}^{+2.0}$ & $8.8_{-0.9}^{+1.0}$ & $4.4_{-1.2}^{+1.1}$ & $27_{-4}^{+6}$ & 1.53$\pm$0.01 & $26.2\pm0.3$ \\
+I           & 56742.68      & 3386      & $8.9_{-2.3}^{+2.2}\times10^{-2}$  & $0.30\pm0.01$ & $15_{-3}^{+5}$ & $7.5_{-1.0}^{+0.9}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.459\pm0.005$ & $29.9\pm0.4$ \\
+II & 56742.75 & 3388 & $7.8_{-1.8}^{+2.0}\times10^{-2}$ & $0.31\pm0.01$ & $13\pm3$ & $7.9_{-0.9}^{+1.0}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.462\pm0.005$ & $30.7\pm0.4$ \\
+III & 56742.82 & 3392 & $8.2_{-1.9}^{+2.4}\times10^{-2}$ & $0.34\pm0.01$ & $12_{-2}^{+3}$ & $7.7_{-0.8}^{+0.9}$ & $3.9_{-0.8}^{+0.9}$ & $26\pm1$ & $1.464\pm0.005$ & $29.7\pm0.4$ \\
+IV & 56742.88 & 3389 & $8.3_{-1.8}^{+2.0}\times10^{-2}$ & $0.35\pm0.01$ & $15_{-3}^{+4}$ & $7.6\pm0.9$ & $3.2_{-0.8}^{+0.7}$ & $26\pm1$ & $1.468\pm0.005$ & $29.5_{-0.3}^{+0.4}$ \\
+V & 56742.95 & 3389 & $6.9_{-1.4}^{+1.6}\times10^{-2}$ & $0.39\pm0.01$ & $13_{-3}^{+4}$ & $7.4\pm0.8$ & $4.3_{-0.9}^{+0.8}$ & $26\pm1$ & $1.473\pm0.005$ & $28.6\pm0.3$ \\
+VI & 56743.02 & 3136 & $7.5_{-1.5}^{+1.9}\times10^{-2}$ & $0.41\pm0.01$ & $17_{-3}^{+5}$ & $6.9_{-0.8}^{+0.9}$ & $3.8_{-0.8}^{+0.7}$ & $26\pm1$ & $1.475\pm0.005$ & $28.1\pm0.3$ \\
+VII & 56743.09 & 2771 & $9.7_{-2.2}^{+2.7}\times10^{-2}$ & $0.43\pm0.01$ & $12_{-2}^{+3}$ & $7.4\pm0.9$ & $3.6\pm0.9$ & $26_{-1}^{+2}$ & $1.500\pm0.005$ & $28.7\pm0.4$ \\
+VIII & 56743.15 & 3387 & $5.8_{-1.5}^{+1.4}\times10^{-2}$ & $0.46\pm0.01$ & $11_{-2}^{+3}$ & $7.9\pm0.9$ & $4.2_{-0.8}^{+0.9}$ & $27\pm2$ & $1.507\pm0.005$ & $29.3\pm0.4$ \\
+IX & 56743.22 & 3392 & $7.1_{-1.4}^{+1.6}\times10^{-2}$ & $0.50\pm0.01$ & $12_{-2}^{+4}$ & $7.9\pm0.8$ & $4.3\pm0.8$ & $26\pm1$ & $1.504\pm0.005$ & $28.1\pm0.3$ \\
+X & 56743.29 & 3390 & $7.0_{-1.6}^{+1.7}\times10^{-2}$ & $0.53\pm0.01$ & $13_{-2}^{+3}$ & $8.7\pm0.7$ & $4.5_{-0.8}^{+0.7}$ & $25\pm1$ & $1.498\pm0.005$ & $27.2\pm0.3$ \\
+XI & 56743.35 & 3382 & $(6.7\pm1.5)\times10^{-2}$ & $0.57\pm0.01$ & $13\pm3$ & $9.1_{-0.7}^{+0.8}$ & $4.0\pm0.8$ & $25\pm1$ & $1.527_{-0.005}^{+0.004}$ & $28.7\pm0.3$ \\
+XII & 56743.42 & 3386 & $6.7_{-1.4}^{+1.8}\times10^{-2}$ & $0.63\pm0.01$ & $14_{-2}^{+3}$ & $9.5_{-0.7}^{+0.8}$ & $4.4\pm0.7$ & $26_{-1}^{+2}$ & $1.525\pm0.004$ & $27.5\pm0.3$ \\
+XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}\times10^{-2}$ & $0.67\pm0.01$ & $15\pm3$ & $9.6\pm0.7$ & $4.2\pm0.8$ & $25_{-1}^{+2}$ & $1.528\pm0.004$ & $26.2\pm0.3$ \\
 \hline
 \end{tabular}
 \end{table*}
 
-Some models suggest, that the type-C QPO arising due to the Lense-Thirring precession of the accretion flow inner parts \citep{1998ApJ...492L..59S, 2006ApJ...642..420S, 2009MNRAS.397L.101I}, in such models growth of the QPO frequency corresponds to the shrinking of the disk inner radius.
-However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius is $R_{\rm in}= 5_{-3}^{+3}R_{\rm g}$.
+Some models suggest, that type-C QPO arising due to the Lense-Thirring precession of the accretion flow inner parts \citep{1998ApJ...492L..59S, 2006ApJ...642..420S, 2009MNRAS.397L.101I}, in such models growth of the QPO frequency corresponds to the shrinking of the disk inner radius.
+However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius was $R_{\rm in}= 5_{-3}^{+3}R_{\rm g}$ during the observation.
 This estimation is primarily based on the profile of the relativistically widened neutral Iron fluorescent line, see section~\ref{sec:spec} and also \citep{miller15_nust}.
 
-We found that the QPO amplitude is smaller in the soft band, while amplitude of it's harmonic is bigger, the ratio of the power in the QPO and it's harmonic is $0.2\pm0.1$ in 10--78~keV band and $0.4\pm0.1$ in 3-5 energy band.
-It follows that the QPO profile, if it's presented \citep[see, e.g.][]{2015MNRAS.446.3516I}, differs in the hard and soft X-ray band.
+We found that the QPO amplitude is smaller in the soft band, while amplitude of it's harmonic is bigger, the ratio of the power in the QPO and it's harmonic see Figure~\ref{fig:qpo_ratio}.
+\begin{figure}
+\includegraphics[width=\columnwidth]{QPO_and_harmonic_ratio_ylabel.pdf}
+        \caption{Ratio of the total power in the QPO and its second harmonic measured for the lightcurves obtained in 3--5~keV and 15--78~keV energy bands.}
+        \label{fig:qpo_ratio}
+\end{figure}
+It follows that the QPO profile, if it's presented \citep[see, e.g.][]{2015MNRAS.446.3516I}, differs in the hard and soft X-ray bands.
 Following \citep{2015MNRAS.446.3516I} we tried to extract  QPO profile segregating the coherent part between the QPO and it's harmonic, however no significant coherence was presented above the noise level, one can conclude that the QPO profile was not stable along the observation. 
 
 In some observation segments QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cross-spectra (see examples on Figure~\ref{fig:subharmonic}, red crosses) (namely I, II, IV, V, VI sets).
@@ -367,14 +393,14 @@ The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were n
 \end{figure}
 
 It should be noted that the changes in the QPO centroid position during the interval may contribute to the observed quality factor $Q$.
-We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 6.5\times10^{-6}$~Hz~s$^{-1}$. 
-During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect QPO located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx \dot{f_{\rm QPO}}\tau/f_{\rm QPO} \approx 0.065$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
-In order to better estimate of the QPO quality factor, we split each of the 13 intervals in a set of 82~s time-series. We fitted power spectrum of all time-series simultaneously,  substituting in the model~\ref{eq:complex_fit} the QPO centroid frequency $f_{\rm qpo}$, stimated for the model \ref{eq:complex_fit}, with shifted frequency $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, with $\dot{f}_{\rm qpo}$ being the free parameter and $t_{\rm mid}$ middle of the data set observation time interval. 
-Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend, nevertheless the median quality factor, obtained in this model appears to be $\sim7\times10^{-2}$ - i.e. compatible with the previous estimations (see Table~\ref{tab:timing}). 
-It should be noted that the estimation of the QPO quality factor is restricted with the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate signals used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz.
+We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 5.0$--$6.5\times10^{-6}$~Hz~s$^{-1}$. 
+During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect QPO located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx f{\rm QPO}/(\dot{f_{\rm QPO}}\tau) \approx 17$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
+In order to better estimate the QPO quality factor, we splited each of the 13 intervals in sets of 82~s long time-series. 
+After that, for each of 13 intervals, we fitted obtained power spectra simultaneously with new model in which we assume that QPO frequency linearly growing with time. 
+The model has the same form as \ref{eq:complex_fit} with $f{\rm qpo}$ substituted with $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, where $\dot{f}_{\rm qpo}$ being the free parameter and $t_{i}^{\rm mid}$, $f_{\rm QPO}$ being the middle time of the $i$-th 82~s interval and qpo centroid frequency measured with \ref{eq:complex_fit} model correspondingly.
+Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend ($\approx 2$--$9\times10^{-6}$~Hz~s$^{-1}$), nevertheless the median quality factor, obtained in this model appears to be $\sim14.3$ - i.e. compatible with the previous estimations made with \ref{eq:complex_fit} model (see Table~\ref{tab:timing}). 
+It should be noted that the estimation of the QPO quality factor is restricted with the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate signals used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz (we cant discriminate Q > 25).
 
-
-In Table \ref{tbl:ps_fit_parameters} one can find obtained fit parameters for the 13 {\it NuSTAR} intervals.
 
 \subsection{Coherence}
 
@@ -532,7 +558,8 @@ This behaviour was first observed in a number of systems by \citet{dimatteo99} a
         \label{fig:qpoconstr}
 \end{figure}
 
-We carried out extensive study of timing properties of the \grs. Along with broadband noise and fundamental QPO first overtone of QPO is clearly seen. During several intervals from first half of the observation subharmonic was seen too. Break frequency of broadband noise is correlated with QPO frequency following the WK relation \citep{wijnands99}. In all 13 intervals first QPO overtone is more prominent in soft band (3--5 keV), with relation of its amplitude to that of fundamental QPO being 0.4(1) in 3--5 keV band versus 0.2(1) in 10--78 keV.  We also measure velocity of QPO drift and found it to be 7.0$\times$10$^{-6}$~Hz~s$^{-1}$. We searched for similar QPO in \swiftx\, observations of the \grs performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
+We carried out extensive study of timing properties of the \grs. Along with broadband noise and fundamental QPO first overtone of QPO is clearly seen. During several intervals from first half of the observation subharmonic was seen too. Break frequency of broadband noise is correlated with QPO frequency following the WK relation \citep{wijnands99}. 
+In all 13 intervals first QPO overtone is more prominent in soft band (3--5 keV), with relation of its amplitude to that of fundamental QPO being 0.4(1) in 3--5 keV band versus 0.2(1) in 10--78 keV.  We also measure velocity of QPO drift and found it to be $7.0\times10^{-6}$~Hz~s$^{-1}$. We searched for similar QPO in \swiftx\, observations of the \grs performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
 Coherence measured between adjacent energy ranges in 0.01-1 Hz was found to be nearly unity, while for distant energy coherence turned out to be lower. Phase lag found to be ....
 
 

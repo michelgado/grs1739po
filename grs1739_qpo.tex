@@ -25,23 +25,18 @@
 
 \title[Study of low-frequency QPO in \grs]{Study of low-frequency quasi-periodic oscillations in \grs during 2014 outburst}
 
-%\author[I. A. Mereminskiy et al.]{
-%Ilya A. Mereminskiy,$^{1}$\thanks{E-mail: i.a.mereminskiy@gmail.com}
-%Andrey N. Semena,$^{1}$
-%Sergey Bykov,$^{1,2}$
-%Ekaterina V. Filippova$^{1}$
-%\\
-% List of institutions
-%$^{1}$Space Research Institute, Russian Academy of Sciences, Profsoyuznaya 84/32, 117997 Moscow, Russia\\
-%$^{2}$MGTU, Moscow, Russia\\
-%}
-
-\author[Authors]{
-Authors$^{1}$
+\author[I. A. Mereminskiy et al.]{
+Ilya A. Mereminskiy$^{1}$\thanks{E-mail: i.a.mereminskiy@gmail.com},
+Andrey N. Semena$^{1}$,
+Alexander A. Lutovinov$^{1}$, \newauthor
+Eugene M. Churazov$^{2,1}$,
+Sergey D. Bykov$^{1,3}$,
+Ekaterina V. Filippova$^{1}$
 \\
 % List of institutions
-$^{1}$Space Research Institute, Russian Academy of Sciences, Profsoyuznaya 84/32, 117997 Moscow, Russia\\
-%$^{2}$MGTU, Moscow, Russia\\
+$^{1}$Space Research Institute, Russian Academy of Sciences, Moscow, Russia\\
+$^{2}$Max-Planck Institute for Astrophysics, Garching bei Muenchen, Germany\\
+$^{3}$Bauman Moscow State Technical University, Moscow, Russia\\
 }
 
 
@@ -55,8 +50,12 @@ $^{1}$Space Research Institute, Russian Academy of Sciences, Profsoyuznaya 84/32
 \maketitle
 
 \begin{abstract}
+We detected type-C LF QPO at 0.3..0.7 Hz in \nustar\, and \swiftx\, observations of black hole candidate \grs during the hard-intermediate state of its 2014 outburst. We traced the evolution of spectro-timing properties of source during 13 consecutive \nustar\, observational segments. As QPO frequency grows, source spectrum became softer, with increasing power-law index and decreasing cut-off energy.
+
+We performed extended analysis of rapid X-ray variability in terms of power spectrum, coherence and phase-lags. In power spectrum there are prominent fundamental QPO and its first overtone. Coherence between neighboring energy channels seems to be unity, while separated channels shows lower value. Phase-lags are found to be...
+
+Using radius of inner disk boundary from average spectrum of source and QPO frequency we show that there are some tensions between data and RPM model \citep{ingram09}.
 \end{abstract}
-We detected low-frequency quasi-periodic oscillations (QPOs) at 0.3..2 Hz in \nustar and \swiftx observations of black hole candidate \grs during its 2014 outburst.
 
 \begin{keywords}
 X-rays: individual (\grs)  -- accretion, accretion disks	
@@ -65,7 +64,7 @@ X-rays: individual (\grs)  -- accretion, accretion disks
 
 \section{Introduction}
 \label{sec:intro} 
-A study of X-ray variability in accreting astrophysical sources provides a broad view on processes that take a place in such systems. This works both on a long timescales - i.e. days and weeks - when one speak about state changes through outbursts of transients sources  \citep[see e.g.][]{2005Ap&SS.300..107H, heil15}, and on short - all the way down to milliseconds - when the subject under consideration are a quasi-periodic oscillations (QPOs) and broad band stochastick noise. By simultaneous usage of spectral and timing data one can better constrain geometry of accretion flow around compact objects and infer on which processes are responsible for generation of observed spectro-timing features in a self-consistent way.
+A study of X-ray variability in accreting astrophysical sources provides a broad view on processes that take a place in such systems. This works both on a long timescales - i.e. days and weeks - when one speak about state changes through outbursts of transients sources  \citep[see e.g.][]{2005Ap&SS.300..107H, heil15}, and on short - all the way down to milliseconds - when the subject under consideration are a quasi-periodic oscillations (QPOs) and broad band stochastic noise. By simultaneous usage of spectral and timing data one can better constrain geometry of accretion flow around compact objects and infer on which processes are responsible for generation of observed spectro-timing features in a self-consistent way.
 
 Some aspects of the spectro-timing evolution of the X-ray transients (usually black-hole candidates, BHC) during outbursts can be explained in the frame of the two-temperature accretion flow model \citep{1975ApJ...199L.153E, 1976ApJ...204..187S, 1995ApJ...452..710N}, in which it is proposed that the accretion flow in a system consists of the geometrically thin cold disk and geometrically thick hot flow (corona). 
 It is strongly suggested from the observations that this geometrically thick hot flow is iresponsible for production of strong variability. 
@@ -178,11 +177,13 @@ Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios
 \subsubsection{Characterization of the average spectrum}            
 There is a 1.3 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides with \nustar\, observation. Extension of an energy range to 0.8 to 78 keV allow one to search for thermal emission associated with cold inner disk with $kT \sim 0.1...0.4$~keV (such as were found in other BHCs, see \cite[][ e.t.c]{miller06b,miller06a,parker15}).
 
-We extracted \swiftx\, spectrum using only zero-grade events, and grouped it (as well as \nustar\, spectra) to have at least 30 counts per bin and added 3\% systematic error. We used latest available version of {\it relxilllp} package (v1.0.2), the model that describes reflection of emission produced by point source located on the rotation axis above the Kerr black hole from the relativistic accretion disk. Among the parameters of a model several of a particular interest namely $h$ - height of point source above the black hole and $R_{in}$, location of the inner boundary of accretion disk.  This model was selected for several reasons - first, \cite{miller15_nust} found that it match observed data well producing least strigthent constraints on inner radius of the disk. Also, during the 1996 outburst source was detected at radiowaves, possibly indicating jet activity.
+We extracted \swiftx\, spectrum using only zero-grade events, and grouped it to have at least 30 counts per bin and added 3\% systematic error. Similar grouping were applied to \nustar\, data. We used latest available version of {\it relxilllp} package (v1.0.2), the model that describes reflection of emission produced by point source located on the rotation axis above the Kerr black hole from the relativistic accretion disk. Jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. Among the parameters of a model several of a particular interest, namely $h$ - height of point source above the black hole and $R_{in}$, location of the inner boundary of accretion disk.  This model was selected for several reasons - first, \cite{miller15_nust} found that it matched observed data well producing least stringent constraints on inner radius of the disk. Also, during the 1996 outburst source was detected at radiowaves, possibly indicating jet activity. For spectral fitting we used \texttt{migrad} minimizer from {\em MINUIT} package \citep{james75minuit}, and in order to estimate error we had employed a large MCMC chain. 
 
-Interestingly, instead of surplus thermal component we found a lack of soft emission - usage of $N_{H} = 2.15\times10^{22}$ cm$^{-2}$, measured in source low state \citep{furst16} led to worse fits with systematic negative residuals below few keV. Therefore, we left $N_{H}$ free during the fit. Obtained value of 2.6$\times10^{22}$ cm$^{-2}$ is higher than one measured by \cite{furst16}. This can be possibly accounted to presence of disk outflow, caused by severe X-ray irradiation. 
+Interestingly, instead of surplus thermal component we found a lack of soft emission - usage of $N_{H} = 2.15\times10^{22}$ cm$^{-2}$, measured in the low state \citep{furst16} led to worse fits with systematic negative residuals below few keV. Therefore, we left $N_{H}$ free during the fit. Obtained value of 2.6$\times10^{22}$ cm$^{-2}$ is higher than one measured by \cite{furst16}. This can be possibly accounted to presence of disk outflow, caused by severe X-ray irradiation. 
 
-Other parameter values match well with measurements by \cite{miller15_nust}. 
+Obtained upper limit on truncation radius of accretion disk - $r_{in} < 9 GM/c^{2}$ (90\% confidence limit) is similar to value from \cite{miller15_nust}, height of source above accretion disk is in agreement too. Some discrepancy seen in parameters of accretion disk - e.g. inclination, ionization parameter and Fe-abundance can be caused by broader energy range. As it can be seen from residuals (see Fig.~\ref{fig:spec}) there is no significant residuals in lower-energy part of spectrum, therefore thermal emission from accretion disk is too weak or too cold to detect. 
+
+Total flux in 0.1--100 keV band is about 10$^{-8}$ erg s$^{-1}$ cm$^{-2}$ which translates to a luminosity of 7.7$\times$10$^{37}$ erg s$^{-1}$ for the 8 kpc distance. Typical luminosity at which BHCs change from LHS to HIMS is about $k_{trans.} L_{Edd} = 1.2\times10^{38} (M/M_{\odot})$ erg s$^{-1}$ where $k_{trans.} \approx 0.1$, although we should note that there is significant scatter in this value. Therefore one can put a rough lower estimate on black-hole mass as 6.5 $M_{\odot}$, which is reasonable.
 
 \begin{table}
 \noindent
@@ -194,22 +195,22 @@ Other parameter values match well with measurements by \cite{miller15_nust}.
 \hline\hline
 Parameter & Value \\
 \hline
-$N_{H}$ &   2.65$^{+0.04}_{-0.02}$ \\   
-$h$   &  19.2$^{+2.8}_{-2.2}$ \\
-$a$    & 0.76$^{+0.21}_{-0.47}$   \\
-$incl$ & 24.3$^{+1.7}_{-2.4}$ \\
-$R_{in}$  & 1.25000 \\ 
+$N_{H}, 10^{22} cm^{-2}$ &   2.64$^{+0.05}_{-0.03}$ \\   
+$h, GM/c^{2}$   &  22.3$^{+0.6}_{-4.3}$ \\
+$a, cJ/GM^{2}$    & 0.73$^{+0.26}_{-0.23}$   \\
+$incl, deg$ & 22.1$^{+2.9}_{-2.0}$ \\
+$R_{in}, ISCO$  & 1.05$^{+1.73}_{-0.02}$ \\ 
 $\Gamma$& 1.40$^{+0.01}_{-0.01}$   \\
-$\log{\xi}$ &  3.48$^{+0.04}_{-0.03}$ \\
-$A_{Fe}$   &  3.0$^{+0.3}_{-0.2}$  \\        
-$E_{cut}$    &       26.2 $^{+0.4}_{-0.3}$    \\
-$R_{refl}$  &         0.44$^{+0.03}_{-0.04}$    \\
-$N,\,\times10^{-2}$          &      1.54$^{+0.07}_{-0.06}$ \\
-$C_{FMPB}$ & 1.018$^{+0.001}_{-0.001}$    \\
-$C_{Swift-XRT}$    &   1.04$^{+0.001}_{-0.001}$\\
+$\log{\xi}$ &  3.52$^{+0.05}_{-0.07}$ \\
+$A_{Fe}$   &  3.0$^{+0.6}_{-0.3}$  \\        
+$E_{cut}, keV$    &       26.3 $^{+0.3}_{-0.5}$    \\
+$R_{refl}$  &         0.42$^{+0.03}_{-0.03}$    \\
+$N_{FMPA},\,\times10^{-2}$          &      1.49$^{+0.09}_{-0.03}$ \\
+$C_{FMPB}$ & 1.017$^{+0.002}_{-0.001}$    \\
+$C_{Swift-XRT}$    &   1.04$^{+0.01}_{-0.01}$\\
 $\chi^{2}_{red.}$    &   1.1=\\ 
-              &= 3366.81/3075 d.o.f\\
-
+              &= 3366.21/3062 d.o.f\\
+              
 \hline
 \end{tabular}
 \end{table}
@@ -218,9 +219,9 @@ $\chi^{2}_{red.}$    &   1.1=\\
 
 
 \begin{figure}
-\centerline{\includegraphics[width=\linewidth]{rinfit_v03.eps}}
-\caption{Estimate of inner radius of accretion disk. Gray solid line denote 90\% confidence interval, while dashed line shows 99\% interval.} 
-\label{fig:rin}
+\centerline{\includegraphics[width=\linewidth]{spectrumfit_v02.eps}}
+\caption{Fit of composite \swiftx/\nustar spectrum by \texttt{phabs*relxilllp} model. Green, red and blue points correspond to \swiftx, \nustar FPMA and FPMB, correspondingly.} 
+\label{fig:spec}
 \end{figure}  
 
 
@@ -523,19 +524,22 @@ Segment & $f_{QPO}$, Hz & $rms$, \% & Type\\
 
 \section{Discussion}
 We had studied the spectra-timing evolution of the \grs\, during its hard-intermediate state.  The frequency of type-C LF QPO show clear correlation with properties of continuum emission. As the QPO frequency increases form 0.3 to 0.7 Hz spectrum became softer: the power law index grows from 1.46 to 1.53 and cut-off energy decreases from 30 to 26 keV. Overall flux increases, too. 
-This behaviour was first observed in a number of systems by \citet{dimatteo99} and now it is studied in greater details in many systems \citep[see e.g.][ and many more]{vignarca03,stiele13,seifina14,fuerst16_gx339}. Although the quality of a data prevented us from measuring a movement of the inner disk boundary, from the total broadband spectrum we found that an accretion disk is truncated at radius smaller than 8 $GM/c^{2}$ (90\% confidence limit) which is in agreement with an estimates by \citet{miller15_nust}. This allowed us to check if this combination of inner radius and frequency is consistent with the popular model of QPO generation such as Lense-Thirring precession \citep{ingram09}. Following the calculations of \citet{ingram14} we calulated nodal frequencies (which is though to correspond to QPO fundamental frequency) versus inner radius for two values of black hole mass (10$M_{\odot}$ and 30$M_{\odot}$) and two values of spin - $a=0.1$ and $a=0.998$ (maximally rotating). As it can be seen from Fig.~\ref{fig:qpoconstr} observations are incompatible with expected values for 10$M_{\odot}$ black hole and barely agrees with slowly rotating massive black hole. This results, along with measurements by \cite{fuerst16_gx339}, indicate that there are some tensions between predictions of RPM and truncation radii inferred from spectral fitting.
+This behaviour was first observed in a number of systems by \citet{dimatteo99} and now it is studied in greater details in many systems \citep[see e.g.][ and many more]{vignarca03,stiele13,seifina14,fuerst16_gx339}. Although the quality of a data prevented us from measuring a movement of the inner disk boundary, from the total broadband spectrum we found that an accretion disk is truncated at radius smaller than 9 $GM/c^{2}$ (90\% confidence limit) which is in agreement with an estimates by \citet{miller15_nust}. This allowed us to check if this combination of inner radius and frequency is consistent with the popular model of QPO generation such as Lense-Thirring precession \citep{ingram09}. Following the calculations of \citet{ingram14} we calulated nodal frequencies (which is though to correspond to QPO fundamental frequency) versus inner radius for two values of black hole mass (10$M_{\odot}$ and 30$M_{\odot}$) and two values of spin - $a=0.1$ and $a=0.998$ (maximally rotating). As it can be seen from Fig.~\ref{fig:qpoconstr} observations are incompatible with expected values for 10$M_{\odot}$ black hole and barely agrees with slowly rotating massive black hole. This results, along with measurements by \cite{fuerst16_gx339}, indicate that there are some tensions between predictions of RPM and truncation radii inferred from spectral fitting.
 
 \begin{figure}
-        \includegraphics[width=\columnwidth]{qpoconstr_v02.eps}
-        \caption{Expected QPO frequency for a black hole of a given mass and spin versus inner disk radius from \cite{ingram14}. Blue point correspond to measured inner disk radius and range of observed QPO frequencies.}
+        \includegraphics[width=\columnwidth]{qpoconstr_v03.eps}
+        \caption{Expected QPO frequency for a black hole of a given mass and spin versus inner disk radius from \protect\cite{ingram14}. Orange square represent region containing observed QPOs.}
         \label{fig:qpoconstr}
 \end{figure}
 
-We carried out extensive study of timing properties of the \grs. Along with broadband noise and fundamental QPO first overtone of QPO is clearly seen. During several intervals from first half of the observation subharmonic was seen too. Break frequency of broadband noise is correlated with QPO frequency following the WK relation \citep{wijnands99}. In all 13 intervals first QPO overtone is more prominent in soft band (3--5 keV), with relation of its amplitude to that of fundamental QPO being 0.4(1) in 3--5 keV band versus 0.2(1) in 10--78 keV.  We also measure velocity of QPO drift and found it to be 7.0\times10^{-6}$~Hz~s$^{-1}$. We searched for similar QPO in \swiftx\, observations of the \grs performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
+We carried out extensive study of timing properties of the \grs. Along with broadband noise and fundamental QPO first overtone of QPO is clearly seen. During several intervals from first half of the observation subharmonic was seen too. Break frequency of broadband noise is correlated with QPO frequency following the WK relation \citep{wijnands99}. In all 13 intervals first QPO overtone is more prominent in soft band (3--5 keV), with relation of its amplitude to that of fundamental QPO being 0.4(1) in 3--5 keV band versus 0.2(1) in 10--78 keV.  We also measure velocity of QPO drift and found it to be 7.0$\times$10$^{-6}$~Hz~s$^{-1}$. We searched for similar QPO in \swiftx\, observations of the \grs performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
 Coherence measured between adjacent energy ranges in 0.01-1 Hz was found to be nearly unity, while for distant energy coherence turned out to be lower. Phase lag found to be ....
 
 
 \section*{Acknowledgments}
+The work was supported by the Russian Science Foundation (grant no. 14-12-01287). Authors are grateful for T.Dauser and J.Gracia for their help with {\em relxill} model. 
+This research has made use of data obtained through the High Energy Astrophysics Science Archive Research Center Online Service, provided by the NASA/Goddard Space Flight Center.
+
 
 %--------------------------------------------------------------------------------
 \bibliographystyle{astron}

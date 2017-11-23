@@ -340,7 +340,7 @@ On the other hand we see, that the QPO amplitude had been stable during the firs
 \begin{table*}
 \noindent
 \centering
-\caption{Evolution of the Fourier and energy spectrum properties through the {\it NuSTAR} observation in the 3--5~keV energy band.}
+\caption{Evolution of the Fourier and energy spectrum properties through the {\it NuSTAR} observation in the 3--78~keV energy band.}
 \label{tab:timing}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
@@ -376,7 +376,10 @@ We found that the QPO amplitude is smaller in the soft band, while amplitude of 
         \label{fig:qpo_ratio}
 \end{figure}
 It follows that the QPO profile, if it's presented \citep[see, e.g.][]{2015MNRAS.446.3516I}, differs in the hard and soft X-ray bands.
-Following \citep{2015MNRAS.446.3516I} we tried to extract  QPO profile segregating the coherent part between the QPO and it's harmonic, however no significant coherence was presented above the noise level, one can conclude that the QPO profile was not stable along the observation. 
+Following \citep{2015MNRAS.446.3516I} we tried to extract QPO profile segregating the coherent part (Fourie signal with concerving phase shift relative to the signal on QPO frequency) between the QPO and it's harmonics, however no significant coherence was presented above the noise level.
+It indicates that the QPO profile was not stable during the observation, in contradition to the result obtained by \citep{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
+
+Since the 2-nd harmonic is quite prominent in the power spectrum and therefore dominant over Poisson noise and broad-band noise we concluded that absence of Fourie signal with converved phase shift indicates on one can conclude that the QPO profile was not stable along the observation. 
 
 In some observation segments QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cross-spectra (see examples on Figure~\ref{fig:subharmonic}, red crosses) (namely I, II, IV, V, VI sets).
 In order to observe QPO profile with better significance we summarized several cospectra, frequency of each cospectrum was scaled in such a way to conserve QPO centroid at 0.3~Hz.
@@ -400,7 +403,6 @@ The model has the same form as \ref{eq:complex_fit} with $f{\rm qpo}$ substitute
 Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend ($\approx 2$--$9\times10^{-6}$~Hz~s$^{-1}$), nevertheless the median quality factor, obtained in this model appears to be $\sim14.3$ - i.e. compatible with the previous estimations made with \ref{eq:complex_fit} model (see Table~\ref{tab:timing}). 
 It should be noted that the estimation of the QPO quality factor is restricted with the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate signals used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz (we cant discriminate Q > 25).
 
-
 \subsection{Coherence}
 
 \citep{1997ApJ...474L..43V} suggested to use coherence between different energy bands in order to obtain additional information from the source variability. 
@@ -414,38 +416,24 @@ $n^2$ - product of the power in uncorrelated components, connected with counting
 Coherence should be computed for the number of independent time intervals, therefore we separated each of the available uninterrupted time series on several shorter parts, 82~s long each.  
 
 Coherence is very similar to cospectrum, but instead of tracking signals with zero phase shifts, it's track all signals with arbitrary conserved phase shift - i.e. Fourier harmonics of the signals may delay each other but be coherent (which means that Fourier functions $H(f)$ and $S(f)$ are related by linear transformation \citep{1997ApJ...474L..43V}).
-It should be noted that from this definition of coherence it follows that coherent signals (with unity coherence along all Fourier frequencies) may not be similar in time domain. 
+%It should be noted that from this definition of coherence it follows that coherent signals (with unity coherence along all Fourier frequencies) may not be similar in time domain. 
 
 Different models of the XBs variability generation suggest that the signal in two energy bands can be partially independent, while the shape of the power spectra is conserved.
 It appears that in many sources coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, 1999ApJ...514..939W}, however there also was indications on complex picture of the coherence in particular state of some systems \citep{2003ApJ...584L..23J}, or drop in coherence between particular energy bands \citep[e.g. in GX 339--4][]{1997ApJ...474L..43V}.
 See also discussion in the \citep{1997ApJ...474L..43V} for the theoretical prediction on the coherence for different models.
 
-%The measure of their difference will be defined by phase shifts, phase shift $\tau f^{-1}$ corresponds to the signals equal in time domain and shifted on $\tau$. 
-%If the phase lags deviate from this pattern it follows that only part of the Fourier harmonics are shifted. 
 
 Following \citep{1997ApJ...474L..43V}, we estimated correlation of \grs\ light-curves obtained in different soft and hard energy bands. 
 Since for the timing analysis we use {\it NuSTAR} data, covering 3--79~keV energy bands, we adopted following energy bands for our analysis: 3--5~keV, 5--8~keV, 8--15~keV and 15--78~keV.
 This partition of the {\it NuSTAR} energy band pursues the following idea: despite the energy spectrum of \grs\ can be described with the two major components - powerlaw continuum and fluorescent Fe K$\alpha$ line, we can expect that each of chosen energy bands is dominated by the processes with slightly different origin. 
-%In the 3--5~keV we may expect the presence of the optically thick disk emission. 
 The Fe K$\alpha$ line has equivalent width approximately 0.2~keV, therefore producing only 5\% of the flux in the 5--8~keV and must be anchored to some source of the hard photons depending on the system geometry, e.g. in the lamp post geometry it should be coherent with the hard powerlaw emission. 
 In the 8--15~keV energy band we expecting the hard powerlaw corona emission to be the dominant, while in the 15--78~keV Compton hump may be presented.
-
-%If we assume that broad band noise dominating in the power spectrum below QPO frequency is originated from the angular transport stochastic fluctuations \citep[e.g. model of propagating fluctuations][]{1997MNRAS.292..679L}
-
-%In contrast to the \citep{nowak99} study, net count rate, obtained from \grs\ in the {\it NuSTAR} observation is {\bf 160~s$^{-1}$}, it follows that approximately quarter of the total variability power is due to the Poisson noise. 
-%This noise introduce large statistical errors in the coherence estimation over the $\sim2$~Hz frequency.
-%As was discussed in \citep{nowak99} the correlation of two independent time series demonstrates large errors on the frequencies dominated with Poisson noise.
 
 Since the {\it NuSTAR} detectors have complex dead-time depending on energy \citep[see ][for a details on how this affects power spectra]{2015ApJ...800..109B}, coherence computed from one detector is subject to the dead-time crosstalk effects (which should make random processes more coherent).
 In order to eliminate this effects, following the recipe suggested in \cite{2015ApJ...800..109B} for cospectrum estimation, for the numerator in Eq.~\ref{eq:nowak_coh} we used cross-products of the light-curves Fourier functions obtained from the different modules - e.g. correlations of the light-curve obtained in the soft band on the FPMA module with the light-curve in the hard band obtained in the FPMB and vice versa.
 In the obtained cross-product dead-time cross-talk effects is significantly dumped.
 We also use cospectrum obtained for each energy band as the estimation for the denominator in the Eq.~\ref{eq:nowak_coh}.
 The $n^2$ component was computed as it is suggested in \citep{1997ApJ...474L..43V}, however for the Poisson noise components power estimation we used mean value of the power spectra in the 5--20~Hz range, assuming that Poisson noise dominating intrinsic source variability and constant along frequencies. 
-%In the estimation of the $n^2$ Poisson estimation power of the Poisson noise is used 
-%For the $n^2$ estimation we use mean power spectrum in 
-% uncoherent component we use recepie of the 
-%The uncoherent noise component $n^2$ is $(P_{s}(f)N_{h} +  P_{h}(f)N_{s} + N_{s}N_{h})/2k$, where k - is number of 
-%For the estimation of the uncoherent component , we use cospectrum for the estimation of raw power ($P_{s}(f)$, $P_{h}(f)$) and  (where $P_{h}$ we use the product of mean power of the time series in each detector computed be
 
 \citet{wijnands99} shown that primary features of the Power spectrum of the XBs in low-hard state are evolving simultaneously, i.e. flat top broad band noise break frequency and QPO centroid frequency are connected with the relation $f_{\rm b} \approx 0.3 f_{\rm qpo}$.
 Therefore, in order to improve significance of the coherence measurements, and bearing in mind aforementioned property of the power spectrum, we stacked all 13 separate parts of the observation, scaling their frequencies to preserve QPO position. 

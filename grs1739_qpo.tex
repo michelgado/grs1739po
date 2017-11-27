@@ -30,8 +30,8 @@
 \author[I. A. Mereminskiy et al.]{
 Ilya A. Mereminskiy$^{1}$\thanks{E-mail: i.a.mereminskiy@gmail.com},
 Andrey N. Semena$^{1}$,
-Alexander A. Lutovinov$^{1}$, \newauthor
-Eugene M. Churazov$^{2,1}$,
+Eugene M. Churazov$^{2,1}$,  \newauthor
+Alexander A. Lutovinov$^{1}$,
 Sergey D. Bykov$^{1,3}$,
 Ekaterina V. Filippova$^{1}$
 \\
@@ -52,7 +52,7 @@ $^{3}$Bauman Moscow State Technical University, Moscow, Russia\\
 \maketitle
 
 \begin{abstract}
-We detected type-C LF QPO at 0.3..0.7 Hz in \nustar\, and \swiftx\, observations of black hole candidate \grs during the hard-intermediate state of its 2014 outburst. We traced the evolution of spectro-timing properties of the source during \nustar\ observation. 
+We detected type-C LF QPO at 0.3..0.7 Hz in \nustar\, and \swiftx\, observations of black hole candidate \grs\, during the hard-intermediate state of its 2014 outburst. We traced the evolution of spectro-timing properties of the source during \nustar\, observation. 
 As QPO frequency grows, source spectrum became softer, with increasing power-law index and decreasing cut-off energy.
 
 We performed extended analysis of rapid X-ray variability in terms of power spectrum, cospectrum, coherence and phase-lags. 
@@ -65,7 +65,7 @@ Measurements of the inner disk radius obtained with the spectral models accounti
 \end{abstract}
 
 \begin{keywords}
-X-rays: individual (\grs)  -- accretion, accretion disks	
+X-rays: individual (\grs) -- X-rays: binaries -- accretion, accretion disks  -- stars: black holes
 \end{keywords}
 
 
@@ -110,7 +110,7 @@ Eventually, they observed very high state and detected a QPO at 5 Hz using {\it 
 
 After some 18 year slumber \grs\ demonstrated another big outburst, rise of which was detected by \swiftb \citep{krimm14_atel} along with \integral \citep{filippova14}. 
 During this outburst extensive observing campaign by \swiftx\, were carried out, along with single long \nustar\ exposure. 
-After this outburst the source remain active with repetitive mini-outbursts \citep{mereminskiy16,yan17}.
+After this outburst the source remain active with repetitive mini-outbursts \citep{mereminskiy17grs,yan17}.
 
 
 
@@ -204,7 +204,8 @@ Equivalent width of the gaussian component is around 0.175 keV and remains const
 \label{fig:intspe}
 \end{figure}  
             
-\subsubsection{Characterization of the average spectrum}            
+\subsubsection{Characterization of the average spectrum}
+\label{sec:spec}            
 There is a 1.3 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides with \nustar\, observation. 
 Extension of an energy range to 0.8--78 keV allows one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (such as were found in other BHCs, see \cite[][ e.t.c]{miller06b,miller06a,parker15}).
 
@@ -315,7 +316,7 @@ We split {\it NuSTAR} observation of the \grs\ 2014 outburst on 13 continuous in
 The continuous intervals have duration from $\sim2440$ to $\sim3390$~sec see Table~\ref{tab:timing}.
 Since {\it NuSTAR} detectors operate in the photons counting mode, data can be reduced to the light-curve with time resolution up to 2$\mu$s.
 For our analysis we extracted light-curves with 0.01~s temporal resolution, therefore we obtained power spectra in $\sim3\times10^{-3}$--$50$~Hz frequency range.
-This is a frequency band which usually contains low frequency quasi periodic oscillations (QPOs) and broad band noise \citep{1999ApJ...514..939W}.
+This is a frequency band which usually contains low frequency quasi periodic oscillations (QPOs) and broad band noise \citep{wijnands99}.
 We did not try to find any high frequency QPOs, since the typical HF QPO (centroid frequency 100-400~Hz, amplitude $\approx10$\% and quality $Q\approx2$--$10$) is indiscernible over the Poisson noise with the obtained count-rate and duration of the observation.
 
 Power spectrum of each of separate interval of {\it NuSTAR} observations has a form of a white noise plateau ($P(f)\propto const$) on the low frequencies, transforming on the frequency $\approx0.1$~Hz in to the power law with the slope $\rho\approx-1.6$..$-2.0$. 
@@ -373,8 +374,8 @@ We take that the quality of the QPO harmonic is equal to the QPO peak quality.
 \end{figure}
 
 
-We found that the QPO frequency had clearly evolved with time see Table~\ref{tab:ps} and Figure~\ref{fig:qpo}.
-The QPO frequency correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep[see, e.g.,][]{2003A&A...397..729V,2003A&A...407.1039P}.
+We found that the QPO frequency had clearly evolved with time see Table~\ref{tab:timing} and Figure~\ref{fig:qpo}.
+The QPO frequency correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep[see, e.g.,][]{vignarca03,2003A&A...407.1039P}.
 On the other hand we see, that the QPO amplitude remained stable during the first half of the observation, and started to grow in the second part.
 
 \begin{table*}
@@ -422,7 +423,7 @@ Following \citep{2015MNRAS.446.3516I} we tried to extract QPO profile segregatin
 It indicates that the QPO profile was not stable during the observation, in contradiction to the result obtained by \citep{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
 
 
-In some intervals QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cospectra (see examples on Fig.~\ref{fig:subharmonic}, red crosses) (namely I, II, IV, V, VI sets).
+In some intervals QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cospectra (see examples on Fig.~\ref{fig:cospec_tracked}, red crosses) (namely I, II, IV, V, VI sets).
 In order to observe QPO with better significance we stacked several cospectra, frequency of each cospectrum was scaled in such a way to conserve QPO centroid at 0.3~Hz.
 Obtained ``tracked'' cospectrum is presented on Fig.~\ref{fig:cospec_tracked}.
 The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were not able to obtain it with a large significance on the tracked cospectrum.
@@ -460,7 +461,7 @@ Coherence is very similar to cospectrum, but instead of tracking signals with ze
 %It should be noted that from this definition of coherence it follows that coherent signals (with unity coherence along all Fourier frequencies) may not be similar in time domain. 
 
 Different models of the XBs variability generation suggest that the signals in two energy bands can be partially independent, while the shape of the power spectra is conserved.
-It appears that in many sources coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, 1999ApJ...514..939W}, however there also were indications on complex picture of the coherence in particular state of some systems \citep{2003ApJ...584L..23J}, or drop in coherence between particular energy bands \citep[e.g. in GX 339--4][]{1997ApJ...474L..43V}.
+It appears that in many sources coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, wijnands99}, however there also were indications on complex picture of the coherence in particular state of some systems \citep{2003ApJ...584L..23J}, or drop in coherence between particular energy bands \citep[e.g. in GX 339--4][]{1997ApJ...474L..43V}.
 See also discussion in the \citet{1997ApJ...474L..43V} for the theoretical prediction on the coherence for different models.
 
 
@@ -493,7 +494,7 @@ It is on the nearly constant level of $\approx0.85$ in the $5\times10^{-3}$--0.1
 %Since the loss of the coherence is also observed above 0.3--1.0~Hz frequency for other energy bands, this effect may be connected not with the intrinsic properties of the source, but with the bead-time cross-talk effects which we did not specially consider, except for using light-curves from the different {\it NuSTAR} modules for cross-products.
 
 \subsection{Phase lags}
-        From the definition of the coherence (see eq.~\ref{eq:coh_nowak}) it follows that signals have roughly constant phase shifts between their Fourier functions in each frequency bin where they are coherent. 
+        From the definition of the coherence (see eq.~\ref{eq:nowak_coh}) it follows that signals have roughly constant phase shifts between their Fourier functions in each frequency bin where they are coherent. 
 As it was discussed in the previous section,  following \citet{1997ApJ...474L..43V} we estimated phase lag as an angle of mean product of the light curves Fourier harmonics from one energy bands to the conjugated Fourier harmonics of the second energy band. 
 \begin{equation}
         \delta \phi(f) = \arctan{\left(\frac{Im(<F_{\rm s}^{*}(f) F_{\rm h}^{*}(f)>)}{Re(<F_{\rm s}^{*}(f) F_{\rm h}^{*}(f)>)}\right)}

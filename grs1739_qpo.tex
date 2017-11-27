@@ -94,6 +94,8 @@ In this article we report on first detection of type-C QPOs in HIMS of Galactic 
 
 \grs is a typical X-ray nova, discovered during outburst in 1996  \citep{paul96} by {\it SIGMA} \citep{paul91} telescope onboard {\it GRANAT} space observatory.
 Using {\it ROSAT} observation from the estimated absorption \citet{greiner96} inferred distance of 6--8.5~kpc, indicating that the source may belong to Galactic bulge. 
+It should be noted that \citet{greiner96} used X-ray halo size to assess obscuration column density, and mean extinction per parsec value from \citep{1973asqu.book.....A} to estimate from it distance to the source. 
+While his $N_{\rm H}$ estimation appears to be quite precise, new measurements of the obscuration in the Galaxy \citep{1990ARA&A..28..215D, 2005A&A...440..775K, 2006A&A...453..635M, 2014A&A...566A.120S} shows (Galaxy line of sight obscuration towards the source $N_{\rm H}\approx0.8\times10^{21}$~cm$^{-2}$ while it has $N_{\rm H}\approx2.15\times10^{22}$~cm$^{-2}$) that the source either has intrinsic obscuration or additional line of sight obscuration, but the distance can not be constrained.
 Optical and radio emission were detected during the course of outburst \citep{hjellming96,marti97}. 
 \citet{borozdin98} found spectral evolution throughout the outburst to be consistent with canonical model - outburst starts from {\bf lhc is ...}(LHC), then soft emission, associated with the optically thick disk starts to dominate, heralding transition to high-soft state. 
 Eventually, they observed very high state and detected a QPO at 5 Hz using {\it RXTE} data \citep{borozdin00}.
@@ -282,25 +284,25 @@ Poisson noise dominates intrinsic source variability on the frequencies over $\a
 There is also signs that the Power spectrum on the frequencies below $\approx0.003$~Hz has a form of growing power law $P(f)\propto f^{\alpha}$, $\alpha > 0.3$.
 From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
 
-{\it NuSTAR} detectors are subject to nonblocking dead time with characteristical timescale $\tau \approx 2.5$~$\mu$s \cite{2015ApJ...800..109B}.
+{\it NuSTAR} detectors are subject to nonblocking dead time with characteristic timescale $\tau \approx 2.5$~$\mu$s \cite{2015ApJ...800..109B}.
 Authors noted that {\it NuSTAR} dead-time has a complex dependence on the energy of registered photons, and therefore it is hard to create analytical model for resulting power spectra. 
 They proposed to use the real part of the cross spectrum of light-curves obtained from two {\it NuSTAR} detectors for the estimation of the power spectrum 
 \begin{equation}
         re(F_{\rm FPMA}^{*}F_{\rm FPMA})
 \end{equation}
-where $F_{\rm FPMA[B]}$ - Fourie funcation of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
+where $F_{\rm FPMA[B]}$ - Fourier function of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
 
 This method is based on the following assumption: signals produced by an observed source on two detectors are identical and have no time lag and therefore their Fourier functions are also identical and have zero phase shift, while independent for two detectors signals (like counting statistics) have random phase shifts.  
 It follows that due to the random phase shift mean power of the independent noise tends to zero in the averaged real part of cross spectrum.
 
-\citep{2017arXiv170909666H} shown that cross-spectrum (or shortly cospectum) in each frequency bin is distributed with Laplace probability density function (PDF) if it is derived from two Normaly distributed random independent series \citep[see, e.q. 14 in ][]{2017arXiv170909666H}:
+\citep{2017arXiv170909666H} shown that cross-spectrum (or shortly cospectum) in each frequency bin is distributed with Laplace probability density function (PDF) if it is derived from two Normally distributed random independent series \citep[see, e.q. 14 in ][]{2017arXiv170909666H}:
 \begin{equation}
         p(C_{j}|0, \sigma_x \sigma_y) = \frac{1}{\sigma_x \sigma_y} exp{\left(\frac{-|C_{j}|}{\sigma_x \sigma_y} \right)}
 \end{equation}
-Where $C_{j}$ - cospectrum of two {\it uncoherent} series measured in the $j$-th frequency chanel and $\sigma_x$, $\sigma_y$ - are second momenta of the initial Normal distributions (therefore they are equal to the square of the power spectra in correspnding frequency channel for each time series).
+Where $C_{j}$ - cospectrum of two {\it uncoherent} series measured in the $j$-th frequency channel and $\sigma_x$, $\sigma_y$ - are second momenta of the initial Normal distributions (therefore they are equal to the square of the power spectra in corresponding frequency channel for each time series).
 If signals used for the estimation of cospectrum have identical power spectra than $\sigma_x = \sigma_y \approx |F_{\rm FPMA}|$.
 We, therefore, see that to proper determine likelihood function which can be used to approximate cospectra with analytical functions, one still has to know Poisson noise level.
-It is also worse noting, that source count rate and total count rate are usually slightly differs for two {\it NuSTAR} modules making amplidues of counting-statistic and dead-time not equal.
+It is also worse noting, that source count rate and total count rate are usually slightly differs for two {\it NuSTAR} modules making amplitudes of counting-statistic and dead-time not equal.
 
 Since we used relatively large bining (10 ms) to extract lightcurves from {\it NuSTAR} data, we assumed that the only effect from the dead-time is lowering of the constant Poisson noise level on the $(1 - 2\nu \tau_{\rm d})$ factor, where $\nu$ is total count rate for detector and $\tau_{\rm d}$ is a dead time. 
 As was mentioned, dead-time is not constant along energy band, therefore We decided to estimate modified Poisson level for each extracted data-set from the data.
@@ -311,27 +313,23 @@ To simplify our analysis we inspect power spectrum only on frequencies below 10~
 
 In order to assess properties of \grs\ intrinsic variability we approximate each obtained power spectra with the following analytical function:
 \begin{equation}
-        \begin{split}
-        P(f) = n (1 + (f/f_{\rm lb})^4)^{\alpha} + \\
-        \frac{s_1}{(f - f_{qpo})^2 + (f_{\rm qpo}/Q_{\rm m})^2} +\\
-        \frac{s_2}{(f - 2f_{qpo})^2 + (2f_{\rm qpo}/Q_{\rm m})^2} + \\
-        + poiss
-\end{split}
+        \begin{aligned}
+                P(f)  = & n (1 + (f/f_{\rm lb})^4)^{\alpha} + \\
+                     &\frac{s_1}{(f - f_{qpo})^2 + (f_{\rm qpo}/Q_{\rm m})^2} +\\
+                        & \frac{s_2}{(f - 2f_{qpo})^2 + (2f_{\rm qpo}/Q_{\rm m})^2} + \\
+                        & poiss
+\end{aligned}
         \label{eq:complex_fit}
 \end{equation}
-Where $f_{\rm lb}$ - broad noise break frequency, $f_{qpo}$ and $Q_{\rm m}$ - centroid of the QPO and its quality correspondingly and poiss - represents mean power of the variations caused by the conunting statistics and dumped by dead-time.
+Where $f_{\rm lb}$ - broad noise break frequency, $f_{qpo}$ and $Q_{\rm m}$ - centroid of the QPO and its quality correspondingly and poiss - represents mean power of the variations caused by the counting statistics and dumped by dead-time.
 In this function first component represents plateau with the break, second two components describe QPO main harmonics and its overtone, last component represents constant Poisson noise.
 We take that the quality of the QPO harmonic is equal to the QPO peak quality.
 
-\begin{figure*}
-        \includegraphics[trim=0 0 0 0.45cm, clip, width=\columnwidth]{spectrum_model_and_cospectrum0.pdf}
-        \includegraphics[width=\columnwidth, height = 0.77\columnwidth]{spectrum_model_and_cospectrum10.pdf}
-        \caption{On the left panel power spectrum and cospectrum obtained in the soft band at the beginning of {\it NuSTAR} observation. 
-        On the right column same spectra obtained at the end of the observation.
-        Red crosses correspond to the power spectrum with Poisson noise component subtracted, and black crosses correspond to cospectrum.
-        Black line represents best model for the power spectrum without Poisson noise component.}
+\begin{figure}
+        \includegraphics[width=\columnwidth]{qpo_centroid_evolution.pdf}
+        \caption{Power spectrum of the \grs\ obtained with {\it NuSTAR} data at the beginning (red crosses) and at the end (black crosses) of the observation. Poisson noise is subtracted.}
         \label{fig:qpo}
-\end{figure*}
+\end{figure}
 
 
 We found that the QPO frequency and amplitude had clearly evolved with time see Table~\ref{tab:ps} and Figure~\ref{fig:qpo}.
@@ -349,7 +347,7 @@ On the other hand we see, that the QPO amplitude remained stable during the firs
 Interval    & T$_{start}$,  & Expo,     & f$_{\rm br}$,                     & f$_{\rm QPO}$, & Q$_{\rm m}$,     & A$_{\rm m}$,  & A$_{\rm o}$,      & rms & $\Gamma$ & E$_{\rm cut}$, \\
             &  MJD          &  s        & $\times10^{-2}$, Hz               &  Hz            &   & \%            &  \%               &   \%       &          &  keV             \\
 \hline
-I           & 56742.68      & 3386      & $8.9_{-2.3}^{+2.2}\times10^{-2}$  & $0.30\pm0.01$ & $15_{-3}^{+5}$ & $7.5_{-1.0}^{+0.9}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.459\pm0.005$ & $29.9\pm0.4$ \\
+I           & 56742.68      & 3386      & $8.9_{-2.3}^{+2.2}$  & $0.30\pm0.01$ & $15_{-3}^{+5}$ & $7.5_{-1.0}^{+0.9}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.459\pm0.005$ & $29.9\pm0.4$ \\
 II & 56742.75 & 3388 & $7.8_{-1.8}^{+2.0}$ & $0.31\pm0.01$ & $13\pm3$ & $7.9_{-0.9}^{+1.0}$ & $2.7_{-0.9}^{+0.8}$ & $26\pm1$ & $1.462\pm0.005$ & $30.7\pm0.4$ \\
 III & 56742.82 & 3392 & $8.2_{-1.9}^{+2.4}$ & $0.34\pm0.01$ & $12_{-2}^{+3}$ & $7.7_{-0.8}^{+0.9}$ & $3.9_{-0.8}^{+0.9}$ & $26\pm1$ & $1.464\pm0.005$ & $29.7\pm0.4$ \\
 IV & 56742.88 & 3389 & $8.3_{-1.8}^{+2.0}$ & $0.35\pm0.01$ & $15_{-3}^{+4}$ & $7.6\pm0.9$ & $3.2_{-0.8}^{+0.7}$ & $26\pm1$ & $1.468\pm0.005$ & $29.5_{-0.3}^{+0.4}$ \\
@@ -377,10 +375,10 @@ We found that the QPO amplitude is smaller in the soft band, while amplitude of 
         \label{fig:qpo_ratio}
 \end{figure}
 It follows that the QPO profile, if it's presented \citep[see, e.g.][]{2015MNRAS.446.3516I}, differs in the hard and soft X-ray bands.
-Following \citep{2015MNRAS.446.3516I} we tried to extract QPO profile segregating the coherent part (Fourie signal with concerving phase shift relative to the signal on QPO frequency) between the QPO and it's harmonics, however no significant coherence was presented above the noise level.
-It indicates that the QPO profile was not stable during the observation, in contradition to the result obtained by \citep{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
+Following \citep{2015MNRAS.446.3516I} we tried to extract QPO profile segregating the coherent part (Fourier signal with conserving phase shift relative to the signal on QPO frequency) between the QPO and it's harmonics, however no significant coherence was presented above the noise level.
+It indicates that the QPO profile was not stable during the observation, in contradiction to the result obtained by \citep{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
 
-Since the 2-nd harmonic is quite prominent in the power spectrum and therefore dominant over Poisson noise and broad-band noise we concluded that absence of Fourie signal with converved phase shift indicates on one can conclude that the QPO profile was not stable along the observation. 
+Since the 2-nd harmonic is quite prominent in the power spectrum and therefore dominant over Poisson noise and broad-band noise we concluded that absence of Fourier signal with conserved phase shift indicates on one can conclude that the QPO profile was not stable along the observation. 
 
 In some observation segments QPO subharmonics, centered approximately at the 1/2 of the QPO centroid frequency, is clearly observed in the cross-spectra (see examples on Figure~\ref{fig:subharmonic}, red crosses) (namely I, II, IV, V, VI sets).
 In order to observe QPO profile with better significance we summarized several cospectra, frequency of each cospectrum was scaled in such a way to conserve QPO centroid at 0.3~Hz.
@@ -400,7 +398,7 @@ We can estimate the derivative of the QPO centroid position with time (by approx
 During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect QPO located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx f{\rm QPO}/(\dot{f_{\rm QPO}}\tau) \approx 17$, which is of order of the Q estimations obtained from the observations with \ref{eq:complex_fit} model.
 In order to better estimate the QPO quality factor, we splited each of the 13 intervals in sets of 82~s long time-series. 
 After that, for each of 13 intervals, we fitted obtained power spectra simultaneously with new model in which we assume that QPO frequency linearly growing with time. 
-The model has the same form as \ref{eq:complex_fit} with $f{\rm qpo}$ substituted with $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, where $\dot{f}_{\rm qpo}$ being the free parameter and $t_{i}^{\rm mid}$, $f_{\rm QPO}$ being the middle time of the $i$-th 82~s interval and qpo centroid frequency measured with \ref{eq:complex_fit} model correspondingly.
+The model has the same form as \ref{eq:complex_fit} with $f{\rm qpo}$ substituted with $f_{\rm qpo}' = f_{\rm qpo} + (t - t_{\rm mid})\dot{f}_{\rm qpo}$, where $\dot{f}_{\rm qpo}$ being the free parameter and $t_{i}^{\rm mid}$, $f_{\rm QPO}$ being the middle time of the $i$-th 82~s interval and QPO centroid frequency measured with \ref{eq:complex_fit} model correspondingly.
 Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend ($\approx 2$--$9\times10^{-6}$~Hz~s$^{-1}$), nevertheless the median quality factor, obtained in this model appears to be $\sim14.3$ - i.e. compatible with the previous estimations made with \ref{eq:complex_fit} model (see Table~\ref{tab:timing}). 
 It should be noted that the estimation of the QPO quality factor is restricted with the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate signals used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz (we cant discriminate Q > 25).
 
@@ -412,7 +410,7 @@ Coherence measure the similarity between two signals and can be computed with th
     C(f) = \frac{|<H(f)^*S(f)>|^2 - n^2}{<|H(f)|^2><|S(f)|^2>}
     \label{eq:nowak_coh}
 \end{equation}
-where $H(f)$ and $S(f)$ are Fourier function (corrected for the Poisson noise components) of the time series in hard and soft bands correspondingly, 
+where $H(f)$ and $S(f)$ are Fourier function (corrected for the Poisson noise components) of the observed time series in hard and soft bands correspondingly, 
 $n^2$ - product of the power in uncorrelated components, connected with counting statistic, divided by the number of used series. 
 Coherence should be computed for the number of independent time intervals, therefore we separated each of the available uninterrupted time series on several shorter parts, 82~s long each.  
 
@@ -453,66 +451,37 @@ It is on the nearly constant level of $\approx0.85$ in the $5\times10^{-3}$--0.1
 %Since the loss of the coherence is also observed above 0.3--1.0~Hz frequency for other energy bands, this effect may be connected not with the intrinsic properties of the source, but with the bead-time cross-talk effects which we did not specially consider, except for using light-curves from the different {\it NuSTAR} modules for cross-products.
 
 \subsection{Phase lags}
-        From the definition of the coherence it follows that coherent signals Fourier function on average have constant 
-    
-        In previous section we demonstrated that \grs\ hard and soft are coherent during {\it NuSTAR} observation. 
-From the definition of the coherence it follows that there is a constant phase shift between coherentflux light-curves It was mentioned in previous section that coherence demonstrates linear 
+        From the definition of the coherence (see eq.~\ref{eq:coh_nowak}) it follows that signals have roughly constant phase shifts between their Fourier functions in each frequency bin where they are coherent. 
 As was discussed in the previous section Following \citep{1997ApJ...474L..43V} we estimated phase lag as an angle of mean product of the light curves Fourier harmonics from one energy bands to the conjugated Fourier harmonics of second energy band. 
-We can imagine that each light curve from a sample consist of a stochastic noise and coherent signal $S\exp{-i(\alpha(s, h) + U_{h=s}[-\pi, \pi])} + N\exp{-iU[-\pi, \pi]}$, where S and N amplitudes of coherent signals and noise correspondingly and U - uniform distribution, $U_{h=s}$ stands for random phase shift equal for the signals in hard and soft bands, and $\alpha(s, h)$ - phase shift between soft and hard bands.
-Therefore the product of the Fourier signals from two bands is $S_{s}S_{h}\exp{-i\alpha(s, h) + (S_{s}*N_{h} + S_{h}*N_{s} + N_{h}*N_{s})\exp{-iU[-\pi, \pi]}}$.
-\citep{bachetti17} pointer out that the product of two normally distributed values has probability density function (PDF) of the form of special Bessel function of second kind with zero order. 
-It follows that noise components in the Brackets is a sum of three random numbers with PDF = $K_{0}$, with not equal moments, phase of the coherent part is either well defined or distributed around some particular phase shift.
-%Result of the product of two Fourier harmonics can be represented as a sum of four complex numbers, amplitude of each is distributed with PDF having a form of modified Bessel function, phases of three of these numbers distributed uniformly, and phase of the last one is distributed nonuniformly with mean equal to real phase shift between two coherent signals.
-We can now determine the ``phase axis'' as the axis along the mean complex value of the Sample.
-Distribution of the points relative to the ``phase axis'' obviously should be symmetrical, and along it should be assymetric and shifted towards the mean complex value of the sample.
-If we now rotate all the obtained complex Fourier harmonics in our sample along this axis $\frac{<P_{\rm hs}^{*}>P_{\rm hs}}{|<P_{\rm hs}>|}$, real part of each value is the projection on the ''phase axis'' and imaginary part is projection on the perpendicular axis. 
-We found that the distribution of the projected on the ''phase axis'' values is closely resembles assymetric Laplace distribution and the distribution of the points projected on the perpendicular axis resembles symmetric Laplace distribution. 
-Bearing this in mind we estimate mean value for each of the four distributions (positive real, negative real, positive imaginary and negative imaginary) and assess variances of this distribution.
-Since we accepted that each of these distribution has a PDF close to exponential we take their variance as a variance of $\chi_2^{\rm 2N}$ distribution, where $N$ - is a number of entities in the each sample. 
-After that we accept the error on the phase to be equal $\pi$ if the mean of positive real sample is less than the square root of the sum of the positive and negative real samples variances, otherwise we take it to be equal
 \begin{equation}
-        \Delta \phi = atan{\left(\frac{\sqrt{v_{i-}^2 + v_{i+}^{2}}}{m_{r+} - m_{r-} - \sqrt{v_{r+}^2 + v_{r-}^2}}\right)}
+        \delta \phi(f) = \arctan{Im(<F_{\rm h}^{*}(f) F_{\rm s}^{*}(f)>)/Re(<F_{\rm h}^{*}(f) F_{\rm s}^{*}(f)>)}
 \end{equation}
+For the error estimation we used \citep{2014A&ARv..22...72U} approach, therefore $\Delta\delta\phi = arctan{\Delta\gamma^2/\gamma^2$, where $\gamma^2$ - estimation of the coherence, and $\Delta\gamma^2$ is coherence error estimation.
+It should be noted that this estimation of the error is build on the assumption that each product $<F_{\rm h}^{*}(f) F_{\rm s}^{*}(f)>$ can be represented as a sum of randomly (for uncoherent signals) and particularly oriented (for coherent signals) vectors with constant length on complex plane, while it can be shown that, at least for uncoherent signals, the length of this vectors is also random variable with Laplace distribution \citep{2017arXiv170909666H}.
 
-    Most of the models of the accretion flow which describe variability and energy spectra formation, suggest the time lag between the signals in different energy bands. 
-For example in some models of the energy spectra formation, time lag is naturally arise due to the geometry of the corona and properties of the inverse Comptonization process \citep[see, e.g.][]{kotov01}.
-Phase lag is also suggested from the propagating fluctuations model - hard photons are emitted from the inner parts of the accretion flow from the perturbations, which initially were born in the outer parts of the disk were produce soft emission.  
+We computed the phase lag spectrum with two approaches - tracing QPO centroid frequency and stacking all the observation without characteristic time corrections (see right and left panels of Fig.\ref{fig:phase_lag} correspondingly).
+It appears that in the 0.1--3~Hz frequency band positive (hard) lag is presented, on the frequencies below 0.1~Hz there are indication on the negative (soft) lag.
+Observed phase lag corresponds to the delay times between soft and hard photons $\sim0.1$~s for frequencies above 0.1 Hz and $0.1$--$1$~s for frequencies below 0.1 Hz.
+%The phase lag in the frequency range 0.1--3~Hz can be described with the shifted power law $\propto(f - f_0)^{0.3}$. 
 
-\citep{eijeden17} have found, that the phase lag of XBs, probably depends on the system inclination angle, it also definitely contain information about the characteristic times of the system, and therefore can be proxy to the compact object mass \citep{}. 
-
-Phase lags can be estimated as a product of the mean phase of the set of Fourier spectra and the corresponding frequency:
-\begin{equation}
-                \tau = \frac{\phi(f)}{2\pi f}\\
-\end{equation}
-\begin{equation}
-        \phi(f) = <arccos{\left(\frac{re(<F_{\rm h}^{*}(f)F_{\rm s}(f)>)}{|F_{\rm h}^{*}(f) F_{\rm s}(f)|}\right)}>
-        \label{eq:phase_lag}
-\end{equation}
-here, $F_h(f)$ and $F_s(f)$ are Fourier functions of the light-curves in the hard and soft bands, $\phi(f)$ is the phase lag. 
-
-%Due to the significant fraction of the Poisson noise in each observation we were not able to obtain phase lag for them.
-%We found that phase lag on each frequency is generally conserved along the observation.
-%In order to improve significance we compute phase lag for all 13 time series.
-Phase lag between 3--5 and 8--15~keV energy bands for frequencies from $10^{-2}$~Hz to 10~Hz is presented in Figure~\ref{fig:phase_lag}.
-To measure phase lags we use two approaches, first we estimated with the frequency scaling, as it was described in the previous part, second we estimated phase lag on the raw frequency suggesting that it do not changing with time.
-Surprisingly, both pictures appears to be very similar, it should be noted that some observations suggested that the phase lag changes with the QPO frequency \citep{}
-
-It appears that the phase lags is generally positive (hard lag) on the frequencies 0.1--2~Hz, and also can be described with the shifted power law $\propto(f - f_0)^{0.3}$. 
-Above 2~Hz significance of the phase lags estimation drops due to the Poisson noise.
-In the range 0.03--0.1 Hz there is a week indication on the negative phase lag with the mean value $\approx 0.02\pi$, which corresponds to the time $\approx0.1$~s.
+\citet{2017ApJ...845..143Z} shown that phase lag on the QPO and its second harmonics in GX~339-4 BHC evolves with QPO centroid frequency. 
+It is also was shown by different authors \citep[see, e.g.,][]{2013ApJ...778..136P, 2017ApJ...845..143Z} that some distinct features are usually presented in phase lag spectra on the QPO and its harmonics frequencies, however, our signal to noise ratio, appears to be insufficient to determine the presence of such features in our phase lag spectrum.
+\citep{2017MNRAS.464.2643V} shown that the sign of the phase lag on the type-C QPO centroid frequency depends on a system inclination, however this difference is explicit only when QPO centroid frequency is above $\sim3$~Hz.
 
 
-
-%It Follows from Figure~\ref{fig:phase_lag} that there is soft lag on low frequencies which transforms in to the hard lag on frequencies grater than QPO frequency. 
-
-\begin{figure}
-        \includegraphics[width=\columnwidth]{phase_lags_traced_and_not.pdf}
-        \caption{Phase lag between the hard (3--5~keV) and soft (8--15) energy bands in \grs}
+\begin{figure*}
+        \includegraphics[width=0.99\columnwidth]{phase_lag_untracked.pdf}
+        \includegraphics[width=0.99\columnwidth]{phase_lag_new.pdf}
+        \caption{Phase lag between the soft (3--5~keV) and hard (5--8; 8--15; 15--78~keV) energy bands in \grs. 
+        On the left panel - phase lag spectrum obtained from {\it NuSTAR} observations by stacking all data, on the right panel same spectrum with tracked frequency (frequency for each separate light-curve segment was scaled such a way to conserve QPO centroid at 0.3~Hz).}
         \label{fig:phase_lag}
-\end{figure}
+\end{figure*}
 
 \subsection{\swiftx\, observations}
-We performed search for LF QPOs in first dosen of \swiftx observations of the \grs. QPO is clearly detected in observations 3 to 9, with frequency varying from 0.4 Hz (during simultaneous observation with \nustar, see Fig.~\ref{fig:nust_lc}) up to 5 Hz (see Tab.~\ref{tab:xrtqpo}). Due to typically short exposures of \swiftx\, snapshots (about 1 ks) it is hard to classify QPOs as belonging to type C or B, because low-frequency part of power spectra lacks statistics, yet, except for the first detection (segment 03) power spectra were red-noise like, without strong low-frequency components. We calculated $rms$ for each detected QPO - most of them is higher than 10\%, which is not typical for type C QPO \citep{casella05}.
+We performed search for LF QPOs in first dozen of \swiftx observations of the \grs. 
+QPO is clearly detected in observations 3 to 9, with frequency varying from 0.4 Hz (during simultaneous observation with \nustar, see Fig.~\ref{fig:nust_lc}) up to 5 Hz (see Tab.~\ref{tab:xrtqpo}). 
+Due to typically short exposures of \swiftx\, snapshots (about 1 ks) it is hard to classify QPOs as belonging to type C or B, because low-frequency part of power spectra lacks statistics, yet, except for the first detection (segment 03) power spectra were red-noise like, without strong low-frequency components. 
+We calculated $rms$ for each detected QPO - most of them is higher than 10\%, which is not typical for type C QPO \citep{casella05}.
 
 \begin{table}
 \noindent

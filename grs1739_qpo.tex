@@ -156,7 +156,7 @@ Fortunately, \nustar\ observation triggered by \cite{miller15_nust} were carried
 \subsection{NuSTAR observation}
 \label{sec:nust} 
 
-\nustar\, observed \grs\ for nearly 30 ks of net exposure right after the hard X-ray peak (see Fig.~\ref{fig:batlc}). 
+\nustar\, observed \grs\ for nearly 30 ks of net exposure right after the hard X-ray peak (at $\tau_{0}\approx+18$, see Fig.~\ref{fig:batlc}). 
 Earlier, \cite{miller15_nust} shown that the average spectrum of this observation is well described by reflection models such as {\it relxill} \citep{garcia14, dauser14,dauser16} with accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO), with disk inner edge radius upper estimate being $R_{\rm in} = 5^{+3}_{-4}\, G M/c^{2}$ \citep{miller15_nust}. 
 They also noted, that no additional thermal component was needed in order to describe {\it NuSTAR} energy spectrum probably due to the low disk temperature and high absorption.
 
@@ -539,8 +539,14 @@ It is also was shown by different authors \citep[see, e.g.,][]{2013ApJ...778..13
 
 \subsection{\swiftx\, observations}
 We performed search for LF QPOs in first dozen of \swiftx observations of the \grs. 
-QPO is clearly detected in observations 3 to 9, with frequency varying from 0.4 Hz (during simultaneous observation with \nustar, see Fig.~\ref{fig:nust_lc}) up to 5 Hz (see Tab.~\ref{tab:xrtqpo}).
-We used shape of power spectrum in order to classify QPOs as belonging to type C or B. Except for the first detection (observation 03) power spectra were red-noise like without strong low-frequency components, which is typical for type-B QPOs in soft-intermediate state. Observed frequencies of these QPOs are range from $\sim$2~Hz to 5~Hz, similar to what had been observed in GX~339-4 \citep{motta11}. We calculated $rms$ for each detected QPO - most of them is higher than 10\%, which is not typical for type C QPO \citep{casella05}.
+QPO is clearly detected in observations 3 to 9, with frequency varying from 0.37 Hz (during simultaneous observation with \nustar, see Fig.~\ref{fig:nust_lc}) up to 5.1 Hz (see Tab.~\ref{tab:xrtqpo}).
+
+We used shape of power spectrum in order to classify QPOs as belonging to type C or B \citep{casella05}. Except for the observation 03, there are no strong low-frequency noise components present in power spectra. Observed features are more like red-noise, which is typical for type-B QPOs in soft-intermediate state, although we should note that due to shortness of observations low-frequency parts of power spectra are subject to strong uncertainties.
+
+Observed frequencies of these QPOs ranges from $\sim$2~Hz to 5~Hz, similar to what had been observed in GX~339-4 \citep{motta11}. However, all observations presented here were taken during outburst rise phase, while in \citet{motta11} type-B QPOs with frequencies below 3~Hz were present only in late phases  of outburst.
+In order to reinforce classification we calculated $rms$ for each detected QPO, along with total $rms$ over 0.01--20 Hz band. Obtained $rms_{total}$ are significantly lower for observations 04..09 than for 03. We, therefore, conclude that in observations 04..09 type-B QPOs were observed.
+
+As an additional cross-check we calculated power color PC2, defined in \citet{heil15}, for all observations. Its value is $1.1_{-0.3}^{+0.7}$ for the 03 observation and in range of 0.1--0.2 for all others. This result confirm that the source was in soft-intermediate state during \swiftx\ snapshots 04..09 and observed QPOs belongs to type-B. Therefore, four days after a \nustar\ observation took a place source already had transitioned from HIMS to SIMS. 
 
 \begin{table}
 \noindent
@@ -550,12 +556,12 @@ We used shape of power spectrum in order to classify QPOs as belonging to type C
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline\hline
-Segment & $f_{QPO}$, Hz & QPO $rms$, \% & Tot $rms$, \% & Type\\
+Segment & $f_{QPO}$, Hz & QPO $rms$, \% & Total $rms$, \% & Type\\
 \hline
 03  &  $0.37\pm0.01$            & $9\pm2$       & $28\pm3$        & C\\
 04  &  $2.17\pm0.03$            & $8_{-2}^{+1}$ & $14_{-1}^{+2}$  & B\\
 05  &  $1.67_{-0.04}^{+0.03}$   & $8\pm1$       & $17_{-3}^{+6}$  & B\\ 
-06  &  $5.05\pm0.09$            & $4^{-1}^{+2}$ & $11_{-1}^{+2}$  & B\\
+06  &  $5.05\pm0.09$            & $4_{-1}^{+2}$ & $11_{-1}^{+2}$  & B\\
 07  &  $2.52_{-0.08}^{+0.07}$   & $7_{-2}^{+1}$ & $15_{-2}^{+3}$  & B\\ 
 08  &  $5.10_{-0.14}^{+0.16}$   & $5\pm1$       & $12_{-2}^{+3}$  & B\\
 09  &  $2.17_{-0.04}^{+0.02}$   & $7_{-1}^{+2}$ & $17_{-3}^{+4}$  & B\\
@@ -587,7 +593,8 @@ During several intervals from first half of the observation subharmonic is also 
 %Break frequency of broadband noise is correlated with QPO frequency following the WK relation \citep{wijnands99}. 
 In all 13 intervals second QPO harmonic is more prominent in soft band (3--5 keV), with ratio of its amplitude to that of fundamental QPO being $0.565\pm0.02$ in 3--5 keV band versus $0.275\pm0.02$ in 15--78 keV.  
 We also measured velocity of the QPO drift and found it to be $\approx6.0\times10^{-6}$~Hz~s$^{-1}$. 
-We searched for similar QPO in \swiftx\, observations of \grs\ performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
+%We searched for similar QPO in \swiftx\, observations of \grs\ performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus indicating that the type-C QPO reach saturation on frequencies below few Hz. 
+We searched for similar QPO in \swiftx\, observations of \grs\ performed after \nustar\, exposure and found that all other detected QPOs are probably of type B, thus that the source transitioned to soft-intermediate state few days after \nustar\ observation.
 Coherence measured between adjacent energy ranges in 0.01-1 Hz was found to be nearly unity, while for distant energy bands coherence turned out to be lower. 
 Phase lag found to be of order of $+0.1$~s (hard) in the 0.1--3~Hz frequency range and $-1$..$-0.1$~s (soft) below 0.1~Hz.
 

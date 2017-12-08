@@ -52,7 +52,7 @@ $^{2}$Bauman Moscow State Technical University, Moscow, Russia\\
 \maketitle
 
 \begin{abstract}
-We detected a type-C LF QPO at 0.3--0.7 Hz in \nustar\, and \swiftx\, observations of the black hole candidate \grs\, during the hard-intermediate state of its 2014 outburst. We traced the evolution of spectro-timing properties of the source during \nustar\, observation. 
+We detected a type-C LF QPO at 0.3--0.7 Hz in \nustar\, and \swiftx\, observations of the black hole candidate \grs\, during the hard-intermediate state of its 2014 outburst, and type-B QPO in 1.7--5.2~Hz range during the soft-intermediate state. We traced the evolution of spectro-timing properties of the source during \nustar\, observation. 
 As QPO frequency increases, the source spectrum becomes softer, with increasing power-law index and decreasing cut-off energy.
 
 We performed an extended analysis of rapid X-ray variability in terms of power spectrum, cospectrum, coherence and phase-lags. 
@@ -90,10 +90,10 @@ In some models, particularly in relativistic precession models (RPM), observed f
 
 Recent advances in simulations of the reflected emission \citep{ross05,garcia14}, arising due to the scattering and absorption of the hard photons in the cold accretion disk, led to the possibility to study geometry of the disk.  
 For such a study to be made it is essential to obtain broadband X-ray spectrum with high energy resolution - reflected emission manifest itself by a presence of prominent, wide and asymmetric iron $K_{\alpha}$ fluorescent emission line at 6.4 keV and Compton-hump at 20-30 keV. 
-Now, adding information from X-ray timing one can, in principle, constrain the location of a component, responsible for the variability - which is though to be a corona or a jet base.
+Now, adding information from X-ray timing analysis one can, in principle, constrain the location of a component, responsible for the variability - which is though to be a corona or a jet base.
 This task presents a challenge, that can be solved only by a telescope that posses both possibility to measure a broadband spectrum with good resolution and have a corresponding timing capabilities. 
 \nustar\, \citep{harrison13_nust}, launched in 2013, is the best available instrument for such studies. 
-\xmm and {\it NICER} can be used too, yet they energy range reaching only up to $\sim$12~keV limits their capability to measure hard tails and Compton-hump contribution.
+\xmm and {\it NICER} can be used too, although their energy range reaching only up to $\sim$12~keV limits their capability to measure hard tails and Compton-hump contribution.
 Nevertheless there are some great results obtained with these instruments, e.g. measurement of the Fe K$\alpha$ line profile variation with QPO phase by \citet[][]{ingram16}. 
 
 In this article we report on first detection of type-C QPOs in HIMS of Galactic black-hole candidate \grs\, and present a detailed study of properties of the X-ray variability, along with spectral evolution with \nustar\ and \swiftx.
@@ -170,6 +170,7 @@ The spectrum also altered, with hardness (defined as ratio of countrates  $R_{3-
 
 
 \subsubsection{Continuum evolution}
+\label{sec:continuum_evolution}
 To get better view on the evolution of continuum emission we fitted all individual interval spectra using \texttt{XSPEC} package \citep{arnaud96} with absorbed \texttt{xillver} \citep{garcia13} model (\texttt{const*phabs*xillver}). 
 %We peaked {\it xillver} model over the {\it relxill} for separate intervals analysis due to its simplicity and lesser amount of free parameters, since the total number of counts in each interval is not enough to well restrict parameter space of {\it relxill} model.
 This model describes reflection of incident radiation from ionized slab of matter. 
@@ -184,7 +185,7 @@ Relative iron abundance were fixed at  $A_{Fe} = 1$, ionization parameter at $\x
 Although in  \texttt{xillver} there is no relativistic broadening of Fe K$\alpha$ emission line no significant residuals in 5--8 keV region are seen, mainly because of limited statistics in per interval spectra. 
 Resulting fits are of satisfactory quality with $\chi^{2}_{red.} \approx 1.05$. 
  
-Examination of the best-fit parameters (see Table~\ref{tab:timing} and Fig.\ref{fig:intspe}) confirms that the spectrum softens during the observation and the cut-off energy decreases. 
+Examination of the best-fit parameters (see Fig.\ref{fig:intspe}) confirms that the spectrum softens during the observation and the cut-off energy decreases. 
 %Flux is steadily increasing and at the end of the observation unabsorbed luminosity in 3--60 keV band reaches $7\times10^{37}$~erg~s$^{-1}$ for 8 kpc distance. 
 
 \begin{figure*}
@@ -195,18 +196,19 @@ Examination of the best-fit parameters (see Table~\ref{tab:timing} and Fig.\ref{
 
 
 \subsubsection{Constrains on movement of the inner parts of accretion disk}
+\label{sec:disk_constr}
 Spectra of single intervals have not enough statistics to constrain change of Fe-line profile and, hence, to determine whether the disk inner boundary  is moving during observation. 
 To increase statistics, we split whole observation into three major pieces, with first made by intervals {\bf I-IV}, second by {\bf V-IX} and third by {\bf X-XIII} and extracted 4--78 keV spectra. 
 We chose to group them in order to have at least 100 counts per bin and then we fitted them (excluding data between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using, once again, $N_{H} = 2.15\times10^{22}$ cm$^{-2}$.  
 
 Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. 
-Therefore we can conclude, that there is no drastic change in position of inner disk boundary between parts of observation. 
 Additionally, we estimated the equivalent width of  Fe K$\alpha$ emission line in this three parts - we approximated 4--78~keV spectra with 10--30~keV range being ignored (to neglect the Compton-hump contribution) with model consisting of absorbed cut-off powerlaw and gaussian. 
 Equivalent width of the gaussian component is around 0.175 keV and remains constant along the observation within error margins, although it is possible that the quality of data is not enough to trace the real change.
+Therefore we can conclude, that there is no drastic change in position of inner disk boundary between parts of observation. 
 
 \begin{figure}
 \centerline{\includegraphics[width=\linewidth]{intspe_v04.eps}}
-\caption{Parameters of continuum emission in intervals. From upper to lower: \texttt{xillver} powerlaw slope, cutoff energy,  flux in 3--60 keV band $\times$\, erg s$^{-1}$ cm$^{-2}$ and Fe-line equivalent width.} 
+\caption{Parameters of continuum emission in intervals. From upper to lower: \texttt{xillver} powerlaw slope, cutoff energy and  flux in 3--60 keV band $\times$\, erg s$^{-1}$ cm$^{-2}$ (see sec.\ref{sec:continuum_evolution}). On the botom panel we present Fe $K\alpha$ line equivalent width obtained with \texttt{phaabs\times (cutoffpl + gauss)} model (see sec.\ref{sec:disk_constr}).} 
 \label{fig:intspe}
 \end{figure}  
 
@@ -217,7 +219,7 @@ Equivalent width of the gaussian component is around 0.175 keV and remains const
 \end{figure}  
 
             
-\subsubsection{Average spectrum analysis}
+\subsubsection{Broadband average spectrum}
 \label{sec:spec}            
 There is a 1.3 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides with \nustar\, observation. 
 Extension of an energy range to 0.8--78 keV allows one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (such as were found in other BHCs, see \cite[][ e.t.c]{miller06b,miller06a,parker15}).
@@ -333,18 +335,43 @@ The continuous intervals have duration about 3~ks, see Table~\ref{tab:timing}.
 Since {\it NuSTAR} detectors operate in the photon counting mode, data can be reduced to the lightcurve with time resolution up to 2$\mu$s.
 For our analysis we extracted lightcurves with 0.01~s temporal resolution in a few energy bands (3--78, 3--5, 5--8, 8--15, 15--78~keV), which allows us to examine $\sim3\times10^{-3}$--$50$~Hz frequency range.
 As it was mentioned above, this is a frequency band which usually contains low frequency QPOs and a broad band noise \citep{wijnands99}.
+%We examined power spectrum of 3--78~keV lightcurve in each interval of {\it NuSTAR} observation and found these typical components are present.
+We produced power spectrum for each interval of {\it NuSTAR} observation using 3--78~keV lightcurves.
+All power spectra have a form of a plateau ($P(f)\propto const$) on the low frequencies, transforming at the frequency $\approx0.1$~Hz in to the power law with the slope $\rho\approx-1.6$..$-2.0$ and to the Poisson noise plateau at the frequencies above few Hz. 
+Also a prominent QPO at the frequencies 0.3--0.7~Hz and its second harmonic are present. 
+%There is also signs that the Power spectrum on the frequencies below $\approx0.003$~Hz has a form of growing power law $P(f)\propto f^{\alpha}$, $\alpha > 0.3$.
+Typical power spectrum (with subtracted Poisson noise, see text below) of a single interval is shown in Fig.~\ref{fig:qpo}.
+%From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
 
-{\it NuSTAR} detectors are subject to non-paralyzing dead time with characteristic timescale $\tau \approx 2.5$~ms \citep{2015ApJ...800..109B}, in our case effects from dead-time already can be observed in power spectrum at frequencies above 20~Hz.
-\citet{2015ApJ...800..109B} noted that {\it NuSTAR} dead-time has a complex dependence on the energy of registered photons, and therefore it is hard to create analytical model for resulting power spectra. 
-They proposed to use the real part of the cross product of Fourier function of light-curves obtained from two {\it NuSTAR} detectors for the estimation of the power spectrum 
+
+In order to quantatively characterize properties of broad band noise and QPOs we approximate each obtained power spectra with the following analytical function:
+\begin{equation}
+        \begin{aligned}
+                P(f)  = & n (1 + (f/f_{\rm lb})^4)^{\alpha} + \\
+                     &\frac{s_1}{(f - f_{\rm QPO})^2 + (f_{\rm QPO}/Q_{\rm m})^2} +\\
+                        & \frac{s_2}{(f - 2f_{QPO})^2 + (2f_{\rm QPO}/Q_{\rm m})^2} + \\
+                        & P_{\rm poiss}
+\end{aligned}
+        \label{eq:complex_fit}
+\end{equation}
+Where $f_{\rm lb}$ - broad noise break frequency, $f_{\rm QPO}$ and $Q_{\rm m}$ - centroid of the QPO and its quality correspondingly and $P_{\rm poiss}$ - represents mean power of the variations caused by the counting statistics and dumped by the dead-time.
+In this function first component represents plateau with the break, second two components describe QPO main harmonics and its overtone, last component represents Poisson noise.
+We take that the quality of the QPO second harmonic is equal to the QPO peak quality.
+Further in the text will mention this models as standard.
+
+In order to properly determine all parameters one have to know the shape and normalization of Possion noise component, which depend on countrate and dead time and in principle can be described with analytical funtions \citep[see, e.g.,][]{1994A&A...287...73V, 1995ApJ...449..930Z}.
+{\it NuSTAR} detectors are subject to non-paralyzing dead time with characteristic timescale $\tau \approx 2.5$~ms \citep{2015ApJ...800..109B}, in our case effects from dead-time already can be observed in power spectra at frequencies above 20~Hz.
+\citet{2015ApJ...800..109B} noted that {\it NuSTAR} dead-time has a complex dependence on the energy of registered photons, and therefore it is hard to create analytical model for the power spectrum of Poisson noise. 
+To avoid this problem they proposed to use cross-spectrum (or shortly cospectrum) for analysis of {\it NuSTAR} data instead of power spectrum. 
+They determine cospectrum as a real part of the cross product of Fourier function of light-curves obtained from two {\it NuSTAR} detectors 
 \begin{equation}
         P(F) \approx <re(F_{\rm FPMA}^{*}(f)F_{\rm FPMB}(F))>
 \end{equation}
-where $P(f)$ is power spectrum, $F_{\rm FPMA[B]}$ - Fourier function of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
+where $P(f)$ {\bf is the estimation of the studied source intrinsic variability power spectrum}, $F_{\rm FPMA[B]}$ - Fourier function of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
 This method is based on the following assumption: signals produced by an observed source on two detectors are identical and have no time lag and therefore their Fourier functions are also identical and have zero phase shift, in contrast, signals independent for two detectors (like counting statistics) have random phase shifts.  
-It follows that for independent signals the average real part of the cross spectrum tends to zero due to the random phase shift .
+It follows that for independent signals the average real part of the cross product tends to zero due to the random phase shift, i.e. Poisson noise is eliminated.
 
-\citet{2017arXiv170909666H} shown that the cross-spectrum (or shortly cospectum) in each frequency bin is distributed with Laplace probability density function (PDF) if it is derived from two normally distributed random independent series \citep[see, e.q. 14 in ][]{2017arXiv170909666H}:
+\citet{2017arXiv170909666H} shown that the cospectrum value in each frequency bin is distributed with Laplace probability density function (PDF) if it is derived from two normally distributed random independent series \citep[see, e.q. 14 in ][]{2017arXiv170909666H}:
 \begin{equation}
         p(C_{j}|0, \sigma_x \sigma_y) = \frac{1}{\sigma_x \sigma_y} exp{\left(\frac{-|C_{j}|}{\sigma_x \sigma_y} \right)}
 \end{equation}
@@ -356,39 +383,11 @@ Taking all this arguments into consideration we decided to use standard power sp
 
 Since we used relatively large time bining (10 ms) to extract lightcurves from {\it NuSTAR} data and also usually considered variability at frequencies below 10~Hz, we assumed that the only effect from the dead-time is lowering of the constant Poisson noise level on some $(1 - 2\nu \tau_{\rm d})$ factor, where $\nu$ is total count rate for detector and $\tau_{\rm d}$ is a dead time \citep{1994A&A...287...73V, 1995ApJ...449..930Z}. 
 Since the dead-time is not constant along energy, we measured modified Poisson level for each extracted data-set separately.
-%To simplify our analysis we decide to use standard 
-%We therefore decided to use power spectrum for the intrinsic variability estimation.
-%To simplify our analysis we inspect power spectrum only on frequencies below 10~Hz.
 
-%%!!!!
-
-Power spectrum of each of separate interval of {\it NuSTAR} observations has a form of a plateau ($P(f)\propto const$) on the low frequencies, transforming at the frequency $\approx0.1$~Hz in to the power law with the slope $\rho\approx-1.6$..$-2.0$ and to the Poisson noise plateau at the frequencies above few Hz. 
-Also a prominent QPO at the frequencies 0.3--0.7~Hz and its second harmonic are present. 
-Typical power spectrum (with subtracted Poisson noise) of a single interval is shown in Fig.~\ref{fig:qpo}.
-
-From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
-
-For the light-curves extracted in 3--78~keV energy range Poisson noise dominates intrinsic source variability on the frequencies over $\approx1$~Hz, preventing analysis of any high-frequency features.
-There is also signs that the Power spectrum on the frequencies below $\approx0.003$~Hz has a form of growing power law $P(f)\propto f^{\alpha}$, $\alpha > 0.3$.
+%For the light-curves extracted in 3--78~keV energy range Poisson noise dominates intrinsic source variability on the frequencies over $\approx1$~Hz, preventing analysis of any high-frequency features.
 We did not try to find any high frequency QPOs, since the typical HF QPO (centroid frequency 100-400~Hz, amplitude $\approx10$\% and quality $Q\approx2$--$10$) is indiscernible over the Poisson noise with the obtained count-rate and duration of the observation.
+""more text here :""
 
-
-%To track the source variability evolution we fitting relatively short observations with duration of 2--3~ks, and therefore can not split them on more than few dozens parts in order to have an eye on the power spectrum break feature on the 0.1~Hz frequency. 
-
-In order to assess properties of \grs\ intrinsic variability we approximate each obtained power spectra with the following analytical function:
-\begin{equation}
-        \begin{aligned}
-                P(f)  = & n (1 + (f/f_{\rm lb})^4)^{\alpha} + \\
-                     &\frac{s_1}{(f - f_{\rm QPO})^2 + (f_{\rm QPO}/Q_{\rm m})^2} +\\
-                        & \frac{s_2}{(f - 2f_{QPO})^2 + (2f_{\rm QPO}/Q_{\rm m})^2} + \\
-                        & poiss
-\end{aligned}
-        \label{eq:complex_fit}
-\end{equation}
-Where $f_{\rm lb}$ - broad noise break frequency, $f_{\rm QPO}$ and $Q_{\rm m}$ - centroid of the QPO and its quality correspondingly and poiss - represents mean power of the variations caused by the counting statistics and dumped by the dead-time.
-In this function first component represents plateau with the break, second two components describe QPO main harmonics and its overtone, last component represents constant Poisson noise.
-We take that the quality of the QPO second harmonic is equal to the QPO peak quality.
-Further in the text will mention this models as standard.
 
 \begin{figure}
         \includegraphics[width=\columnwidth]{qpo_centroid_evolution.pdf}
@@ -397,7 +396,7 @@ Further in the text will mention this models as standard.
 \end{figure}
 
 
-We found that the QPO frequency had clearly evolved with time see Table~\ref{tab:timing} and Figure~\ref{fig:qpo}.
+We found that the QPO frequency evolves with time see Table~\ref{tab:timing} and Figure~\ref{fig:qpo}.
 The QPO frequency correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep[see, e.g.,][]{vignarca03,2003A&A...407.1039P}.
 On the other hand we see, that the QPO amplitude remained stable during the first half of the observation, and started to grow in the second part.
 
@@ -428,7 +427,7 @@ XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}$ & $0.67\pm0.01$ & $15\pm3$ & $9.6\p
 \hline
 \end{tabular}
 \begin{flushleft}
-        In Table $f_{\rm br}$ is broad band noise break frequency, $f_{\rm QPO}$ is QPO centroid frequency, $Q_{\rm m}$ is QPO main harmonic quality (ratio of its centroid frequency to its width), $A_{\rm m}$ - total power in the QPO main harmonic in \% of mean countrate, $A_{\rm m}$ is total power in the QPO second harmonic in \% of mean countrate, rms - total amplitude of variations in the \% of mean countrate, $\Gamma$ - powerlaw photon index, $E_{\rm cut}$ - powerlaw cutoff energy.
+        In Table $f_{\rm br}$ is broad band noise break frequency, $f_{\rm QPO}$ is QPO centroid frequency, $Q_{\rm m}$ is QPO main harmonic quality (ratio of its centroid frequency to its width), $A_{\rm m}$ - total power in the QPO main harmonic in \% of mean countrate, $A_{\rm m}$ is total power in the QPO second harmonic in \% of mean countrate, rms - total amplitude of variations in the \% of mean countrate, $\Gamma$ - powerlaw photon index, $E_{\rm cut}$ - powerlaw cutoff energy. Parameters $\Gamma$ and $E_{\rm cut}$ were obtained from spectra of individual intervals with {\it xillver} model (see sec.\ref{sec:continuum_evolution}).
 \end{flushleft}
 \end{table*}
 
@@ -437,6 +436,7 @@ XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}$ & $0.67\pm0.01$ & $15\pm3$ & $9.6\p
 %However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius was $R_{\rm in}<9 GM/c^2$ during the observation.
 %This estimation is primarily based on the profile of the relativistically widened neutral Iron fluorescent line, see section~\ref{sec:spec} and also \citet{miller15_nust}.
 
+We also inspect power spectra in soft (3--5~keV) and hard (15--78~keV) energy bands.
 We found that the QPO amplitude is smaller in the soft band, while amplitude of its harmonic is bigger.
 The ratio of the power in the QPO and its harmonic for hard and soft energy bands is presented in Fig.~\ref{fig:qpo_ratio}.
 \begin{figure}
@@ -444,10 +444,9 @@ The ratio of the power in the QPO and its harmonic for hard and soft energy band
         \caption{Ratio of the total power in the QPO and its second harmonic measured for the lightcurves obtained in 3--5~keV and 15--78~keV energy bands.}
         \label{fig:qpo_ratio}
 \end{figure}
-It follows that the QPO profile, if it is present \citep[see, e.g.][]{2015MNRAS.446.3516I}, differs in the hard and soft X-ray bands.
-Following \citep{2015MNRAS.446.3516I} we tried to extract QPO profile segregating the coherent part (Fourier signal with conserving phase shift relative to the signal on QPO frequency) between the QPO and its harmonics, however no significant coherence was present above the noise level.
-It indicates that the QPO profile was not stable during the observation, in contradiction to the result obtained by \citet{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
-
+It follows that the QPO profile in time domain, such as was found by \citet{2015MNRAS.446.3516I} in GRS~1915+105, differs in the hard and soft X-ray bands.
+Following \citet{2015MNRAS.446.3516I} we tried to extract QPO profile by segregating the coherent part (Fourier signal with conserving phase shift relative to the signal on QPO frequency) between the QPO and its harmonics, however no significant coherence was detected above the noise level.
+It indicates that the QPO profile was not stable during the observation, in contrast with the result obtained by \citet{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
 
 In some intervals QPO subharmonics, centered approximately at 1/2 of the QPO centroid frequency, is clearly observed in the cospectra (see examples on Fig.~\ref{fig:cospec_tracked}, red crosses) (namely I, II, IV, V, VI sets).
 In order to observe QPO with better significance we stacked several cospectra, frequency of each cospectrum was scaled in such a way to conserve QPO centroid at 0.3~Hz.
@@ -471,27 +470,29 @@ The model has the same form as standard with $f_{\rm QPO}$ substituted with $f_{
 Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend ($\approx 2$--$9\times10^{-6}$~Hz~s$^{-1}$), nevertheless the median quality factor, obtained in this model appears to be $\sim14.3$ - i.e. compatible with the previous estimations made with standard model (see Table~\ref{tab:timing}). 
 It should be noted that the estimation of the QPO quality factor is restricted by the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate series used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz (we can not discriminate Q > 25).
 
+From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
+
 \subsection{Coherence}
 
-\citet{1997ApJ...474L..43V} suggested to use coherence between different energy bands in order to obtain additional information from the source variability. 
+\citet{1997ApJ...474L..43V}(hereafter V97) suggested to use coherence between different energy bands in order to obtain additional information from the source variability. 
 Coherence measure the similarity between two signals and can be computed with the following expression:
 \begin{equation}
         C(f) = \frac{|<F_{\rm s}(f)^*F_{\rm h}(f)>|^2 - n^2}{<|F_{\rm s}(f)|^2><|F_{\rm h}(f)|^2>}
     \label{eq:nowak_coh}
 \end{equation}
 where $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are Fourier function (corrected for the Poisson noise components) of the observed time series in hard and soft bands, correspondingly, 
-$n^2$ - product of the power in uncorrelated components, connected with counting statistic, divided by the number of used series \citep{1997ApJ...474L..43V}. 
+$n^2$ - product of the power in uncorrelated components, connected with counting statistic, divided by the number of used series (V97). 
 Coherence should be computed for the number of independent time series, therefore we separated each of the available uninterrupted time intervals on several shorter parts, 82~s long each.  
 
-Coherence is very similar to cospectrum, but instead of tracking signals with zero phase shifts, it tracks all signals with arbitrary conserved phase shift - i.e. Fourier harmonics of the signals may delay each other but be coherent (which means that Fourier functions $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are related by linear transformation \citep{1997ApJ...474L..43V}).
+Coherence is very similar to cospectrum, but instead of tracking signals with zero phase shifts, it tracks all signals with arbitrary conserved phase shift - i.e. Fourier harmonics of the signals may delay each other but be coherent (which means that Fourier functions $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are related by linear transformation V97).
 %It should be noted that from this definition of coherence it follows that coherent signals (with unity coherence along all Fourier frequencies) may not be similar in time domain. 
 
 Different models of the XBs variability generation suggest that the signals in two energy bands can be partially independent, while the shape of the power spectra is conserved.
 It appears that in many sources coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, wijnands99}, however there also were indications on complex picture of the coherence in particular state of some systems \citep{2003ApJ...584L..23J}, or drop in coherence between particular energy bands \citep[e.g. in GX 339--4][]{1997ApJ...474L..43V}.
-See also discussion in the \citet{1997ApJ...474L..43V} for the theoretical prediction on the coherence for different models.
+See also discussion in the V97 for the theoretical prediction on the coherence for different models.
 
 
-Following \citet{1997ApJ...474L..43V}, we estimated coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
+Following V97, we estimated coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
 Since for the timing analysis we use {\it NuSTAR} data, covering 3--78~keV energy band, we adopted following energy bands for our analysis: 3--5~keV, 5--8~keV, 8--15~keV and 15--78~keV.
 This partition of the {\it NuSTAR} energy band pursues the following idea: the energy spectrum of \grs\ can be described with the two major components - powerlaw continuum and reflection features i.e. fluorescent Fe K$\alpha$ line and Compton hump.
 %we can expect that each of the chosen energy bands is dominated by the processes with slightly different origin. 
@@ -501,14 +502,14 @@ Compton hump, another reflection features, is confined in 15--78~kev energy band
 %that the hard powerlaw corona emission to be dominant, while in the 15--78~keV Compton hump is present.
 %The Fe K$\alpha$ line has equivalent width approximately 0.2~keV, therefore producing only 5\% of the flux in the 5--8~keV and must be anchored to some source of the hard photons depending on the system geometry, e.g. in the lamp post geometry it should be coherent with the hard powerlaw emission. 
 
-Since the {\it NuSTAR} detectors have complex dead-time depending on energy \citep[see ][for a details on how this affects power spectra]{2015ApJ...800..109B}, coherence computed from one detector is subject to the dead-time crosstalk effects (which should make random processes more coherent).
-In order to eliminate this effects, following the recipe suggested in \cite{2015ApJ...800..109B} for cospectrum estimation, for the numerator in Eq.~\ref{eq:nowak_coh} we used cross-products of the light-curves Fourier functions obtained from the different modules - e.g. correlations of the light-curve obtained in the soft band on the FPMA module with the light-curve in the hard band obtained on the FPMB module and vice versa.
-In the obtained cross-product dead-time cross-talk effects are significantly dumped.
-We also used cospectrum obtained for each energy band as the estimation for the denominator in the Eq.~\ref{eq:nowak_coh}.
-The $n^2$ component was computed as it is suggested by \citet{1997ApJ...474L..43V}, however for the Poisson noise components power estimation we used mean value of the power spectra in the 5--15~Hz range, assuming that Poisson noise dominating intrinsic source variability and is constant along frequencies. 
+As it was mentioned above the {\it NuSTAR} detectors have complex dead-time depending on energy, coherence computed from one detector is subject to the dead-time crosstalk effects (which should make random processes more coherent).
+In order to eliminate this effects in coherence estimation, following the recipe suggested in \cite{2015ApJ...800..109B} for cospectrum, for the numerator in Eq.~\ref{eq:nowak_coh} we used cross-products of the Fourier functions of lightcurves obtained from the different modules - e.g. correlations of the lightcurve obtained in the soft band on the FPMA module with the lightcurve in the hard band obtained on the FPMB module and vice versa.
+In the obtained cross-product effects of dead-time crosstalk are significantly dumped.
+We also used cospectrum obtained for each energy band as the estimation for the denominator in Eq.~\ref{eq:nowak_coh}.
+The $n^2$ component was computed as it is suggested by V97, however for the Poisson noise components power estimation we used mean value of the power spectra in the 5--15~Hz range, assuming that Poisson noise dominating intrinsic source variability and is constant along frequencies. 
 
 \citet{wijnands99} shown that primary features of the power spectrum of the XBs in low-hard and high intermediate states are evolving simultaneously, i.e. flat top broad band noise break frequency and QPO centroid frequency are connected with the relation $f_{\rm b} \approx 0.3 f_{\rm QPO}$.
-Bearing in mind aforementioned property of the power spectrum, despite observed scatter in the $f_{\rm b}/f{\rm QPO}$ in our data, in order to improve significance of the coherence measurements we stacked all 13 separate intervals of the observation, scaling their frequencies to preserve QPO position. 
+Bearing in mind aforementioned property of the power spectrum and small scatter in the $f_{\rm b}/f_{\rm QPO}$ in our data, to improve significance of the coherence measurements, we stacked all 13 separate intervals of the observation, scaling their frequencies to preserve QPO position. 
 We assumed that the coherence in each tracked frequency channel is preserved along the observation. 
 
 \begin{figure}

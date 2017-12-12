@@ -485,7 +485,6 @@ $n^2$ - product of the power in uncorrelated components, connected with counting
 Coherence should be computed for the number of independent time series, therefore we separated each of the available uninterrupted time intervals on several shorter parts, 82~s long each.  
 
 Coherence is very similar to cospectrum, but instead of tracking signals with zero phase shifts, it tracks all signals with arbitrary conserved phase shift - i.e. Fourier harmonics of the signals may delay each other but be coherent (which means that Fourier functions $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are related by linear transformation V97).
-%It should be noted that from this definition of coherence it follows that coherent signals (with unity coherence along all Fourier frequencies) may not be similar in time domain. 
 
 Different models of the XBs variability generation suggest that the signals in two energy bands can be partially independent, while the shape of the power spectra is conserved.
 It appears that in many sources coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, wijnands99}, however there also were indications on complex picture of the coherence in particular state of some systems \citep{2003ApJ...584L..23J}, or drop in coherence between particular energy bands \citep[e.g. in GX 339--4][]{1997ApJ...474L..43V}.
@@ -495,12 +494,9 @@ See also discussion in the V97 for the theoretical prediction on the coherence f
 Following V97, we estimated coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
 Since for the timing analysis we use {\it NuSTAR} data, covering 3--78~keV energy band, we adopted following energy bands for our analysis: 3--5~keV, 5--8~keV, 8--15~keV and 15--78~keV.
 This partition of the {\it NuSTAR} energy band pursues the following idea: the energy spectrum of \grs\ can be described with the two major components - powerlaw continuum and reflection features i.e. fluorescent Fe K$\alpha$ line and Compton hump.
-%we can expect that each of the chosen energy bands is dominated by the processes with slightly different origin. 
-In 8--15~keV energy band we expect only the power law component to be present.
 In 5--8~kev band there is a contribution of the prominent Fe K$\alpha$ line, given the equivalent width 0.2~keV it provides about 5\% of flux.
+In 8--15~keV energy band we expect only the power law component to be present.
 Compton hump, another reflection features, is confined in 15--78~kev energy band. 
-%that the hard powerlaw corona emission to be dominant, while in the 15--78~keV Compton hump is present.
-%The Fe K$\alpha$ line has equivalent width approximately 0.2~keV, therefore producing only 5\% of the flux in the 5--8~keV and must be anchored to some source of the hard photons depending on the system geometry, e.g. in the lamp post geometry it should be coherent with the hard powerlaw emission. 
 
 As it was mentioned above the {\it NuSTAR} detectors have complex dead-time depending on energy, coherence computed from one detector is subject to the dead-time crosstalk effects (which should make random processes more coherent).
 In order to eliminate this effects in coherence estimation, following the recipe suggested in \cite{2015ApJ...800..109B} for cospectrum, for the numerator in Eq.~\ref{eq:nowak_coh} we used cross-products of the Fourier functions of lightcurves obtained from the different modules - e.g. correlations of the lightcurve obtained in the soft band on the FPMA module with the lightcurve in the hard band obtained on the FPMB module and vice versa.
@@ -522,7 +518,6 @@ We assumed that the coherence in each tracked frequency channel is preserved alo
 The coherence between hard and soft energy bands at frequencies up to $\sim3$~Hz is presented in Fig.~\ref{fig:coherence}. 
 We found that coherence in the adjacent energy bands is close to unity, with mean values in 0.01--1~Hz frequency band being $1.0\pm0.05$, however for the 3--5 and 15--78~keV energy bands the coherence is significantly lower, see Fig.~\ref{fig:coherence}. 
 It is on the nearly constant level of $\approx0.85$ in the $5\times10^{-3}$--0.1~Hz frequency band and drops down above this frequency.
-%Since the loss of the coherence is also observed above 0.3--1.0~Hz frequency for other energy bands, this effect may be connected not with the intrinsic properties of the source, but with the bead-time cross-talk effects which we did not specially consider, except for using light-curves from the different {\it NuSTAR} modules for cross-products.
 
 \begin{figure*}
         \includegraphics[width=0.99\columnwidth]{phase_lag_untracked.pdf}
@@ -570,7 +565,6 @@ Observed phase lag corresponds to the delay times between soft and hard photons 
 
 \citet{2017ApJ...845..143Z} shown that the phase lag at the QPO frequency and its second harmonic in GX~339-4 BHC evolves with this frequency. 
 It is also was shown by different authors \citep[see, e.g.,][]{2013ApJ...778..136P, 2017ApJ...845..143Z} that some distinct features are usually present in phase lag spectra on the QPO and its harmonics frequencies, however, our signal to noise ratio appears to be insufficient to determine the presence of such features.
-\citet{2017MNRAS.464.2643V} shown that the sign of the phase lag on the type-C QPO centroid frequency depends on a system inclination, however this difference is explicit only when QPO centroid frequency is above $\sim3$~Hz.
 
 
 
@@ -579,15 +573,16 @@ We performed search for LF QPOs in first dozen of \swiftx\ observations of the \
 QPO is clearly detected in observations 3 to 9, with frequency varying from 0.37 Hz (during simultaneous observation with \nustar, see Fig.~\ref{fig:nust_lc}) up to 5.1 Hz (see Tab.~\ref{tab:xrtqpo}). Last detection of QPO happened right before the onset of a strong flaring, at $\tau_{0}+46.6$. 
 
 We used the shape of power spectra in order to classify QPOs as belonging to type C or B \citep{casella05}. 
-Except for the observation 03, there are no strong low-frequency noise components present in power spectra. 
-Observed features are more like red-noise, which is typical for type-B QPOs, although we should note that due to shortness of observations low-frequency parts of power spectra are subject to strong uncertainties. 
+In all observations except for the observation 03, low frequency parts of power spectra can be described with weak red noise, which typically accompanies type-B QPOs.
 In order to reinforce classification we calculated $rms$ for each detected QPO, along with total $rms$ over 0.01--20 Hz band. 
 Obtained $rms_{total}$ are significantly lower for observations 04..09 than for 03. 
 We, therefore, conclude that in observations 04..09 type-B QPOs were observed with frequencies ranging from $\sim$2~Hz to 5~Hz.
-It follows, that four days after the \nustar\ observation took place, the source already had transitioned from HIMS to SIMS and resided in this state during all \swiftx\ observations.
+It follows, that four days after the \nustar\ observation, the source already had transitioned from HIMS to SIMS and resided in this state until 09 \swifrx\ observation. 
+%during all \swiftx\ observations.
 
 
 \section{Discussion and conclusions}
+We had studied {\it NuSTAR} observation carried out during the transition between soft and hard state. 
 We had studied the spectro-timing evolution of \grs\, during its hard-intermediate state.  
 We found a prominent type-C LF QPO in its power spectrum, its frequency show clear correlation with parameters of continuum emission. 
 As the QPO frequency increases from 0.3 to 0.7 Hz spectrum became softer: the power law index grows from 1.46 to 1.53 and cut-off energy decreases from 30 to 26 keV. 
@@ -618,6 +613,7 @@ Coherence measured between adjacent energy ranges in 0.01-1 Hz was found to be n
 In the frame of the propagating fluctuations model it can indicate on the presence of partially independent radial flows.
 
 Phase lag found to be of order of $+0.1$~s (hard) in the 0.1--3~Hz frequency range and $-1$..$-0.1$~s (soft) below 0.1~Hz.
+\citet{2017MNRAS.464.2643V} shown that the sign of the phase lag on the type-C QPO centroid frequency depends on a system inclination, however this difference is explicit only when QPO centroid frequency is above $\sim3$~Hz.
 
 
 \section*{Acknowledgments}

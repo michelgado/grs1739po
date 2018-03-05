@@ -476,39 +476,57 @@ From the shape of the energy and Fourier spectrum we concluded that the system i
 
 \subsection{Coherence}
 
-\citet{1997ApJ...474L..43V}(hereafter V97) suggested to use the coherence between different energy bands in order to obtain additional information from the source variability. 
+\defcitealias{1997ApJ...474L..43V}{VN97}
+\citet{1997ApJ...474L..43V}(hereafter \citetalias{1997ApJ...474L..43V}) suggested to use the coherence between different energy bands in order to obtain additional information from the source variability. 
 The coherence measure the similarity between two signals and can be computed with the following expression:
 \begin{equation}
         C(f) = \frac{|<F_{\rm s}(f)^*F_{\rm h}(f)>|^2 - n^2}{P_{\rm s}(f) P_{\rm h}(f)}
     \label{eq:nowak_coh}
 \end{equation}
 where $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are Fourier function of the observed time series in hard and soft bands, correspondingly, $P_{\rm s}(f)$ and $P_{\rm h}(f)$ is estimation of their power density spectra (derived, for example, with the Equation~\ref{eq: ps_estimation}),  
-$n^2$ - product of the power in the uncorrelated noise components divided by the number of used series (which mostyly determined by Poisson statistics noise, see V97). 
+$n^2$ - product of the power in the uncorrelated noise components divided by the number of used series (which mostly determined by Poisson statistics noise, see \citetalias{1997ApJ...474L..43V}). 
 Since the coherence is estimated as a mean product of the Fourier functions it should be computed for the number of independent time series, therefore we separated each of the available uninterrupted time intervals on several shorter parts, 82~s long each.  
 
-%The coherence is very similar to the cospectrum, but instead of the tracking signals with zero phase shifts, it tracks all signals with arbitrary conserved phase shift, i.e. Fourier harmonics of the signals may delay each other but to be coherent (which means that Fourier functions $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are related by a linear transformation V97).
+%The coherence is very similar to the cospectrum, but instead of the tracking signals with zero phase shifts, it tracks all signals with arbitrary conserved phase shift, i.e. Fourier harmonics of the signals may delay each other but to be coherent (which means that Fourier functions $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are related by a linear transformation \citetalias{1997ApJ...474L..43V}).
 
 Different models of the XRBs variability generation suggest that signals in two energy bands can be partially independent, while the shape of the power spectra is conserved.
 It appears that in many sources the coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, wijnands99}, however there were also indications  on complex picture of the coherence in particular state of some systems \citep[dip in the coherence at 0.03~Hz frequency, observed in GRS1915+105, ][]{2003ApJ...584L..23J}, \citep[decreasing of the coherence between particular energy bandse in GX 339--4, ][]{1997ApJ...474L..43V}.
-See also discussion in the V97 for the theoretical prediction on the coherence for different models.
+See also discussion in the \citetalias{1997ApJ...474L..43V} for the theoretical prediction on the coherence for different models.
 
 
-Following V97, we estimated the coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
+Following \citetalias{1997ApJ...474L..43V}, we estimated the coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
 Since we use {\it NuSTAR} data (covering 3--79~keV energy band) we adopted following energy bands for our analysis: 3--5~keV, 5--8~keV, 8--15~keV and 15--78~keV.
 This partition of the {\it NuSTAR} energy band pursues the following idea: the energy spectrum of \grs\ can be described with two major components - powerlaw continuum and reflection features i.e. the fluorescent Fe K$\alpha$ line and the Compton hump.
 In the 5--8~kev band there is a contribution of the prominent Fe K$\alpha$ line, with the equivalent width of 0.2~keV it provides about 5\% of the flux in this band.
 In the 8--15~keV energy band we expect only the power law component to be present.
 Compton hump, another reflection feature, is confined in the 15--78~kev energy band. 
 
-As it was mentioned above the {\it NuSTAR} detectors have a complex dead-time depending on the energy, the coherence computed from one detector is subject to the dead-time cross-talk effects (which should make random processes more coherent).
-In order to eliminate this effects in coherence estimation, following the recipe suggested in \cite{2015ApJ...800..109B} for cospectrum, for the numerator in Eq.~\ref{eq:nowak_coh} we used cross-products of the Fourier functions of lightcurves obtained from the different modules - e.g. correlations of the lightcurve obtained in the soft band on the FPMA module with the lightcurve in the hard band obtained on the FPMB module and vice versa.
-In the obtained cross-product effects of dead-time crosstalk are significantly dumped.
-We also used cospectrum obtained for each energy band as the estimation for the denominator in Eq.~\ref{eq:nowak_coh}.
-The $n^2$ component was computed as it is suggested by V97, however for the Poisson noise components power estimation we used mean value of the power spectra in the 5--15~Hz range, assuming that Poisson noise dominating intrinsic source variability and is constant along frequencies. 
+As it was mentioned above the {\it NuSTAR} detectors have a complex dead-time depending on the energy, the coherence computed from one detector is subject to the dead-time cross-talk effects (i.e. capturing of the photon in particular energy band prevents registration of any next photon arriving during the dead-time, see e.g. \citet{2015MNRAS.451.4253R}). 
+Such cross-talk makes more coherent random processes, independent in different energy channels.
+In order to eliminate these effects in coherence estimation we follow the recipe suggested by \citet{2015ApJ...800..109B} for the cospectrum estimation. 
+%Specifically we want to get rid off correlation due to the dead time between different energy channels, 
+As explained in \citep{2015ApJ...800..109B} we can take advantage of the presence of two detectors modules, signals from which are processed independently. 
+That means that the photon registered by one of the modules do not prevent registration of the photon arriving during the dead-time in another module. 
+Therefore, for the numenator in Eq~\ref{eq:nowak_coh} (cross product of the Fourier functions of the light-curves obtained in different energy bands) we use light-curves obtained from different modules - e.g. lightcurve obtained in soft band on FPMA with one obtained in hard band on FPMB and vice versa.
 
-\citet{wijnands99} shown that primary features of the power spectrum of the XBs in low-hard and high intermediate states are evolving simultaneously, i.e. flat top broad band noise break frequency and QPO centroid frequency are connected with the relation $f_{\rm b} \approx 0.3 f_{\rm QPO}$.
-Bearing in mind aforementioned property of the power spectrum and small scatter in the $f_{\rm b}/f_{\rm QPO}$ in our data, to improve significance of the coherence measurements, we stacked all 13 separate intervals of the observation, scaling their frequencies to preserve QPO position. 
-We assumed that the coherence in each tracked frequency channel is preserved along the observation. 
+To obtain proper estimation on the coherence it is also important to have the correct estimation of the intrinsic variability power spectrum (denumenator in Eq.~\ref{eq:nowak_coh}).
+We use in this work model independent approach, with the cospectrum used for the power spectrum estimation (another approach would be to use Poisson noise subtracted power spectrum or analytical function fitted to the power spectrum in the previous section).
+
+%In the obtained cross-product effects of dead-time crosstalk are significantly dumped.
+%We also used cospectrum obtained for each energy band as the estimation for the denominator in Eq.~\ref{eq:nowak_coh}.
+The $n^2$ component was computed as it is suggested by \citetalias{1997ApJ...474L..43V}. 
+We estimated Poisson noise level as a mean power in the 5--15~Hz range, in this frequency band Poisson noise dominating over the source intrinsic variability, while its shape already not affected by the dead-time effects (the spectrum is flat below 15~Hz).
+%however for the Poisson noise components power estimation we used mean value of the power spectra in the 5--15~Hz range, assuming that Poisson noise dominating intrinsic source variability and is constant along frequencies. 
+
+By using the cospectrum for the intrinsic variability power spectrum estimation we introduce one drawback. 
+As was discussed in the previous section cospectrum can be described with Laplace statistics, which have non-zero probability density in the vicinity of zero and positive mean value.
+Therefore, if insufficient number of samples are used to calculate the mean of the cospectrum than the enormous statistical errors would be introduce in the coherence (since the cospectrum is used in the denominator in its estimation).
+The number of the samples is limited by the total duration of the observation and the condition that the shape of the cospectrum should not changing significantly in used samples (otherwise artificial dispersion would be introduced in the cospectrum distribution).
+The last criterion appears to be more strict one, since the QPO and break frequencies are changed by a factor of two during the observation.
+In order to increase statistical significance of the estimated cospectrum we use the following property found to be inherent for the XRBs intrinsic variability. 
+\citet{wijnands99} shown that primary features of the power spectrum of the XRBs in low-hard and high intermediate states are evolving simultaneously, i.e. the break frequency of the flat top broad band noise and the QPO centroid frequency are connected with the relation $f_{\rm b} \approx 0.3 f_{\rm QPO}$.
+Bearing in mind this property of the power spectrum and small scatter in the $f_{\rm b}/f_{\rm QPO}$ in our data, we stacked all 13 separate intervals of the observation, scaling their frequencies to preserve QPO position. 
+We assumed that the coherence in each tracked frequency channel is preserved along the observation and scaled in the similar way.
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{coherence_5.pdf}
@@ -517,8 +535,14 @@ We assumed that the coherence in each tracked frequency channel is preserved alo
 \end{figure}
 
 The coherence between hard and soft energy bands at frequencies up to $\sim3$~Hz is presented in Fig.~\ref{fig:coherence}. 
-We found that coherence in the adjacent energy bands is close to unity, with mean values in 0.01--1~Hz frequency band being $1.0\pm0.05$, however for the 3--5 and 15--78~keV energy bands the coherence is significantly lower, see Fig.~\ref{fig:coherence}. 
-It is on the nearly constant level of $\approx0.85$ in the $5\times10^{-3}$--0.1~Hz frequency band and drops down above this frequency.
+We found that the coherence in the adjacent energy bands is close to unity, with mean values in 0.01--1~Hz frequency band being $1.0\pm0.05$.
+However for the 3--5 and 15--78~keV energy bands the coherence is significantly lower (Fig.~\ref{fig:coherence}). 
+It is on the nearly constant level of $\approx0.85$ in the (0.005--0.1)~Hz frequency band and drops down above this frequency.
+Analogous behavior was observed in GX 339--4 \citepalias{1997ApJ...474L..43V}, in this work authors also discussed possible mechanisms which could lead to such loss of coherence between different energy bands. 
+Two main possibilities discussed by \citetalias{1997ApJ...474L..43V} were a) nonlinear transfer function between soft and hard bands and b) contribution of several coherent (within two energy bands) but independent processes in each energy band.
+Both this scenarios can take place along with the model of propagating fluctuations, considered in this work.
+First one would have require nonlinear process in the formation of the soft and hard emission, and the second require spatial separation of the soft and hard emission regions along the accretion flow. 
+
 
 \begin{figure*}
         \includegraphics[width=0.99\columnwidth]{phase_lag_untracked_2.pdf}

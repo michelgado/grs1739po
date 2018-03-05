@@ -365,6 +365,7 @@ In order to properly determine all parameters one have to know the shape and nor
 To avoid this problem they proposed to use cross-spectrum (or shortly cospectrum) for analysis of {\it NuSTAR} data instead of power spectrum. 
 They determine cospectrum as a real part of the cross product of Fourier function of light-curves obtained from two {\it NuSTAR} detectors 
 \begin{equation}
+        \label{eq: ps_estimation}
         P(F) \approx <re(F_{\rm FPMA}^{*}(f)F_{\rm FPMB}(F))>
 \end{equation}
 where $P(f)$ {\bf is the estimation of the studied source intrinsic variability power spectrum}, $F_{\rm FPMA[B]}$ - Fourier function of a light curve from FPMA[B] module, $^{*}$ - stands for complex conjugation. 
@@ -475,31 +476,31 @@ From the shape of the energy and Fourier spectrum we concluded that the system i
 
 \subsection{Coherence}
 
-\citet{1997ApJ...474L..43V}(hereafter V97) suggested to use coherence between different energy bands in order to obtain additional information from the source variability. 
-Coherence measure the similarity between two signals and can be computed with the following expression:
+\citet{1997ApJ...474L..43V}(hereafter V97) suggested to use the coherence between different energy bands in order to obtain additional information from the source variability. 
+The coherence measure the similarity between two signals and can be computed with the following expression:
 \begin{equation}
-        C(f) = \frac{|<F_{\rm s}(f)^*F_{\rm h}(f)>|^2 - n^2}{<|F_{\rm s}(f)|^2><|F_{\rm h}(f)|^2>}
+        C(f) = \frac{|<F_{\rm s}(f)^*F_{\rm h}(f)>|^2 - n^2}{P_{\rm s}(f) P_{\rm h}(f)}
     \label{eq:nowak_coh}
 \end{equation}
-where $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are Fourier function (corrected for the Poisson noise components) of the observed time series in hard and soft bands, correspondingly, 
-$n^2$ - product of the power in uncorrelated components, connected with counting statistic, divided by the number of used series (V97). 
-Coherence should be computed for the number of independent time series, therefore we separated each of the available uninterrupted time intervals on several shorter parts, 82~s long each.  
+where $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are Fourier function of the observed time series in hard and soft bands, correspondingly, $P_{\rm s}(f)$ and $P_{\rm h}(f)$ is estimation of their power density spectra (derived, for example, with the Equation~\ref{eq: ps_estimation}),  
+$n^2$ - product of the power in the uncorrelated noise components divided by the number of used series (which mostyly determined by Poisson statistics noise, see V97). 
+Since the coherence is estimated as a mean product of the Fourier functions it should be computed for the number of independent time series, therefore we separated each of the available uninterrupted time intervals on several shorter parts, 82~s long each.  
 
-Coherence is very similar to cospectrum, but instead of tracking signals with zero phase shifts, it tracks all signals with arbitrary conserved phase shift - i.e. Fourier harmonics of the signals may delay each other but be coherent (which means that Fourier functions $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are related by linear transformation V97).
+%The coherence is very similar to the cospectrum, but instead of the tracking signals with zero phase shifts, it tracks all signals with arbitrary conserved phase shift, i.e. Fourier harmonics of the signals may delay each other but to be coherent (which means that Fourier functions $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are related by a linear transformation V97).
 
-Different models of the XBs variability generation suggest that the signals in two energy bands can be partially independent, while the shape of the power spectra is conserved.
-It appears that in many sources coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, wijnands99}, however there also were indications on complex picture of the coherence in particular state of some systems \citep{2003ApJ...584L..23J}, or drop in coherence between particular energy bands \citep[e.g. in GX 339--4][]{1997ApJ...474L..43V}.
+Different models of the XRBs variability generation suggest that signals in two energy bands can be partially independent, while the shape of the power spectra is conserved.
+It appears that in many sources the coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, wijnands99}, however there were also indications  on complex picture of the coherence in particular state of some systems \citep[dip in the coherence at 0.03~Hz frequency, observed in GRS1915+105, ][]{2003ApJ...584L..23J}, \citep[decreasing of the coherence between particular energy bandse in GX 339--4, ][]{1997ApJ...474L..43V}.
 See also discussion in the V97 for the theoretical prediction on the coherence for different models.
 
 
-Following V97, we estimated coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
-Since for the timing analysis we use {\it NuSTAR} data, covering 3--78~keV energy band, we adopted following energy bands for our analysis: 3--5~keV, 5--8~keV, 8--15~keV and 15--78~keV.
-This partition of the {\it NuSTAR} energy band pursues the following idea: the energy spectrum of \grs\ can be described with the two major components - powerlaw continuum and reflection features i.e. fluorescent Fe K$\alpha$ line and Compton hump.
-In 5--8~kev band there is a contribution of the prominent Fe K$\alpha$ line, given the equivalent width 0.2~keV it provides about 5\% of flux.
-In 8--15~keV energy band we expect only the power law component to be present.
-Compton hump, another reflection features, is confined in 15--78~kev energy band. 
+Following V97, we estimated the coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
+Since we use {\it NuSTAR} data (covering 3--79~keV energy band) we adopted following energy bands for our analysis: 3--5~keV, 5--8~keV, 8--15~keV and 15--78~keV.
+This partition of the {\it NuSTAR} energy band pursues the following idea: the energy spectrum of \grs\ can be described with two major components - powerlaw continuum and reflection features i.e. the fluorescent Fe K$\alpha$ line and the Compton hump.
+In the 5--8~kev band there is a contribution of the prominent Fe K$\alpha$ line, with the equivalent width of 0.2~keV it provides about 5\% of the flux in this band.
+In the 8--15~keV energy band we expect only the power law component to be present.
+Compton hump, another reflection feature, is confined in the 15--78~kev energy band. 
 
-As it was mentioned above the {\it NuSTAR} detectors have complex dead-time depending on energy, coherence computed from one detector is subject to the dead-time crosstalk effects (which should make random processes more coherent).
+As it was mentioned above the {\it NuSTAR} detectors have a complex dead-time depending on the energy, the coherence computed from one detector is subject to the dead-time cross-talk effects (which should make random processes more coherent).
 In order to eliminate this effects in coherence estimation, following the recipe suggested in \cite{2015ApJ...800..109B} for cospectrum, for the numerator in Eq.~\ref{eq:nowak_coh} we used cross-products of the Fourier functions of lightcurves obtained from the different modules - e.g. correlations of the lightcurve obtained in the soft band on the FPMA module with the lightcurve in the hard band obtained on the FPMB module and vice versa.
 In the obtained cross-product effects of dead-time crosstalk are significantly dumped.
 We also used cospectrum obtained for each energy band as the estimation for the denominator in Eq.~\ref{eq:nowak_coh}.

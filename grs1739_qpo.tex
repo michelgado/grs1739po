@@ -25,15 +25,14 @@
 \def\arcmin{'}
 \def\iaucirc{{IAU~Circ.}}
 
-\title[Study of low-frequency QPO in  \grs]{Study of low-frequency quasi-periodic oscillations in \grs during 2014 outburst}
+\title[Low-frequency QPOs in  \grs]{Study of low-frequency quasi-periodic oscillations in \grs during 2014 outburst}
 
 \author[I. A. Mereminskiy et al.]{
 Ilya A. Mereminskiy$^{1}$\thanks{E-mail: i.a.mereminskiy@gmail.com},
 Andrey N. Semena$^{1}$,
-%Eugene M. Churazov$^{2,1}$,  \newauthor
-Alexander A. Lutovinov$^{1}$,\newauthor
-Sergey D. Bykov$^{1,2}$,
-Ekaterina V. Filippova$^{1}$
+Sergey D. Bykov$^{1,2}$, \newauthor
+\,\,Ekaterina V. Filippova$^{1}$,
+Alexander A. Lutovinov$^{1}$
 \\
 % List of institutions
 $^{1}$Space Research Institute, Russian Academy of Sciences, Moscow, Russia\\
@@ -52,14 +51,14 @@ $^{2}$Bauman Moscow State Technical University, Moscow, Russia\\
 \maketitle
 
 \begin{abstract}
-We detected a type-C LF QPO at 0.3--0.7 Hz in \nustar\, and \swiftx\, observations of the black hole candidate \grs\, during the hard-intermediate state of its 2014 outburst, and type-B QPO in 1.7--5.2~Hz range during the soft-intermediate state. We traced the evolution of spectro-timing properties of the source during \nustar\, observation. 
-As QPO frequency increases, the source spectrum becomes softer, with increasing power-law index and decreasing cut-off energy.
+We detected a type-C low-frequency (LF) QPO at 0.3--0.7 Hz in \nustar\, and \swiftx\, data of the black hole candidate \grs\, in the hard-intermediate state during its 2014 outburst, and type-B QPO in the 1.7--5.2~Hz range in the soft-intermediate state. We traced an evolution of spectral-timing properties of the source during the \nustar\, observation. 
+(???)As QPO frequency increases, the source spectrum becomes softer, with increasing power-law index and decreasing cut-off energy.
 
-We performed an extended analysis of rapid X-ray variability in terms of power spectrum, cospectrum, coherence and phase-lags. 
+We performed an extended analysis of a rapid X-ray variability in terms of the power spectrum, cospectrum, coherence and phase-lags. 
 In the power spectrum a prominent QPO and its second harmonic are clearly seen. 
-The fluxes in soft and hard X-ray bands are coherent, however coherence drops with the separation of the energy bands. 
+The fluxes in soft and hard X-ray bands are coherent, however the coherence drops with the separation of the energy bands. 
 Phase-lags are generally positive (hard) in the 0.1--3~Hz frequency range, and negative below 0.1~Hz.
-Measurements of the inner disk radius obtained with the spectral models accounting for the metric around black hole and QPO frequency together with the relativistic precession model points towards very massive black hole.
+The inner disk radius obtained with the spectral models, accounting for the metric around the black hole and the QPO frequency together with the relativistic precession model points towards very massive black hole.
 \end{abstract}
 
 \begin{keywords}
@@ -70,90 +69,88 @@ X-rays: individual (\grs) -- X-rays: binaries -- accretion, accretion disks  -- 
 \section{Introduction}
 \label{sec:intro} 
 A study of X-ray variability in accreting astrophysical sources provides a broad view on processes that take a place in such systems. 
-This works both on a long timescales - i.e. days and weeks - when one speaks about state changes through outbursts of transients sources \citep[see e.g.][]{homan05, heil15}, and on short - all the way down to milliseconds - when the subject under consideration are a quasi-periodic oscillations (QPOs) and broad band stochastic noise. 
-By simultaneous usage of spectral and timing data one can better constrain geometry of accretion flow around compact objects and infer on which processes are responsible for generation of observed spectro-timing features in a self-consistent way.
+This is true both on long (days and weeks), when one speaks about state changes through outbursts of transients sources \citep[see e.g.][]{homan05, heil15}, and on short timescales (down to milliseconds), when the subject under consideration are a quasi-periodic oscillations (QPOs) and broad band stochastic noise. 
+A simultaneous usage of spectral and timing data can help to better constrain a geometry of accretion flows around compact objects and infer on processes, which are responsible for generation of the observed spectral-timing features in a self-consistent way.
 
-Some aspects of the spectro-timing evolution of X-ray transients (usually black-hole candidates, BHC) during outbursts can be explained in the frame of the two-temperature accretion flow model \citep{1975ApJ...199L.153E, 1976ApJ...204..187S, 1995ApJ...452..710N}, in which it is proposed that the accretion flow in a system consists of the geometrically thin cold disk and geometrically thick hot flow (corona). 
-It is strongly suggested from the observations that this geometrically thick hot flow is responsible for production of strong variability. 
-As an example, using frequency-resolved spectroscopy \citet{2001MNRAS.321..759C} shown that variable part of the emission from the BHC system Cyg X-1 has a hard power-law shaped spectrum, which is thought to be produced by Comptonization of soft photons onto hot electrons in the corona, while stable part of the emission has a spectrum which is consistent with the cold classical $\alpha$-disc spectrum \citep{shakura73}.  
-It is also well known that total variability power of BHC and neutron star binaries is greater in the hard state (when the spectrum is dominated by the emission produced in the hot flow) than in the soft state (when the spectrum can be described with optically thick $\alpha$-disk model) \citep[][e.t.c.]{1992ApJ...391L..21M, 2000A&A...363.1013R, 2001ApJS..132..377H, 2001MNRAS.321..759C}. 
-\citet{1997MNRAS.292..679L} proposed that observed strong variability (seen as a broad band noise in power spectra) is produced due to the stochastic variations of the angular momentum transport efficiency. 
-In this propagating fluctuation model broad band noise of the luminosity is a product of noise signals from different radii of the accretion flow, each with its own characteristic time-scale \citep[see, e.g.][]{2006MNRAS.367..801A, 2013MNRAS.434.1476I}. 
-Therefore, the spectral shape of the broad band noise is determined by the physical and geometrical properties of the accretion flow, e.g. in particular in these works it was suggested that the broad noise dumping frequency is connected to the inner edge of the accretion flow. 
+Some aspects of the spectro-timing evolution of X-ray transients (usually black-hole candidates, BHC) during outbursts can be explained in frames of the two-temperature accretion flow model \citep{1975ApJ...199L.153E, 1976ApJ...204..187S, 1995ApJ...452..710N}. In this model the accretion flow in the system consists of a geometrically thin cold disk and geometrically thick hot flow (corona). 
+It is strongly suggested from observations that this geometrically thick hot flow is responsible for production of a strong variability. 
+In particular, using a frequency-resolved spectroscopy \citet{2001MNRAS.321..759C} showed that the variable part of the emission from the BHC system Cyg X-1 has a hard power-law spectrum. This spectrum is produced by the comptonization of soft photons onto hot electrons in the corona, while a stable part of the emission has a cold classical $\alpha$-disc spectrum \citep{shakura73}.  
+It is also well known that the total power variability of BHC and neutron star binaries is greater in the hard state (when the spectrum is dominated by the emission produced in the hot flow) than in the soft state (when the spectrum can be described with the optically thick $\alpha$-disk model) \citep[][e.t.c.]{1992ApJ...391L..21M, 2000A&A...363.1013R, 2001ApJS..132..377H, 2001MNRAS.321..759C}. 
+\citet{1997MNRAS.292..679L} proposed that the observed strong variability (seen as a broad band noise in power spectra) is produced by the stochastic variations of the angular momentum transport efficiency. 
+In this propagating fluctuation model a broad band noise of the luminosity is a product of the noise signals from different radii of the accretion flow, owing their characteristic time-scales \citep[see, e.g.,][]{2006MNRAS.367..801A, 2013MNRAS.434.1476I}. 
+Therefore, the spectral shape of the broad band noise is determined by the physical and geometrical properties of the accretion flow. In particular, in these papers it was suggested that the broad noise dumping frequency is connected with the inner edge of the accretion flow. 
 
-Another feature, frequently observed in the X-ray binaries power spectra is different types of low and high frequency QPOs, manifesting itself as a narrow Lorentzian components. The low frequency QPOs are better studied, since they occur at moderate frequencies of 0.1..10 Hz. This QPOs are ubiquitous - they found in systems with neutron stars and black holes \citep{wijnands99}, in cataclysmic variables \citep{mauche02} and even in active galactic nuclei \citep{gierlinskiy08}. Few types of LF QPOs are distinguished, based on the shape of power spectrum \citep[see, e.g.][]{casella05}. Most importantly, their origin still remains unclear, although it is possible that different mechanisms are responsible for different types of QPO.
+Another feature, frequently observed in the power spectra of X-ray binaries is different types of  QPOs, manifesting itself as a narrow Lorentzian components. The low frequency QPOs are better studied, since they occur at moderate frequencies of 0.1..10 Hz. These QPOs are ubiquitous: they were found in systems with neutron stars and black holes \citep{wijnands99}, cataclysmic variables \citep{mauche02} and active galactic nuclei \citep{gierlinskiy08}. Few types of LF QPOs are distinguished, based on the shape of power spectra \citep[see, e.g.][]{casella05}, but their origin remains still unclear.
 
 
-Type-C LF QPOs are typically found in X-ray black hole transients (yet they are known to be present in neutron star systems too) during initial rise and transition to disk dominated state - i.e. in low-hard state (LHS) and in hard intermediate state (HIMS), according to standard scheme \citep{grebenev97, tanaka96, remillard06, belloni10}, although they are sometimes seen at higher frequencies ($\approx$30~Hz) after transition to high soft state (HSS). These QPOs are easy to detect and study, since they are prominent, having $rms\approx10\%$ \citep{casella05}. 
-Different authors prescribe generation of these QPOs to various processes: Lense-Thirring precession of inner parts of the accretion disk \citep{stella98, ingram09}, oscillations of a standing shock \citep{molteni96} and accretion rate modulation caused by different phenomena \citep{tagger99,cabanac10} e.t.c. 
-In some models, particularly in relativistic precession models (RPM), observed frequency is strongly dependent on the inner radius of the accretion disk, at which it transforms into geometrically thick optically thin hot flow . 
+So-called type-C LF QPOs are typically found in X-ray black hole transients during an initial rising part of an outburst and transition to the disk dominated state, i.e. in low-hard state (LHS) and in hard intermediate state (HIMS), according to standard scheme \citep{tanaka96,grebenev97, remillard06, belloni10}, although they are sometimes seen at higher frequencies ($\approx$30~Hz) after transition to high soft state (HSS). These QPOs are easy to detect and study, since they are prominent, with $rms\approx10\%$ \citep{casella05}. 
+Different authors prescribe a generation of these QPOs to various processes: the Lense-Thirring precession of inner parts of the accretion disk \citep{stella98, ingram09}, oscillations of a standing shock \citep{molteni96}, the accretion rate modulation caused by different phenomena \citep{tagger99,cabanac10} etc. 
+In some models, particularly in relativistic precession models (RPM), an observed frequency is strongly dependent on the inner radius of the accretion disk, at which it transforms into a geometrically thick optically thin hot flow. 
 
-Recent advances in simulations of the reflected emission \citep{ross05,garcia14}, arising due to the scattering and absorption of the hard photons in the cold accretion disk, led to the possibility to study geometry of the disk.  
-For such a study to be made it is essential to obtain broadband X-ray spectrum with high energy resolution - reflected emission manifest itself by a presence of prominent, wide and asymmetric iron $K_{\alpha}$ fluorescent emission line at 6.4 keV and Compton-hump at 20-30 keV. 
-Now, adding information from X-ray timing analysis one can, in principle, constrain the location of a component, responsible for the variability - which is though to be a corona or a jet base.
-This task presents a challenge, that can be solved only by a telescope that posses both possibility to measure a broadband spectrum with good resolution and have a corresponding timing capabilities. 
+Recent advances in simulations of the reflected emission \citep{ross05,garcia14}, arising due to the scattering and absorption of the hard photons in the cold accretion disk, led to the possibility to study a geometry of the disk.  
+For such a study to be made it is essential to obtain a broadband X-ray spectrum with high energy resolution - the reflected emission manifests itself by a presence of a prominent, wide and asymmetric iron $K_{\alpha}$ fluorescent emission line at 6.4 keV and Compton-hump at 20-30 keV. 
+Adding an information from the X-ray timing analysis one can, in principle, to constrain the location of the component, responsible for the variability, which is though to be a corona or a jet base.
+This task presents a challenge, that can be solved only by instruments that posses both a possibility to measure a broadband spectrum with good resolution and corresponding timing capabilities. 
 \nustar\, \citep{harrison13_nust}, launched in 2013, is the best available instrument for such studies. 
-\xmm and {\it NICER} can be used too, although their energy range reaching only up to $\sim$12~keV limits their capability to measure hard tails and Compton-hump contribution.
-Nevertheless there are some great results obtained with these instruments, e.g. measurement of the Fe K$\alpha$ line profile variation with QPO phase by \citet[][]{ingram16}. 
+\xmm and {\it NICER} can be used also, although their energy range reaching only up to $\sim$12~keV limits their capabilities to measure hard tails and the Compton-hump contribution.
+Nevertheless there are some great results obtained with these instruments, e.g. the measurement of the Fe K$\alpha$ line profile variation with the QPO phase by \citet[][]{ingram16}. 
 
-In this article we report on first detection of type-C QPOs in HIMS of Galactic black-hole candidate \grs\, and present a detailed study of properties of the X-ray variability, along with spectral evolution with \nustar\ and \swiftx.
+In this article we report on first detection of type-C QPOs in HIMS of the Galactic black-hole candidate \grs\, and present a detailed study of properties of the X-ray variability, along with the spectral evolution with \nustar\ and \swiftx instruments.
 
 \section{GRS 1739-278}
 
-\grs is a typical X-ray nova, discovered during outburst in 1996  \citep{paul96} by {\it SIGMA} \citep{paul91} telescope onboard {\it GRANAT} space observatory.
-Using {\it ROSAT} observation \citet{greiner96} inferred distance of 6--8.5~kpc from the estimated absorption, indicating that the source may belong to Galactic bulge. 
-It should be noted that \citet{greiner96} used X-ray halo size to assess obscuration column density, and mean extinction per parsec value from \citep{1973asqu.book.....A} to estimate distance to the source. 
-While his $N_{\rm H}$ estimation appears to be quite precise it is larger than the new measurements of the line of sight absorption in the Galaxy towards the source \citep{1990ARA&A..28..215D, 2005A&A...440..775K, 2006A&A...453..635M, 2014A&A...566A.120S}. 
-It follows that the source either has intrinsic obscuration or additional line of sight obscuration  and the distance to the source can not be constrained from $N_{\rm H}$.
-%the source , but, since the line of sight obscuration in Galaxy towards the source is smaller than its estimated $N_{\rm H}$.
+\grs is a typical X-ray nova, discovered during an outburst in 1996  \citep{paul96} by the {\it SIGMA} \citep{paul91} telescope onboard {\it GRANAT} space observatory.
+Using {\it ROSAT} measurement of the absorption column \citet{greiner96} inferred a distance of 6--8.5~kpc from the estimated absorption, indicating that the source may belong to the Galactic bulge. 
+It should be noted that \citet{greiner96} used an X-ray halo size to assess an obscuration column density, and the mean extinction per parsec value from \citet{1973asqu.book.....A} to estimate the distance to the source. 
+While this $N_{\rm H}$ estimation appears to be quite precise it is larger than the new measurements of the line of sight absorption in the Galaxy towards the source \citep{1990ARA&A..28..215D, 2005A&A...440..775K, 2006A&A...453..635M, 2014A&A...566A.120S}. 
+It means that the source has either an intrinsic obscuration or a additional line of sight obscuration,  and its distance can not be constrained from $N_{\rm H}$.
 Nevertheless in this work we will assume that the distance to \grs\ is 8~kpc, given that the source is projected on to the Galactic Bulge.  
 
-Optical and radio emission were detected during the course of outburst \citep{hjellming96,marti97}. 
-\citet{borozdin98} found spectral evolution throughout the outburst to be consistent with canonical model - outburst starts from LHS, then soft emission, associated with the optically thick disk starts to dominate, heralding transition to high soft state. 
+Optical and radio emissions were detected during the course of outburst \citep{hjellming96,marti97}. 
+\citet{borozdin98} found a strong spectral evolution throughout the outburst to be consistent with the canonical model - the outburst starts from LHS, then soft emission, associated with the optically thick disk starts to dominate, heralding a transition to the high soft state. 
 Eventually, they observed very high state and detected a QPO at 5 Hz using {\it RXTE} data \citep{borozdin00, 2001MNRAS.328..451W}.
 
-After some 18 year slumber \grs\ demonstrated another big outburst, rise of which was detected by \swiftb \citep{krimm14_atel} along with \integral \citep{filippova14}. 
-During this outburst extensive observing campaign by \swiftx\, were carried out, along with single long \nustar\ exposure. 
-After this outburst the source remain active with repetitive mini-outbursts \citep{mereminskiy17grs,yan17}.
+After 18 years of quesence \grs\ demonstrated another big outburst, rise of which was detected by \swiftb \citep{krimm14_atel} along with \integral \citep{filippova14}. 
+During this outburst an extensive observing campaign by the \swiftx\, telescope was carried out, along with a single long \nustar\ observation. 
+After this outburst the source remains active with repetitive mini-outbursts \citep{mereminskiy17grs,yan17}.
 
 
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.5]{batlc_v06.eps}}
-\caption{{\it Upper:} green points denote \swiftb\, lightcurve of 2014 outburst in 15--50~keV range, orange circles correspond to \maxi\, fluxes in 2--4 keV. 
-Red line show the time interval of \nustar\, observation. 
-{\it Lower:} evolution of \swiftx\, spectral hardness during the outburst.} 
+\caption{{\it Upper panel:} green points denote \swiftb\, lightcurve of the 2014 outburst in the 15--50~keV range; orange circles correspond to \maxi\, fluxes in the 2--4 keV energy band.  
+Red line shows the time interval of the \nustar\, observation. 
+{\it Bottom panel:} evolution of the source spectral hardness during the outburst.} 
 \label{fig:batlc}
 \end{figure*} 
 
 \section{Observations and data reduction}
 \label{sec:datared} 
-In order to characterize the overall outburst profile we used data of \swiftb\, {\it transient monitor} \citep{krimm13bat} in hard X-rays (15--50 keV) as well as (2--4 keV) lightcurve from \maxi\, \citep{matsuoka13maxi} .
+In order to characterize the overall outburst profile we used data of the \swiftb\, transient monitor \citep{krimm13bat} in hard X-rays (15--50 keV) as well as a soft (2--4 keV) lightcurve from \maxi\, \citep{matsuoka13maxi}.  As a reference value for the Crab we took 0.22 cts cm$^{-2}$ s$^{-1}$ for 15--50 keV band and for 2--4 keV band we took a 1.67 counts s$^{-1}$.
 
-We used \nustar\, observation (ObsID: 80002018002) performed at March 26, 2014 (MJD 56742). 
-We utilized {\texttt{nuproducts}} pipeline to extract photons from two-arcminute circular region, centered on the source and to produce lightcurves and spectra.
+We used the \nustar\, observation (ObsID: 80002018002) performed at March 26, 2014 (MJD 56742) and utilized the {\texttt{nuproducts}} pipeline to extract photons from two-arcminute circular region, centered on the source and to produce lightcurves and spectra.
 
 We also used public observations of \swiftx\, (target ID: 33203) performed regularly over the rise and peak of the outburst.  
-Since the source was bright, all \swiftx\, observations were performed in windowed mode, allowing study of timing properties of the source. 
-We performed standard analysis with {\texttt{xrtpipeline}} and barycentered data prior to lightcurve extraction. 
-During several observations countrate was as high as 280 cts s$^{-1}$, therefore we excluded one or few brightest columns depending on countrate, in order to suppress effects caused by photon pile-up. 
-Photons with energies below 0.8 keV and above 10 keV were also filtered out. 
+Since the source was bright, all \swiftx\, observations were performed in windowed mode, allowing to study a timing properties of the source. 
+We performed a standard analysis with {\texttt{xrtpipeline}} and barycentered data prior to a lightcurve extraction. 
+During several observations countrate was as high as 280 cts s$^{-1}$, therefore we excluded one or few brightest columns depending on the countrate, in order to suppress the effects caused by photon pile-up. 
+Photons with energies below 0.8 keV and above 10 keV were filtered out. 
 Long-term lightcurves and spectra were obtained from UK Swift Science Data Centre at the University of Leicester \citep{evans09}.
 
 \section{Analysis}
 \subsection{Outburst}
-First detection of the source by \swiftb\, \citep{krimm14_atel} occurred at March 9, 2014 (MJD 56725, we will refer to this date as $\tau_{0}$). 
-Outburst profile in hard X-rays (15--50~keV) featured fast rise with tenfold intensity increase over ten days, nearly flat-top peak ($\tau_{0}$+10..+15 days) followed by abrupt flux decrease by 30\% over the course of two days.
-After this, the source demonstrated gradual decline interrupted by flaring activity at $\tau_{0}$+50..+70 days. 
+A first detection of the source by \swiftb\, occurred at March 9, 2014 (MJD 56725 \citep{krimm14_atel}, we will refer to this date as $\tau_{0}$). 
+An outburst profile in hard X-rays (15--50~keV) featured fast rise with a tenfold intensity increase over ten days (see Fig.~\ref{fig:batlc}), nearly flat-top peak ($\tau_{0}$+10..+15 days) followed by an abrupt flux decrease by 30\% over the course of two days.
+After this, the source demonstrated a gradual decline interrupted by a flaring activity at $\tau_{0}$+50..+70 days. 
 At $\tau_{0} \approx +86$ days a sharp dip occurred in the \swiftb\ lightcurve. 
-After the cease of the outburst source remained active with flux about 5--15 mCrab. 
+After the cease of the outburst the source was remained active with flux about 5--15 mCrab. 
 
-Adding data from \maxi\, to the \swiftb\, hard X-ray lightcurve gives us another insight on the outburst evolution as shown in Fig.\,\ref{fig:batlc} - comparing fluxes in soft and hard bands (for 2--4 keV band we took a 1.67 counts s$^{-1}$ as a reference value for Crab, corresponding value for 15--50 keV band is 0.22 cts cm$^{-2}$ s$^{-1}$) one can see that the soft component obviously lags hard emission in the beginning of the outburst but then starts to grow and ends up dominating during the flaring period as well as during hard dip. 
-Lower subplot of Fig.\,\ref{fig:batlc} shows evolution of hardness ratio (3--10~keV/0.8--3~keV) measured by \swiftx. 
-Right after the peak of hard emission one can see the decline of hardness, also indicating appearance of the thermal component.
-Detailed analysis of the spectral evolution during the outburst will be presented in Bykov et al., (2018) in preparation.
+An addition of data from \maxi\, to the \swiftb\, lightcurve gives us another insight on the outburst evolution. Comparing fluxes in soft and hard bands one can see that the soft component obviously lags hard emission in the beginning of the outburst, but then starts to grow and ends up dominating during the flaring period as well as during the hard dip. 
+The bottom panel of Fig.\,\ref{fig:batlc} shows an evolution of the hardness ratio (3--10~keV/0.8--3~keV) measured by \swiftx. 
+Practically immediately after the peak of hard emission one can see the drop of the hardness, also indicating an appearance of the thermal component.
+The detailed analysis of the spectral evolution during the outburst will be presented elsewhere (Bykov et al., in preparation).
 
-Fortunately, \nustar\ observation triggered by \cite{miller15_nust} were carried right at the transition between hard and soft states, thus giving us unique possibility to study processes that happens during HIMS. 
+Fortunately, the \nustar\ observation triggered by \cite{miller15_nust} were carried out right at the transition between hard and soft states, thus giving us an unique possibility to study processes that happens during hard-intermediate state. 
 
 
 \subsection{NuSTAR observation}

@@ -401,7 +401,7 @@ We did not consider were any high frequency QPOs, since the typical HF QPO (cent
 
 We found that the QPO frequency evolves with time (Table~\ref{tab:timing} and Fig.~\ref{fig:qpo}).
 It correlates with the {\it NuSTAR} flux and photon index, similar to many other black hole and neutron star binary systems \citep[see, e.g.,][]{vignarca03,2003A&A...407.1039P}.
-On the other hand we see, that the QPO amplitude remained stable during the first half of the observation, and started to grow in the second part.
+The QPO amplitude remained stable during the first half of the observation, and started to grow in the second part.
 
 \begin{table*}
 \noindent
@@ -430,7 +430,7 @@ XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}$ & $0.67\pm0.01$ & $15\pm3$ & $9.6\p
 \hline
 \end{tabular}
 \begin{flushleft}
-        In Table $f_{\rm br}$ is broad band noise break frequency, $f_{\rm QPO}$ is QPO centroid frequency, $Q_{\rm m}$ is QPO main harmonic quality (ratio of its centroid frequency to its width), $A_{\rm m}$ - total power in the QPO main harmonic in \% of mean countrate, $A_{\rm m}$ is total power in the QPO second harmonic in \% of mean countrate, rms - total amplitude of variations in the \% of mean countrate, $\Gamma$ - powerlaw photon index, $E_{\rm cut}$ - powerlaw cutoff energy. Parameters $\Gamma$ and $E_{\rm cut}$ were obtained from spectra of individual intervals with {\it xillver} model (see sec.\ref{sec:continuum_evolution}).
+        In Table $f_{\rm br}$ is broad band noise break frequency, $f_{\rm QPO}$ is the QPO centroid frequency, $Q_{\rm m}$ is QPO main harmonic quality (ratio of its centroid frequency to its width), $A_{\rm m}$ - total power in the QPO main harmonic in \% of mean countrate, $A_{\rm m}$ is total power in the QPO second harmonic in \% of mean countrate, rms - total amplitude of variations in the \% of mean countrate, $\Gamma$ - powerlaw photon index, $E_{\rm cut}$ - powerlaw cutoff energy. Parameters $\Gamma$ and $E_{\rm cut}$ were obtained from spectra of individual intervals with {\it xillver} model (see sec.\ref{sec:continuum_evolution}).
 \end{flushleft}
 \end{table*}
 
@@ -439,21 +439,22 @@ XIII & 56743.49 & 3391 & $7.5_{-1.5}^{+1.7}$ & $0.67\pm0.01$ & $15\pm3$ & $9.6\p
 %However, sophisticated spectral models applied to the observed {\it NuSTAR} spectrum suggest that the accretion disk inner radius was $R_{\rm in}<9 GM/c^2$ during the observation.
 %This estimation is primarily based on the profile of the relativistically widened neutral Iron fluorescent line, see section~\ref{sec:spec} and also \citet{miller15_nust}.
 
-We also inspect power spectra in soft (3--5~keV) and hard (15--78~keV) energy bands.
-We found that the QPO amplitude is smaller in the soft band, while amplitude of its harmonic is bigger.
-The ratio of the power in the QPO and its harmonic for hard and soft energy bands is presented in Fig.~\ref{fig:qpo_ratio}.
+We also inspected power spectra in soft (3--5~keV) and hard (15--78~keV) energy bands and found that the QPO amplitude is smaller in the soft band, while amplitude of its harmonic is larger.
+The ratio of the power in the QPO and its second harmonic for hard and soft energy bands is presented in Fig.~\ref{fig:qpo_ratio}.
 \begin{figure}
 \includegraphics[width=\columnwidth]{qpo_amplitude.pdf}
 \includegraphics[width=\columnwidth]{QPO_and_harmonic_ratio_ylabel.pdf}
         \caption{On top panel: amplitude of the QPO harmonic in \% of mean countrate, on the bottom panel: ratio of the total power in the QPO and its second harmonic measured for the lightcurves obtained in 3--5~keV and 15--78~keV energy bands.}
         \label{fig:qpo_ratio}
 \end{figure}
-It follows that the QPO profile in time domain, such as was found by \citet{2015MNRAS.446.3516I} in GRS~1915+105, differs in the hard and soft X-ray bands.
-Following \citet{2015MNRAS.446.3516I} we tried to extract QPO profile by segregating the coherent part (Fourier signal with conserving phase shift relative to the signal on QPO frequency) between the QPO and its harmonics, however no significant coherence was detected above the noise level.
-It indicates that the QPO profile was not stable during the observation, in contrast with the result obtained by \citet{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
+\citet{2015MNRAS.446.3516I} proposed that the ratio between the QPO first and other harmonics is determined by the particular pulse profile (stable in time with small distortions, which determine QPO quality) and derived such pulse profile in GRS~1915+105.
+From the changing ratio between the QPO and its harmonics it follows that the pulse profile is changing with energy. 
+%It follows that the QPO profile in time domain, such as was found by \citet{2015MNRAS.446.3516I} in GRS~1915+105, differs in the hard and soft X-ray bands.
+Following \citet{2015MNRAS.446.3516I} we tried to extract QPO profile by segregating the coherent part (Fourier signal with conserving phase shift relative to the signal on the QPO frequency) between the QPO and its harmonics, however no significant coherence was detected above the noise level.
+It indicates that the pulse profile was not stable during the observation, in contrast with the result obtained by \citet{2015MNRAS.446.3516I} for GRS~1915+105 with {\it RXTE} observatory data.
 
-In some intervals QPO subharmonics, centered approximately at 1/2 of the QPO centroid frequency, is clearly observed in the cospectra (see examples on Fig.~\ref{fig:cospec_tracked}, red crosses) (namely I, II, IV, V, VI sets).
-In order to observe QPO with better significance we stacked several cospectra, frequency of each cospectrum was scaled in such a way to conserve QPO centroid at 0.3~Hz.
+In some intervals QPO subharmonics (another peak like feature in the power spectrum), centered approximately at 1/2 of the QPO centroid frequency, is clearly observed in the cospectra (see examples on Fig.~\ref{fig:cospec_tracked}, red crosses) (namely I, II, IV, V, VI sets).
+In order to detect QPO with the better significance we stacked several cospectra, frequency of each cospectrum was scaled in such a way to conserve QPO centroid at 0.3~Hz.
 Obtained ``tracked'' cospectrum is presented on Fig.~\ref{fig:cospec_tracked}.
 The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were not able to obtain it with a large significance on the tracked cospectrum.
 
@@ -465,27 +466,34 @@ The subharmonics seems to roam around the 1/2 QPO frequency, therefore we were n
         \label{fig:cospec_tracked}
 \end{figure}
 
-It should be noted that the changes in the QPO centroid position during the interval may contribute to the observed quality factor $Q$.
-We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 5.0$--$6.5\times10^{-6}$~Hz~s$^{-1}$. 
-During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect periodic signal located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx f_{\rm QPO}/(\dot{f}_{\rm QPO}\tau) \approx 17$, which is of order of the Q estimations obtained from the observations with standard model (described with eq.\ref{eq:complex_fit}).
-In order to better estimate the QPO quality factor, we split each of the 13 intervals in sets of 82~s long time-series. 
-After that, for each of 13 intervals, we fitted obtained power spectra simultaneously with new model in which we assume that QPO frequency linearly growing with time. 
-The model has the same form as standard with $f_{\rm QPO}$ substituted with $f_{\rm QPO}' = f_{\rm QPO} + (t - t_{\rm mid})\dot{f}_{\rm QPO}$, where $\dot{f}_{\rm QPO}$ is the free parameter and $t_{i}^{\rm mid}$, $f_{\rm QPO}$ are the middle time of the $i$-th 82~s interval and QPO centroid frequency measured with standard model correspondingly.
-Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend ($\approx 2$--$9\times10^{-6}$~Hz~s$^{-1}$), nevertheless the median quality factor, obtained in this model appears to be $\sim14.3$ - i.e. compatible with the previous estimations made with standard model (see Table~\ref{tab:timing}). 
-It should be noted that the estimation of the QPO quality factor is restricted by the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate series used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz (we can not discriminate Q > 25).
+It should be noted that the changes in the QPO centroid position during each interval may contribute to the measured quality factor $Q$ due to the relatively large QPO frequency changing speed $d{f}_{\rm QPO}/dt \approx 5.0$--$6.5\times10^{-6}$~Hz~s$^{-1}$ and relatively short time of separate intervals $\approx3000$~s.
+Such movement of the QPO centroid frequency during the interval results in the measured quality $Q \approx 17$ even if its real value is much higher (QPO is almost periodical).
+To check does this effect bring any distortions in our quality measurements we introduced another model to fit power spectra, which take in to account QPO centroid frequency movement. 
+In this model we fitted simultaneously multiple power spectra obtained from the shorter intervals, amplitude and the QPO quality were taken to be equal for all power spectra, while for the QPO centroid frequency  linearly evolves with time.
+Obtained quality factors are in good agreement with those obtained with more simple model, the median value $Q=14.3$.
 
-From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
+%We checked is there any significant bias introduced in our quality estimation by this effect, and found no major 
+%To do so we used another model 
+%We can estimate the derivative of the QPO centroid position with time (by approximating $f_{\rm QPO}(time)$ with the straight line), which appears to be $\dot{f}_{\rm QPO} \approx 5.0$--$6.5\times10^{-6}$~Hz~s$^{-1}$. 
+%During an interval with the duration $\tau = 3000$~s observed QPO drift will broaden the perfect periodic signal located at $f_{\rm QPO}=0.3$~Hz up to the quality factor $Q \approx f_{\rm QPO}/(\dot{f}_{\rm QPO}\tau) \approx 17$, which is of order of the Q estimations obtained from the observations with standard model (described with eq.\ref{eq:complex_fit}).
+%In order to better estimate the QPO quality factor, we split each of the 13 intervals in sets of 82~s long time-series. 
+%After that, for each of 13 intervals, we fitted obtained power spectra simultaneously with new model in which we assume that QPO frequency linearly growing with time. 
+%The model has the same form as standard with $f_{\rm QPO}$ substituted with $f_{\rm QPO}' = f_{\rm QPO} + (t - t_{\rm mid})\dot{f}_{\rm QPO}$, where $\dot{f}_{\rm QPO}$ is the free parameter and $t_{i}^{\rm mid}$, $f_{\rm QPO}$ are the middle time of the $i$-th 82~s interval and QPO centroid frequency measured with standard model correspondingly.
+%Inside each data set we obtained the QPO centroid changing speed consistent with the estimation obtained from the general trend ($\approx 2$--$9\times10^{-6}$~Hz~s$^{-1}$), nevertheless the median quality factor, obtained in this model appears to be $\sim14.3$ - i.e. compatible with the previous estimations made with standard model (see Table~\ref{tab:timing}). 
+%It should be noted that the estimation of the QPO quality factor is restricted by the width of fast Fourier transform frequency bins, which is 1/T, where T - is a duration of separate series used for fitting, in our case $T=82$~s, and QPO width is limited at $1/T = 0.012$~Hz (we can not discriminate Q > 25).
+
+%From the shape of the energy and Fourier spectrum we concluded that the system is in the hard intermediate state and observed low frequency QPO (LF QPO) is of type C. 
 
 \subsection{Coherence}
 
 \defcitealias{1997ApJ...474L..43V}{VN97}
-\citet{1997ApJ...474L..43V}(hereafter \citetalias{1997ApJ...474L..43V}) suggested to use the coherence between different energy bands in order to obtain additional information from the source variability. 
-The coherence measure the similarity between two signals and can be computed with the following expression:
+\citet{1997ApJ...474L..43V}(hereafter \citetalias{1997ApJ...474L..43V}) suggested to use a coherence between different energy bands in order to obtain an additional information from the source variability. 
+The coherence measures the similarity between two signals and can be calculated with the following expression:
 \begin{equation}
         C(f) = \frac{|<F_{\rm s}(f)^*F_{\rm h}(f)>|^2 - n^2}{P_{\rm s}(f) P_{\rm h}(f)}
     \label{eq:nowak_coh}
 \end{equation}
-where $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are Fourier function of the observed time series in hard and soft bands, correspondingly, $P_{\rm s}(f)$ and $P_{\rm h}(f)$ is estimation of their power density spectra (derived, for example, with the Equation~\ref{eq: ps_estimation}),  
+where $F_{\rm h}(f)$ and $F_{\rm s}(f)$ are Fourier functions of the observed time series in hard and soft bands, correspondingly, $P_{\rm s}(f)$ and $P_{\rm h}(f)$ is estimation of their power density spectra (derived, for example, with the Equation~\ref{eq: ps_estimation}),  
 $n^2$ - product of the power in the uncorrelated noise components divided by the number of used series (which mostly determined by Poisson statistics noise, see \citetalias{1997ApJ...474L..43V}). 
 Since the coherence is estimated as a mean product of the Fourier functions it should be computed for the number of independent time series, therefore we separated each of the available uninterrupted time intervals on several shorter parts, 82~s long each.  
 

@@ -110,7 +110,7 @@ Optical and radio emissions were detected during the course of outburst \citep{h
 \citet{borozdin98} found a strong spectral evolution throughout the outburst to be consistent with the canonical model - the outburst starts from LHS, then soft emission, associated with the optically thick disk starts to dominate, heralding a transition to the high soft state. 
 Eventually, they observed very high state and detected a QPO at 5 Hz using {\it RXTE} data \citep{borozdin00, 2001MNRAS.328..451W}.
 
-After 18 years of quesence \grs\ demonstrated another big outburst, rise of which was detected by \swiftb \citep{krimm14_atel} along with \integral \citep{filippova14}. 
+After 18 years of quiescence \grs\ demonstrated another big outburst, rise of which was detected by \swiftb \citep{krimm14_atel} along with \integral \citep{filippova14}. 
 During this outburst an extensive observing campaign by the \swiftx\, telescope was carried out, along with a single long \nustar\ observation. 
 After this outburst the source remains active with repetitive mini-outbursts \citep{mereminskiy17grs,yan17}.
 
@@ -131,7 +131,7 @@ In order to characterize the overall outburst profile we used data of the \swift
 We used the \nustar\, observation (ObsID: 80002018002) performed at March 26, 2014 (MJD 56742) and utilized the {\texttt{nuproducts}} pipeline to extract photons from two-arcminute circular region, centered on the source and to produce lightcurves and spectra.
 
 We also used public observations of \swiftx\, (target ID: 33203) performed regularly over the rise and peak of the outburst.  
-Since the source was bright, all \swiftx\, observations were performed in windowed mode, allowing to study a timing properties of the source. 
+Since the source was bright, all \swiftx\, observations were performed in the windowed mode (WT), allowing to study a timing properties of the source. 
 We performed a standard analysis with {\texttt{xrtpipeline}} and barycentered data prior to a lightcurve extraction. 
 During several observations countrate was as high as 280 cts s$^{-1}$, therefore we excluded one or few brightest columns depending on the countrate, in order to suppress the effects caused by photon pile-up. 
 Photons with energies below 0.8 keV and above 10 keV were filtered out. 
@@ -156,33 +156,31 @@ Fortunately, the \nustar\ observation triggered by \cite{miller15_nust} were car
 \subsection{NuSTAR observation}
 \label{sec:nust} 
 
-\nustar\, observed \grs\ for nearly 30 ks of net exposure right after the hard X-ray peak (at $\tau_{0}\approx+18$, see Fig.~\ref{fig:batlc}). 
-Earlier, \cite{miller15_nust} shown that the average spectrum of this observation is well described by relativistic reflection models such as {\it relxill} \citep{garcia14, dauser14,dauser16} with accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO), with disk inner edge radius upper estimate being $R_{\rm in} = 5^{+3}_{-4}\, G M/c^{2}$ \citep{miller15_nust}. 
-They also noted that no additional thermal component was needed in order to describe {\it NuSTAR} energy spectrum probably due to the low disk temperature and high absorption.
+\nustar\, observed \grs\ for nearly 30 ks of the net exposure right after the hard X-ray peak (at $\tau_{0}\approx+18$, Fig.~\ref{fig:batlc}). 
+Earlier, \cite{miller15_nust} shown that the average spectrum during observation is well described by relativistic reflection models such as {\texttt relxill} \citep{garcia14, dauser14,dauser16} with the accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO). The disk inner edge radius was estimated as $R_{\rm in} = 5^{+3}_{-4}\, G M/c^{2}$ \citep{miller15_nust}. It was also noted that no additional thermal component was needed to describe the energy spectrum probably due to the low disk temperature and high absorption.
 
-Given the 96.9 minute orbital period of \nustar, observation is divided in 13 intervals separated by Earth occultations, as shown in Fig.\,\ref{fig:nust_lc}. 
+Given the 96.9 minute orbital period of \nustar, the observation is divided in 13 intervals separated by Earth occultations, as shown in Fig.\,\ref{fig:nust_lc}. 
 We denoted these intervals with roman numerals, from {\bf I} to {\bf XIII}. 
-From the lightcurve it is clear, that the source flux increased throughout observation from $\approx$145 up to $\approx$170 counts per second. 
-The spectrum also altered, with hardness (defined as ratio of countrates  $R_{3-10\,keV}/R_{10-78\,keV}$) had been growing monotonically from 2.7 to 3.1. 
+From the lightcurve it is clear, that the source flux is increased throughout the observation from $\approx$145 up to $\approx$170 counts per second. 
+The spectrum is also altered, with the hardness (defined as a ratio of countrates  $R_{3-10\,keV}/R_{10-78\,keV}$) had been growing monotonically from 2.7 to 3.1 (Fig.\,\ref{fig:nust_lc}). 
 
 
-\subsubsection{Continuum evolution}
+\subsubsection{Evolution of the continuum}
 \label{sec:continuum_evolution}
-To get better view on the evolution of continuum emission we fitted all individual interval spectra using \texttt{XSPEC} package \citep{arnaud96} with absorbed \texttt{xillver} \citep{garcia13} model (\texttt{const*phabs*xillver}). 
-%We peaked {\it xillver} model over the {\it relxill} for separate intervals analysis due to its simplicity and lesser amount of free parameters, since the total number of counts in each interval is not enough to well restrict parameter space of {\it relxill} model.
-This model describes reflection of incident radiation from ionized slab of matter. 
-The spectrum of incident radiation are assumed to be power-law with exponential cutoff. 
-We picked {\it xillver} model over the {\it relxill} for separate intervals analysis because we wanted to describe the changes in the continuum emission making no assumptions on the system geometry. 
+To get a better view on the evolution of the continuum emission we fitted all individual interval spectra using the \texttt{XSPEC} package \citep{arnaud96} with the absorbed \texttt{xillver} \citep{garcia13} model (\texttt{const*phabs*xillver}). 
+This model describes the reflection of the incident radiation from the ionized slab of the matter. 
+The spectrum of the incident radiation are assumed to be power-law with the exponential cutoff. 
+We picked the {\texttt xillver} model over the {\texttt relxill} for the analysis of separate intervals because we wanted to describe changes in the continuum emission making no assumptions on the system geometry. 
 
-Spectra from two \nustar\, modules of each interval were fitted simultaneously with free cross-calibration constant between modules.
-Before fitting, spectra were grouped in order to have at least 100 counts per bin, channels above 60 keV were ignored. 
-We choose to fix interstellar absorption at $N_{H} = 2.15\times10^{22}$ cm$^{-2}$ as was found by joint \xmm/\nustar\, observation during the low luminosity state \citep{fuerst16}. 
+Spectra from two \nustar\, modules for each interval were fitted simultaneously with free cross-calibration constant between modules.
+Before fitting, spectra were grouped in order to have at least 100 counts per bin, channels above 60 keV were ignored, due to the low statistics of high-energy photons. 
+We fixed interstellar absorption at $N_{H} = 2.15\times10^{22}$ cm$^{-2}$, as was found by joint \xmm/\nustar\, observation during the low luminosity state \citep{fuerst16}. 
 Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}. 
-Relative iron abundance were fixed at  $A_{Fe} = 1$, ionization parameter at $\xi=3.2$ and inclination at 35 degrees, in consistency with \citet{miller15_nust} results obtained with different spectral models. 
-Although in  \texttt{xillver} there is no relativistic broadening of Fe K$\alpha$ emission line no significant residuals in 5--8 keV region are seen, mainly because of limited statistics in per interval spectra. 
-Resulting fits are of satisfactory quality with $\chi^{2}_{red.} \approx 1.05$. 
+A relative iron abundance was fixed at  $A_{Fe} = 1$, an ionization parameter and an inclination at $\xi=3.2$ and 35 degrees, respectively, in consistency with results of \citet{miller15_nust}, obtained with different spectral models. 
+Although in the \texttt{xillver} there is no relativistic broadening of the Fe K$\alpha$ emission line no significant residuals in the 5--8 keV region are seen, mainly because of limited statistics in per interval spectra. 
+Resulting fits are of satisfactory quality with $\chi^{2} \approx 1.05 (d.o.f)$. (????) 
  
-Examination of the best-fit parameters (see Fig.\ref{fig:intspe}) confirms that the spectrum softens during the observation and the cut-off energy decreases. 
+The examination of the best-fit parameters (see Fig.\ref{fig:intspe}) confirms that the spectrum soften during the observation and the cut-off energy decreases. 
 %Flux is steadily increasing and at the end of the observation unabsorbed luminosity in 3--60 keV band reaches $7\times10^{37}$~erg~s$^{-1}$ for 8 kpc distance. 
 
 \begin{figure*}
@@ -192,16 +190,16 @@ Examination of the best-fit parameters (see Fig.\ref{fig:intspe}) confirms that 
 \end{figure*} 
 
 
-\subsubsection{Constrains on movement of the inner parts of accretion disk}
+\subsubsection{Constrains on the movement of the inner parts of the accretion disk}
 \label{sec:disk_constr}
-Spectra of single intervals have not enough statistics to constrain change of Fe-line profile and, hence, to determine whether the disk inner boundary  is moving during observation. 
-To increase statistics, we split whole observation into three major pieces, with first made by intervals {\bf I-IV}, second by {\bf V-IX} and third by {\bf X-XIII} and extracted 4--78 keV spectra. 
-We chose to group them in order to have at least 100 counts per bin and then we fitted them (excluding data between 5--10 keV) with simple \texttt{phabs*cutoffpl} model, using, once again, $N_{H} = 2.15\times10^{22}$ cm$^{-2}$.  
+Spectra for single intervals have not enough statistics to constrain changes of the Fe-line profile and, as a sequence, to determine whether the disk inner boundary  is moving during the observation. 
+To increase the statistics, we split whole observation into three major parts, with the first one consisting of intervals {\bf I-IV}, the second of {\bf V-IX} and the third of {\bf X-XIII} and extracted spectra in 4--78 keV band. 
+We grouped them in order to have at least 100 counts per bin and then fitted them (excluding data between 5--10 keV) with the simple \texttt{phabs*cutoffpl} model, again using $N_{H} = 2.15\times10^{22}$ cm$^{-2}$.  
 
-Now, plotting the ratio of this fit to initial spectra (see Fig.~\ref{fig:ratios}) one can see that both strong features - i.e. Fe-line complex at 5--9 keV and Compton hump around 30 keV are seemingly stable. 
-Additionally, we estimated the equivalent width of  Fe K$\alpha$ emission line in this three parts - we approximated 4--78~keV spectra with 10--30~keV range being ignored (to neglect the Compton-hump contribution) with model consisting of absorbed cut-off powerlaw and gaussian. 
+Plotting the ratio of this fit to initial spectra (Fig.~\ref{fig:ratios}) one can see that two strong features, a broadened Fe-line at 5--9 keV and a Compton hump around 30 keV are stable. 
+We estimated the equivalent width of  Fe K$\alpha$ emission line in this three parts - we approximated 4--78~keV spectra with 10--30~keV range being ignored (to neglect the Compton-hump contribution) with model consisting of absorbed cut-off powerlaw and gaussian. 
 Equivalent width of the gaussian component is around 0.175 keV and remains constant along the observation within error margins, although it is possible that the quality of data is not enough to trace the real change.
-Therefore we can conclude, that there is no drastic change in position of inner disk boundary between parts of observation. 
+Therefore we can conclude, that there is no drastic change in position of inner disk boundary during the observation. 
 
 \begin{figure}
 \centerline{\includegraphics[width=\linewidth]{intspe_v04.eps}}
@@ -218,14 +216,14 @@ Therefore we can conclude, that there is no drastic change in position of inner 
             
 \subsubsection{Broadband average spectrum}
 \label{sec:spec}            
-There is a 1.3 ks part of \swiftx\, snapshot (ObsId: 00033203003) that coincides with \nustar\, observation. 
-Extension of an energy range to 0.8--78 keV allows one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (such as were found in other BHCs, see \cite[][ e.t.c]{miller06b,miller06a,parker15}).
+There is a \swiftx\, observation (ObsId: 00033203003, 1.3 ks exposure) that coincides with the \nustar\, observation. 
+An extension of the energy range to 0.8--78 keV allows one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (similar was found in other BHCs, see \cite[][ etc]{miller06b,miller06a,parker15}).
 
 We extracted \swiftx\, spectrum using only zero-grade events, grouped it to has at least 30 counts per bin and added 3\% systematic error. 
-Similar grouping were applied to \nustar\, data. 
+Similar grouping were applied to \nustar\, data. It should be noted, that \grs\, is known to demonstrate a large dust scattering halo \citep{greiner96}
 
 Since the average spectrum has much better statistics we applied more sophisticated {\it relxilllp} spectral model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
-We used latest available version of {\it relxilllp} package (v1.0.2).
+We used latest available version of {\texttt relxilllp} package (v1.0.2).
 Jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. 
 Among the parameters of a model several are of a particular interest, namely $h$ - height of a point source above the black hole illuminating the accretion disk and $R_{in}$ - disks inner radius.  
 We selected this model for several reasons - first, \cite{miller15_nust} found that it matches {\it NuSTAR} data well. 

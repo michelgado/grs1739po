@@ -52,7 +52,7 @@ $^{2}$Bauman Moscow State Technical University, Moscow, Russia\\
 
 \begin{abstract}
 We detected a type-C low-frequency (LF) QPO at 0.3--0.7 Hz in \nustar\, and \swiftx\, data of the black hole candidate \grs\, in the hard-intermediate state during its 2014 outburst, and type-B QPO in the 1.7--5.2~Hz range in the soft-intermediate state. We traced an evolution of spectral-timing properties of the source during the \nustar\, observation. 
-(???)As QPO frequency increases, the source spectrum becomes softer, with increasing power-law index and decreasing cut-off energy.
+As QPO frequency increases, the source spectrum becomes softer, with increasing power-law index and decreasing cut-off energy.
 
 We performed an extended analysis of a rapid X-ray variability in terms of the power spectrum, cospectrum, coherence and phase-lags. 
 In the power spectrum a prominent QPO and its second harmonic are clearly seen. 
@@ -220,9 +220,10 @@ There is a \swiftx\, observation (ObsId: 00033203003, 1.3 ks exposure) that coin
 An extension of the energy range to 0.8--78 keV allows one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (similar was found in other BHCs, see \cite[][ etc]{miller06b,miller06a,parker15}).
 
 We extracted \swiftx\, spectrum using only zero-grade events, grouped it to has at least 30 counts per bin and added 3\% systematic error. 
-Similar grouping were applied to \nustar\, data. It should be noted, that \grs\, is known to demonstrate a large dust scattering halo \citep{greiner96}
+Similar grouping were applied to \nustar\, data. Obtained spectrum have a very complicated shape, that is unlike the  \citep{zdziarski04}
 
-Since the average spectrum has much better statistics we applied more sophisticated {\it relxilllp} spectral model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
+
+Examining spectra (Fig.\ref{fig:spec}) it is easy to see that  . Since the average spectrum has much better statistics we applied more sophisticated {\it relxilllp} spectral model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
 We used latest available version of {\texttt relxilllp} package (v1.0.2).
 Jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. 
 Among the parameters of a model several are of a particular interest, namely $h$ - height of a point source above the black hole illuminating the accretion disk and $R_{in}$ - disks inner radius.  
@@ -232,8 +233,8 @@ For spectral fitting we used \texttt{migrad} minimizer from {\em MINUIT} package
 
 Interestingly, instead of surplus thermal component we found a lack of the soft emission - usage of $N_{H} = 2.15\times10^{22}$ cm$^{-2}$, measured in the low state \citep{fuerst16_gx339} led to worse fits with systematic negative residuals below few keV. 
 Therefore, we left $N_{H}$ free during the fit. 
-Obtained value of 2.64$\times10^{22}$ cm$^{-2}$ is higher than one measured by \cite{fuerst16_gx339}. 
-This can be possibly accounted to a presence of disk outflow, caused by severe X-ray irradiation. 
+Obtained value of 2.64$\times10^{22}$ cm$^{-2}$ is higher than one measured by \cite{fuerst16_gx339}. It should be noted, that \grs\, is known to demonstrate a large dust scattering halo \citep{greiner96}. Similar halo was observed during this observation (K.L. Page, private communication). It may introduce some bias in spectrum normalisation, which is expected to be at 15\% level. Therefore, this discrepancy in measured absorption column densities could be partially caused by the unaccounted halo emission.
+
 
 Obtained upper limit on the accretion disk truncation radius - $R_{in} < 9 GM/c^{2}$ (90\% confidence limit) is similar to the value from \cite{miller15_nust}, height of the source above the accretion disk is in agreement too (see Tab.~\ref{tab:fullfit} for obtained parameters). 
 Some discrepancy seen in the parameters of accretion disk - e.g. inclination, ionization parameter and Fe-abundance, it can be caused by a broader energy range used in this study. 
@@ -277,7 +278,7 @@ $\chi^{2}_{red.}$    &   1.1=\\
 
 
 \begin{figure}
-\centerline{\includegraphics[width=\linewidth]{spectrumfit_v02.eps}}
+\centerline{\includegraphics[width=\linewidth]{spectrumfit_v04.pdf}}
 \caption{Fit of composite \swiftx/\nustar spectrum by \texttt{phabs*relxilllp} model. Green, red and blue points correspond to \swiftx, \nustar FPMA and FPMB, correspondingly.} 
 \label{fig:spec}
 \end{figure}  
@@ -726,7 +727,7 @@ This research has made use of data obtained through the High Energy Astrophysics
 This work made use of data supplied by the UK Swift Science Data Centre at the University of Leicester.
 
 %--------------------------------------------------------------------------------
-\bibliographystyle{astron}
+\bibliographystyle{mnras}
 \bibliography{author_en.bib,coherence.bib}
 \bsp	
 \label{lastpage}

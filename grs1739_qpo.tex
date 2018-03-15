@@ -165,7 +165,7 @@ From the lightcurve it is clear, that the source flux is increased throughout th
 The spectrum is also altered, with the hardness (defined as a ratio of countrates  $R_{3-10\,keV}/R_{10-78\,keV}$) had been growing monotonically from 2.7 to 3.1 (Fig.\,\ref{fig:nust_lc}). 
 
 
-\subsubsection{Evolution of the continuum}
+\subsubsection{Evolution of the continuum and constrains on the movement of the inner parts of the accretion disk}
 \label{sec:continuum_evolution}
 To get a better view on the evolution of the continuum emission we fitted all individual interval spectra using the \texttt{XSPEC} package \citep{arnaud96} with the absorbed \texttt{xillver} \citep{garcia13} model (\texttt{const*phabs*xillver}). 
 This model describes the reflection of the incident radiation from the ionized slab of the matter. 
@@ -189,8 +189,6 @@ The examination of the best-fit parameters (see Fig.\ref{fig:intspe}) confirms t
 \label{fig:nust_lc}
 \end{figure*} 
 
-
-\subsubsection{Constrains on the movement of the inner parts of the accretion disk}
 \label{sec:disk_constr}
 Spectra for single intervals have not enough statistics to constrain changes of the Fe-line profile and, as a sequence, to determine whether the disk inner boundary  is moving during the observation. 
 To increase the statistics, we split whole observation into three major parts, with the first one consisting of intervals {\bf I-IV}, the second of {\bf V-IX} and the third of {\bf X-XIII} and extracted spectra in 4--78 keV band. 
@@ -203,7 +201,7 @@ Therefore we can conclude, that there is no drastic change in position of inner 
 
 \begin{figure}
 \centerline{\includegraphics[width=\linewidth]{intspe_v04.eps}}
-\caption{Parameters of continuum emission in intervals. From upper to lower: \texttt{xillver} powerlaw slope, cutoff energy and  flux in 3--60 keV band $\times$\, erg s$^{-1}$ cm$^{-2}$ (see sec.\ref{sec:continuum_evolution}). On the botom panel we present Fe $K\alpha$ line equivalent width obtained with \texttt{phabs$\times$(cutoffpl + gauss)} model (see sec.\ref{sec:disk_constr}).} 
+\caption{Parameters of continuum emission in intervals. From upper to lower: \texttt{xillver} powerlaw slope, cutoff energy,  flux in 3--60 keV band $\times$\, erg s$^{-1}$ cm$^{-2}$ and Fe $K\alpha$ line equivalent width obtained with \texttt{phabs$\times$(cutoffpl + gauss)} model (see sec.\ref{sec:continuum_evolution}).} 
 \label{fig:intspe}
 \end{figure}  
 
@@ -220,10 +218,10 @@ There is a \swiftx\, observation (ObsId: 00033203003, 1.3 ks exposure) that coin
 An extension of the energy range to 0.8--78 keV allows one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (similar was found in other BHCs, see \cite[][ etc]{miller06b,miller06a,parker15}).
 
 We extracted \swiftx\, spectrum using only zero-grade events, grouped it to has at least 30 counts per bin and added 3\% systematic error. 
-Similar grouping were applied to \nustar\, data. Obtained spectrum have a very complicated shape, that is unlike the  \citep{zdziarski04}
+Similar grouping were applied to \nustar\, data. Obtained spectrum (Fig.\ref{fig:spec}) have a very complicated shape, that is unlike the canonical LHS \citep{zdziarski04}, when power law extends up to a few hundred keV without cutoff. Such spectral state was observed in \grs\, during failed outburst in 2016 \citep{mereminskiy17grs}.
 
 
-Examining spectra (Fig.\ref{fig:spec}) it is easy to see that  . Since the average spectrum has much better statistics we applied more sophisticated {\it relxilllp} spectral model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
+Since the average spectrum has much better statistics we applied more sophisticated {\it relxilllp} spectral model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
 We used latest available version of {\texttt relxilllp} package (v1.0.2).
 Jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. 
 Among the parameters of a model several are of a particular interest, namely $h$ - height of a point source above the black hole illuminating the accretion disk and $R_{in}$ - disks inner radius.  

@@ -472,6 +472,8 @@ Different models of the XRBs variability generation suggest that signals in two 
 It appears that in many sources the coherence between soft and hard X-ray bands is close to unity \citep{1999ApJ...517..355N, wijnands99}, however there were also indications  on complex picture of the coherence in particular state of some systems \citep[dip in the coherence at 0.03~Hz frequency, observed in GRS1915+105, ][]{2003ApJ...584L..23J}, \citep[decreasing of the coherence between particular energy bandse in GX 339--4, ][]{1997ApJ...474L..43V}.
 See also discussion in the \citetalias{1997ApJ...474L..43V} for the theoretical prediction on the coherence for different models.
 
+%~\\
+once upon a time....
 
 Following \citetalias{1997ApJ...474L..43V}, we estimated the coherence of \grs\ light-curves obtained in different soft and hard energy bands. 
 Since we use {\it NuSTAR} data (covering 3--79~keV energy band) we adopted following energy bands for our analysis: 3--5~keV, 5--8~keV, 8--15~keV and 15--78~keV.
@@ -483,7 +485,6 @@ Compton hump, another reflection feature, is confined in the 15--78~kev energy b
 As it was mentioned above the {\it NuSTAR} detectors have a complex dead-time depending on the energy, the coherence computed from one detector is subject to the dead-time cross-talk effects (i.e. capturing of the photon in particular energy band prevents registration of any next photon arriving during the dead-time, see e.g. \citet{2015MNRAS.451.4253R}). 
 Such cross-talk makes more coherent random processes, independent in different energy channels.
 In order to eliminate these effects in coherence estimation we follow the recipe suggested by \citet{2015ApJ...800..109B} for the cospectrum estimation. 
-%Specifically we want to get rid off correlation due to the dead time between different energy channels, 
 As explained in \citet{2015ApJ...800..109B} we can take advantage of the presence of two detectors modules, signals from which are processed independently. 
 That means that the photon registered by one of the modules do not prevent registration of the photon arriving during the dead-time in another module. 
 Therefore, for the numenator in Eq~\ref{eq:nowak_coh} (cross product of the Fourier functions of the light-curves obtained in different energy bands) we use light-curves obtained from different modules - e.g. lightcurve obtained in soft band on FPMA with one obtained in hard band on FPMB and vice versa.
@@ -491,11 +492,8 @@ Therefore, for the numenator in Eq~\ref{eq:nowak_coh} (cross product of the Four
 To obtain proper estimation on the coherence it is also important to have the correct estimation of the intrinsic variability power spectrum (denumenator in Eq.~\ref{eq:nowak_coh}).
 We use in this work model independent approach, with the cospectrum used for the power spectrum estimation (another approach would be to use Poisson noise subtracted power spectrum or analytical function fitted to the power spectrum in the previous section).
 
-%In the obtained cross-product effects of dead-time crosstalk are significantly dumped.
-%We also used cospectrum obtained for each energy band as the estimation for the denominator in Eq.~\ref{eq:nowak_coh}.
 The $n^2$ component was computed as it is suggested by \citetalias{1997ApJ...474L..43V}. 
 We estimated Poisson noise level as a mean power in the 5--15~Hz range, in this frequency band Poisson noise dominating over the source intrinsic variability, while its shape yet not affected by the dead-time effects (the spectrum is flat below 15~Hz).
-%however for the Poisson noise components power estimation we used mean value of the power spectra in the 5--15~Hz range, assuming that Poisson noise dominating intrinsic source variability and is constant along frequencies. 
 
 By using the cospectrum for the intrinsic variability power spectrum estimation we introduce one drawback. 
 As was discussed in the previous section cospectrum can be described with Laplace statistics, which have non-zero probability density in the vicinity of zero and positive mean value.

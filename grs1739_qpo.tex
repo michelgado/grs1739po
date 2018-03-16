@@ -157,7 +157,6 @@ Fortunately, the \nustar\ observation triggered by \cite{miller15_nust} were car
 \label{sec:nust} 
 
 \nustar\, observed \grs\ for nearly 30 ks of the net exposure right after the hard X-ray peak (at $\tau_{0}\approx+18$, Fig.~\ref{fig:batlc}). 
-Earlier, \cite{miller15_nust} shown that the average spectrum during observation is well described by relativistic reflection models such as {\texttt relxill} \citep{garcia14, dauser14,dauser16} with the accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO). The disk inner edge radius was estimated as $R_{\rm in} = 5^{+3}_{-4}\, G M/c^{2}$ \citep{miller15_nust}. It was also noted that no additional thermal component was needed to describe the energy spectrum probably due to the low disk temperature and high absorption.
 
 Given the 96.9 minute orbital period of \nustar, the observation is divided in 13 intervals separated by Earth occultations, as shown in Fig.\,\ref{fig:nust_lc}. 
 We denoted these intervals with roman numerals, from {\bf I} to {\bf XIII}. 
@@ -178,10 +177,9 @@ We fixed interstellar absorption at $N_{H} = 2.15\times10^{22}$ cm$^{-2}$, as wa
 Element abundances were taken from \cite{wilms00} and cross-sections from \cite{verner96}. 
 A relative iron abundance was fixed at  $A_{Fe} = 1$, an ionization parameter and an inclination at $\xi=3.2$ and 35 degrees, respectively, in consistency with results of \citet{miller15_nust}, obtained with different spectral models. 
 Although in the \texttt{xillver} there is no relativistic broadening of the Fe K$\alpha$ emission line no significant residuals in the 5--8 keV region are seen, mainly because of limited statistics in per interval spectra. 
-Resulting fits are of satisfactory quality with $\chi^{2} \approx 1.05 (d.o.f)$. (????) 
+Resulting fits are of satisfactory quality with $\chi^{2}/d.o.f. \approx 1.05$. 
  
 The examination of the best-fit parameters (see Fig.\ref{fig:intspe}) confirms that the spectrum soften during the observation and the cut-off energy decreases. 
-%Flux is steadily increasing and at the end of the observation unabsorbed luminosity in 3--60 keV band reaches $7\times10^{37}$~erg~s$^{-1}$ for 8 kpc distance. 
 
 \begin{figure*}
 \centerline{\includegraphics[scale=0.7]{nuAlc_color_v04.eps}}
@@ -214,27 +212,26 @@ Therefore we can conclude, that there is no drastic change in position of inner 
             
 \subsubsection{Broadband average spectrum}
 \label{sec:spec}            
-There is a \swiftx\, observation (ObsId: 00033203003, 1.3 ks exposure) that coincides with the \nustar\, observation. 
-An extension of the energy range to 0.8--78 keV allows one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (similar was found in other BHCs, see \cite[][ etc]{miller06b,miller06a,parker15}).
 
-We extracted \swiftx\, spectrum using only zero-grade events, grouped it to has at least 30 counts per bin and added 3\% systematic error. 
-Similar grouping were applied to \nustar\, data. Obtained spectrum (Fig.\ref{fig:spec}) have a very complicated shape, that is unlike the canonical LHS \citep{zdziarski04}, when power law extends up to a few hundred keV without cutoff. Such spectral state was observed in \grs\, during failed outburst in 2016 \citep{mereminskiy17grs}.
+Earlier, \cite{miller15_nust} shown that the average spectrum during observation is well described by relativistic reflection models such as {\texttt relxill} \citep{garcia14, dauser14,dauser16} with the accretion disk that reaches remarkably close to the black hole innermost stable circular orbit (ISCO). The disk inner edge radius was estimated as $R_{\rm in} = 5^{+3}_{-4}\, G M/c^{2}$ \citep{miller15_nust}. It was also noted that no additional thermal component was needed to describe the energy spectrum probably due to the low disk temperature and high absorption.
+
+Obtained spectrum (Fig.\ref{fig:spec}, see also Fig.2 in \citet{miller15_nust}) have a very complicated shape, that is unlike the canonical LHS \citep{zdziarski04}, when power law extends up to a few hundred keV without cutoff. Such spectral state was observed in \grs\, during failed outburst in 2016 \citep{mereminskiy17grs}. 
 
 
-Since the average spectrum has much better statistics we applied more sophisticated {\it relxilllp} spectral model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
-We used latest available version of {\texttt relxilllp} package (v1.0.2).
-Jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. 
-Among the parameters of a model several are of a particular interest, namely $h$ - height of a point source above the black hole illuminating the accretion disk and $R_{in}$ - disks inner radius.  
-We selected this model for several reasons - first, \cite{miller15_nust} found that it matches {\it NuSTAR} data well. 
-Also, during the 1996 outburst source was detected at radiowaves, possibly indicating jet activity. 
+We used a \swiftx\, observation (ObsId: 00033203003, 1.3 ks exposure) that coincides with the \nustar\, observation, to extend the energy range up to 0.8--78 keV, allowing one to search for thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (similar was found in other BHCs, see \cite[][ etc]{miller06b,miller06a,parker15}).
+
+Since the average spectrum has much better statistics we applied more sophisticated {\it relxilllp} (v1.0.2) spectral model that describes reflection of emission, produced by point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. We selected this model for several reasons - first, \cite{miller15_nust} found that it matches {\it NuSTAR} data well. 
+Also, during the 1996 outburst source was detected at radiowaves, possibly indicating jet activity, and the jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. 
+
 For spectral fitting we used \texttt{migrad} minimizer from {\em MINUIT} package \citep{james75minuit}, and in order to estimate errors we employed a large MCMC chain. 
+We extracted \swiftx\, spectrum using only zero-grade events, grouped it to has at least 30 counts per bin and added 3\% systematic error. Similar grouping were applied to \nustar\, data. 
 
 Interestingly, instead of surplus thermal component we found a lack of the soft emission - usage of $N_{H} = 2.15\times10^{22}$ cm$^{-2}$, measured in the low state \citep{fuerst16_gx339} led to worse fits with systematic negative residuals below few keV. 
 Therefore, we left $N_{H}$ free during the fit. 
 Obtained value of 2.64$\times10^{22}$ cm$^{-2}$ is higher than one measured by \cite{fuerst16_gx339}. It should be noted, that \grs\, is known to demonstrate a large dust scattering halo \citep{greiner96}. Similar halo was observed during this observation (K.L. Page, private communication). It may introduce some bias in spectrum normalisation, which is expected to be at 15\% level. Therefore, this discrepancy in measured absorption column densities could be partially caused by the unaccounted halo emission.
 
 
-Obtained upper limit on the accretion disk truncation radius - $R_{in} < 9 GM/c^{2}$ (90\% confidence limit) is similar to the value from \cite{miller15_nust}, height of the source above the accretion disk is in agreement too (see Tab.~\ref{tab:fullfit} for obtained parameters). 
+Obtained upper limit on the accretion disk truncation radius - $R_{in} < 9 GM/c^{2}$ (90\% confidence limit) is similar to the value from \cite{miller15_nust}, height of the ``lamp'' above the accretion disk is in agreement too (see Tab.~\ref{tab:fullfit} for obtained parameters). 
 Some discrepancy seen in the parameters of accretion disk - e.g. inclination, ionization parameter and Fe-abundance, it can be caused by a broader energy range used in this study. 
 As it can be seen from Fig.~\ref{fig:spec} there are no significant residuals in lower-energy part of the spectrum, therefore thermal emission from accretion disk is too weak or too cold to detect. 
 

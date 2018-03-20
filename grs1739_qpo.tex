@@ -109,7 +109,7 @@ In this article we report on first detection of type-C QPOs in HIMS of the Galac
 Using {\it ROSAT} measurement of the absorption column \citet{greiner96} inferred a distance of 6--8.5~kpc from the estimated absorption, indicating that the source may belong to the Galactic bulge. 
 It should be noted that \citet{greiner96} used an X-ray halo size to assess an obscuration column density, and the mean extinction per parsec value from \citet{1973asqu.book.....A} to estimate the distance to the source. 
 While this $N_{\rm H}$ estimation appears to be quite precise it is larger than the new measurements of the line of sight absorption in the Galaxy towards the source \citep{1990ARA&A..28..215D, 2005A&A...440..775K, 2006A&A...453..635M, 2014A&A...566A.120S}. 
-It means that the source has either an intrinsic obscuration or a additional line of sight obscuration,  and its distance can not be constrained from $N_{\rm H}$.
+It means that the source has either an intrinsic obscuration or an additional line of sight obscuration,  and its distance can not be constrained from $N_{\rm H}$.
 Nevertheless in this work we will assume that the distance to \grs\ is 8~kpc, given that the source is projected on to the Galactic Bulge.  
 
 Optical and radio emissions were detected during the course of outburst \citep{hjellming96,marti97}. 
@@ -132,7 +132,7 @@ Red line shows the time interval of the \nustar\, observation.
 
 \section{Observations and data reduction}
 \label{sec:datared} 
-In order to characterize the overall outburst profile we used data of the \swiftb\, transient monitor \citep{krimm13bat} in hard X-rays (15--50 keV) as well as a soft (2--4 keV) lightcurve from \maxi\, \citep{matsuoka13maxi}.  As a reference value for the Crab we took 0.22 cts cm$^{-2}$ s$^{-1}$ for 15--50 keV band and for 2--4 keV band we took a 1.67 cts s$^{-1}$.
+In order to characterize the overall outburst profile we used data of the \swiftb\, transient monitor \citep{krimm13bat} in hard X-rays (15--50 keV) as well as a soft (2--4 keV) lightcurve from \maxi\, \citep{matsuoka13maxi}.  As a reference value for the Crab we took 0.22 cts cm$^{-2}$ s$^{-1}$ for 15--50 keV band and for 2--4 keV band we took 1.67 cts s$^{-1}$.
 
 We used the \nustar\, observation (ObsID: 80002018002) performed at March 26, 2014 (MJD 56742) and utilized the \texttt{nuproducts} pipeline to extract photons from 2' circular region, centered on the source and to produce lightcurves and spectra.
 
@@ -180,15 +180,15 @@ We would like to mention that the obtained spectrum (Fig.\ref{fig:spec}, see als
 We used a \swiftx\, observation (ObsId: 00033203003, 1.3 ks exposure) that coincides with the \nustar\, observation, to extend the energy range up to 0.8--78 keV, allowing one to search for the thermal emission associated with the cold inner disk with $kT \sim 0.1...0.4$~keV (similar was found in other BHCs, see \cite[][ etc]{miller06b,miller06a,parker15}).
 
 For the spectral fitting we used \texttt{XSPEC} package \citep{arnaud96}.
-We applied {\it relxilllp} (v1.0.2) spectral model that describes reflection of emission, produced by a point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
+We applied {\it relxilllp} (v1.0.2) spectral model that describes the reflection of emission, produced by a point source located on the rotation axis above the Kerr black hole, from the relativistic accretion disk. 
 We selected this model for several reasons - first, \cite{miller15_nust} found that it matches {\it NuSTAR} data well. 
-Also, during the 1996 outburst source was detected at radiowaves, possibly indicating jet activity, and the jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. 
+Also, during the 1996 outburst source was detected at radiowaves, possibly indicating jet activity, the jet foundation are often thought to be responsible for this type of ``lamp-post'' geometry. 
 
 For spectral fitting we used \texttt{migrad} minimizer from {\em MINUIT} package \citep{james75minuit}, and in order to estimate errors we employed a large MCMC chain. 
 We extracted \swiftx\, spectrum using only zero-grade events, grouped it to has at least 30 counts per bin and added 3\% systematic error. Similar grouping were applied to \nustar\, data. 
 
 Usage of this spectral model and fixed absorption column ($N_{H} = 2.15\times10^{22}$ cm$^{-2}$, \citep{fuerst16_gx339}) led to fits with systematic negative residuals below few keV. 
-Therefore, we left $N_{H}$ free during the fit and obtained value of 2.64$\times10^{22}$ cm$^{-2}$. 
+Therefore, we left $N_{H}$ free and obtained value of 2.64$\times10^{22}$ cm$^{-2}$. 
 No additional soft component is required in order to describe broadband spectra.
 
 It should be noted, that \grs\, is known to demonstrate a large dust scattering halo \citep{greiner96}. 
@@ -201,7 +201,7 @@ Some discrepancy seen in the parameters of the accretion disk - e.g. inclination
 
 Total unabsorbed flux in 0.1--100 keV band is about 1.4$\times$10$^{-8}$~erg s$^{-1}$ cm$^{-2}$ which translates to a luminosity of 1.1$\times$10$^{38}$ erg s$^{-1}$ for the 8 kpc distance. 
 Typical luminosity at which BHCs change from LHS to HIMS is about $0.1 L_{Edd} = 1.2\times10^{37} (M/M_{\odot})$ erg s$^{-1}$ \citep{2010MNRAS.403...61D}, although we should note that there is significant scatter in this value. 
-Therefore one can put a rough lower estimate on the black-hole mass as 9 $M_{\odot}$.
+Therefore one can put a rough estimate on the black-hole mass as 9 $M_{\odot}$, assuming 8 kpc distance.
 
 \begin{table}
 \noindent
@@ -246,9 +246,9 @@ $\chi^{2}_{red.}$    &   1.1=\\
 
 \subsubsection{Evolution of the continuum and constrains on the movement of the inner parts of the accretion disk}
 \label{sec:continuum_evolution}
-To get a better view on the evolution of the continuum emission we fitted all individual interval spectra with the absorbed \texttt{xillver} \citep{garcia13} model (\texttt{const*phabs*xillver}). 
+To get a better view on the evolution of the continuum emission we fitted all individual intervals spectra with the absorbed \texttt{xillver} \citep{garcia13} model (\texttt{const*phabs*xillver}). 
 This model describes the reflection of the incident radiation from the ionized slab of the matter. 
-The spectrum of the incident radiation are assumed to be power-law with the exponential cutoff. 
+The spectrum of the incident radiation is assumed to be a power-law with the exponential cutoff. 
 We picked the \texttt{xillver} model over the \texttt{relxilllp} for the analysis of separate intervals because we wanted to describe changes in the continuum emission making no assumptions on the system geometry. 
 
 Spectra from two \nustar\, modules for each interval were fitted simultaneously with free cross-calibration constant between modules.
